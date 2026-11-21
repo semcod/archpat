@@ -1,0 +1,574 @@
+{
+  "schema": "archpat.source-lock/v1",
+  "generated_at": "2026-11-21T18:09:22Z",
+  "archpat_root": "/home/tom/github/semcod/archpat",
+  "evidence_level": "source_verified",
+  "note": "Read-only inventory of local PC checkouts; no sibling checkouts were modified.",
+  "sources": [
+    {
+      "id": "uritime-workspace",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime",
+      "resolved_path": "/home/tom/github/uritime",
+      "role": "Umbrella workspace holding uritime, urt, autodo, autonom, urtlog, wheelhouse, and autonomy-pilot",
+      "git": {
+        "is_git_repo": false
+      },
+      "package": null,
+      "contracts": [
+        {
+          "path": "planning/urt-polycell-forge-autonomy.md",
+          "exists": true,
+          "size_bytes": 128215,
+          "sha256": "0b731192ebac02baa78436674e146671d78690c53cf3689c7f25ac2bd0afab31"
+        },
+        {
+          "path": "planning/autonomy-pilot/README.md",
+          "exists": true,
+          "size_bytes": 25293,
+          "sha256": "27b2f545a38711726bec00972c9635ee81d73f4370bde99101e44979f94c7e05"
+        },
+        {
+          "path": "planning/autonomy-pilot/contracts/cells/backlog.reconciliation.cell.yaml",
+          "exists": true,
+          "size_bytes": 3185,
+          "sha256": "70efe00c9d0ba6a882987eafc89f4f5cc7a13def87a4b5c85e1239b89df6061b"
+        },
+        {
+          "path": "planning/autonomy-pilot/cells/python/backlog_reconciliation.py",
+          "exists": true,
+          "size_bytes": 2314,
+          "sha256": "646935c3e858f22a6058a5e34f706f74926d30b42451d27ae2bb52aefe819a27"
+        }
+      ]
+    },
+    {
+      "id": "uritime",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime/uritime",
+      "resolved_path": "/home/tom/github/uritime/uritime",
+      "role": "Plan/Schedule single-writer ledger, UriEventStore, ur-cqrs-v1 and urt-record-v1 contracts",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:uritime/uritime.git",
+        "branch": "main",
+        "head_commit": "6fbeb64fa5ff99a28ae76b928bf0a599b2c527fa",
+        "head_date": "2026-11-21T18:17:05+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "uritime",
+        "version": "0.1.0",
+        "license": "Apache-2.0",
+        "pyproject_sha256": "f4774cc3f755b664630bef3925b5e8275ae5760eab25781d3275363292cb2cc1"
+      },
+      "contracts": [
+        {
+          "path": "src/urievents/contracts.py",
+          "exists": true,
+          "size_bytes": 18676,
+          "sha256": "45e51a55f36e8124933c8321bc3c8b1f149f9e772016f62230d6782eae7304ad"
+        },
+        {
+          "path": "src/urievents/store.py",
+          "exists": true,
+          "size_bytes": 25249,
+          "sha256": "986c8014e7f3622de0345d6f2e81b602652127f62c4299222200eb2dc0d9921f"
+        },
+        {
+          "path": "src/urievents/schemas/ur-cqrs-v1.schema.json",
+          "exists": true,
+          "size_bytes": 8550,
+          "sha256": "354206178e980c9ceb050747c77d3f5122850b139eb13973624e8c105df51db2"
+        },
+        {
+          "path": "src/urievents/schemas/urt-record-v1.schema.json",
+          "exists": true,
+          "size_bytes": 1688,
+          "sha256": "874ed171f055818b616845b617e37a2c80d7acb79ada2b78363e17e730ae39ae"
+        },
+        {
+          "path": "src/urievents/schemas/urt-record-data-v1.schema.json",
+          "exists": true,
+          "size_bytes": 11158,
+          "sha256": "58c6ca1952f41ba865a770fded61f3216b081491ae21ab1e1ca7949ceb2de7fa"
+        },
+        {
+          "path": "src/uritime/plan_commands.py",
+          "exists": true,
+          "size_bytes": 15152,
+          "sha256": "2060658eb76fa5cb05774034900b9811682ce55470090e6fffccd37df3aaa28a"
+        },
+        {
+          "path": "src/uritime/plan_queries.py",
+          "exists": true,
+          "size_bytes": 10875,
+          "sha256": "c1d25d456a56bfb3ea681feb6b8fd3644388c35eadf58cf8f4afd536dff3d04a"
+        }
+      ]
+    },
+    {
+      "id": "uritime-urt",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime/urt",
+      "resolved_path": "/home/tom/github/uritime/urt",
+      "role": "URT v1 canonical temporal descriptors, AST validation, and deterministic intent resolution",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:uritime/urt.git",
+        "branch": "main",
+        "head_commit": "54b52d90bf6082838d7357b5e859e404e5296263",
+        "head_date": "2026-11-19T22:31:51+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "uritime-urt",
+        "version": "0.2.0",
+        "license": "Apache-2.0",
+        "pyproject_sha256": "631a41c51777e44670e6a1bcb726f2f8d07266eefef08f6f0ca4b43ddb3dad95"
+      },
+      "contracts": [
+        {
+          "path": "src/uritime_urt/intents.py",
+          "exists": true,
+          "size_bytes": 11041,
+          "sha256": "f96cbe734e8a6d6daf7d71bdb37dbe5950d6e0c166a0e80003223b80cb998b0c"
+        },
+        {
+          "path": "src/uritime_urt/resolution.py",
+          "exists": true,
+          "size_bytes": 23172,
+          "sha256": "33f3464c2e581e40001681f276ff8ec1566d862d6bdc289e0b566d7dc0691cd7"
+        },
+        {
+          "path": "src/uritime_urt/schemas/descriptor-v1.schema.json",
+          "exists": true,
+          "size_bytes": 10883,
+          "sha256": "29304bd43d7af02d3f7d81a70e35757cac1b5b992148f79cf050d7d503f3ee18"
+        },
+        {
+          "path": "src/uritime_urt/schemas/temporal-intent-v1.schema.json",
+          "exists": true,
+          "size_bytes": 2962,
+          "sha256": "da24847654a8aba86726e113fb8572e8db1c486a14749a218a0733d1d3fd80ff"
+        },
+        {
+          "path": "src/uritime_urt/schemas/temporal-monitor-v1.schema.json",
+          "exists": true,
+          "size_bytes": 2663,
+          "sha256": "d65f64d12408f2a5d72e59bb720e500dd0df507e554a4fc981d29c8d45178a90"
+        },
+        {
+          "path": "src/uritime_urt/schemas/resolution-v1.schema.json",
+          "exists": true,
+          "size_bytes": 1545,
+          "sha256": "d5236654c91f1b3bbb88249878a627350166e288ad760f607e590e3668665f24"
+        }
+      ]
+    },
+    {
+      "id": "uritime-autodo",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime/autodo",
+      "resolved_path": "/home/tom/github/uritime/autodo",
+      "role": "Goal/Action execution, operation descriptors, service bindings, and data pinning",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:uritime/autodo.git",
+        "branch": "main",
+        "head_commit": "cd434216584a16fdd55d0309bf1cbec8598244be",
+        "head_date": "2026-11-19T23:36:36+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "uritime-autodo",
+        "version": "0.2.0",
+        "license": "Apache-2.0",
+        "pyproject_sha256": "817913aadd6a81b758ff93b6ef18fdb06db4135bffe5da2248f95e6bfc9cb79e"
+      },
+      "contracts": [
+        {
+          "path": "src/subactor_autonomy/operation_descriptor.py",
+          "exists": true,
+          "size_bytes": 22049,
+          "sha256": "071395f74cc206ef84204b7ae1110a2d88c937c6747b433fe81f0cfd3714f445"
+        },
+        {
+          "path": "src/subactor_autonomy/service_binding.py",
+          "exists": true,
+          "size_bytes": 20819,
+          "sha256": "465fc26d3ce0c18400bcc5e26cdf3720d7979581c37296fe88603b8446e49c57"
+        },
+        {
+          "path": "src/subactor_autonomy/data_pinning.py",
+          "exists": true,
+          "size_bytes": 34554,
+          "sha256": "4451acd82190ef1a33100f5f6dc466f8fe4f58c6d6e9104a53c76c19c92e37fc"
+        },
+        {
+          "path": "src/subactor_autonomy/ownership.py",
+          "exists": true,
+          "size_bytes": 22827,
+          "sha256": "536dc7cab522c61f2c5e9b1837dd7290d9d2ad5f3c5e5c48a4af63f2544c71b6"
+        }
+      ]
+    },
+    {
+      "id": "uritime-autonom",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime/autonom",
+      "resolved_path": "/home/tom/github/uritime/autonom",
+      "role": "Candidate decision synthesis and SubLLM client",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:uritime/autonom.git",
+        "branch": "main",
+        "head_commit": "79ca80d66f0b55f782186609ab133c6a5d539e9f",
+        "head_date": "2026-11-18T19:12:46+01:00",
+        "dirty_count": 5,
+        "clean": false
+      },
+      "package": {
+        "name": "oqlos-autonom",
+        "version": "0.1.0",
+        "license": "Apache-2.0",
+        "pyproject_sha256": "ba3cec503041f0719654c1884149d84729aabec97a11f6fed457d42990469136"
+      },
+      "contracts": [
+        {
+          "path": "src/autonom/synthesizer.py",
+          "exists": true,
+          "size_bytes": 11400,
+          "sha256": "59731d3f96c84d2bd279537e2b23ccc1b57acfc04693d758ebafbdf549858f43"
+        }
+      ]
+    },
+    {
+      "id": "uritime-urtlog",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/uritime/urtlog",
+      "resolved_path": "/home/tom/github/uritime/urtlog",
+      "role": "Unified URL/URI/URN/URT log and registry facade",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:uritime/urtlog.git",
+        "branch": "main",
+        "head_commit": "38c6ca45c7b2d2d91ce466b273960e59f8ea0a37",
+        "head_date": "2026-11-21T19:02:13+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "uritime-urtlog",
+        "version": "0.3.0",
+        "license": null,
+        "pyproject_sha256": "53e0569bd6e16d095e12b1766c100dce5c7b480b3b32d10c489a26a9a01090a3"
+      },
+      "contracts": [
+        {
+          "path": "src/urtlog/dsl.py",
+          "exists": true,
+          "size_bytes": 21976,
+          "sha256": "53f1ed600f73697a0dc8c30ce86dcbb1996909e14c3bd3f141953ea97483c15d"
+        },
+        {
+          "path": "src/urtlog/registry.py",
+          "exists": true,
+          "size_bytes": 26349,
+          "sha256": "937af5c7028e9c63c90f1fd651fe73d6a26732a3cd1a47b54d99e2887e8b29fc"
+        }
+      ]
+    },
+    {
+      "id": "forge",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/paxlet-com/forge",
+      "resolved_path": "/home/tom/github/paxlet-com/forge",
+      "role": "Immutable Git-commit snapshots, project_jobs patch qualification, process contracts, and Wellman pins",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:heyasa/forge.git",
+        "branch": "main",
+        "head_commit": "e67afb42edb22d9824f5af0d290bc85f66479712",
+        "head_date": "2026-11-18T11:44:12+01:00",
+        "dirty_count": 21,
+        "clean": false
+      },
+      "package": null,
+      "contracts": [
+        {
+          "path": "packages/forge_base/forge_base/snapshots.py",
+          "exists": true,
+          "size_bytes": 32235,
+          "sha256": "d0c9e3f5d014783ebbe705c8a9496ae2050109cf450f63aa70ba563295cb0104"
+        },
+        {
+          "path": "packages/forge_base/forge_base/project_jobs.py",
+          "exists": true,
+          "size_bytes": 8655,
+          "sha256": "7b5707ef929024c26bc3438c2a1d1858664c5eac0818b93fca0b20284ce66ab3"
+        },
+        {
+          "path": "packages/forge_base/forge_base/contracts.py",
+          "exists": true,
+          "size_bytes": 3353,
+          "sha256": "7ecbf16d21ab502eb882f464a9cc228fc1f58fafd23533f56cd895f889eb5a12"
+        },
+        {
+          "path": "packages/forge_base/forge_base/catalog.py",
+          "exists": true,
+          "size_bytes": 26306,
+          "sha256": "f15eb377703a130d0af4b916c364460604a7df0d79732b5b6d1a62cdfbfcf1b2"
+        },
+        {
+          "path": "packages/forge_wellman/forge_wellman/upstream-pins.json",
+          "exists": true,
+          "size_bytes": 1206,
+          "sha256": "53d30cc37b2012938387762372d9c07b919997f4be7872cdaa7dd4f7932f5724"
+        },
+        {
+          "path": "examples/wellman/standards/nl-uri-dsl-llm/process-uri.schema.json",
+          "exists": true,
+          "size_bytes": 787,
+          "sha256": "a18c2f779dfebc9d993ea0e4f011eed62cc33dc4a7d6aeb8cd27d87928e03835"
+        },
+        {
+          "path": "examples/wellman/standards/data-plane/process-exchange.schema.json",
+          "exists": true,
+          "size_bytes": 7140,
+          "sha256": "61521953c224d57c28f24e02d7f3871d5a4ed852019de9fd03cbb5ff37170b9e"
+        }
+      ]
+    },
+    {
+      "id": "heyasa",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/paxlet-com/heyasa",
+      "resolved_path": "/home/tom/github/paxlet-com/heyasa",
+      "role": "Host ecosystem orchestrator consuming uritime temporal runtime and urtlog",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:heyasa/heyasa.git",
+        "branch": "main",
+        "head_commit": "290b3c441d94a2ce68f4e495c9d54933140bfb74",
+        "head_date": "2026-11-21T19:04:17+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "heyasa",
+        "version": null,
+        "license": "Apache-2.0",
+        "pyproject_sha256": "e4404990dcc558bcc5a58c5b1a64b8ba66be3ee120245bddeed8671baedf27ab"
+      },
+      "contracts": [
+        {
+          "path": "heyasa/temporal_runtime.py",
+          "exists": true,
+          "size_bytes": 32178,
+          "sha256": "67be56d82a8f639d2ca36754e7ae386bce54f7ef3eb4e42c5f0d4594d1566eee"
+        },
+        {
+          "path": "heyasa/urt_cqrs_adapter.py",
+          "exists": true,
+          "size_bytes": 21212,
+          "sha256": "f6db4602c4a5f268674ec46c54634e202836fa0785e81058f9ae26759ba5f829"
+        },
+        {
+          "path": "docs/decisions/heyasa-uritime-autonom-boundary-2026-11-18.md",
+          "exists": true,
+          "size_bytes": 6865,
+          "sha256": "e98d0b0cf7ff47b74c23f1324e6817113eb2aee95b668951ff786abb2e9e1c18"
+        }
+      ]
+    },
+    {
+      "id": "wellmanifest-polycell",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/wellmanifest/polycell",
+      "resolved_path": "/home/tom/github/wellmanifest/polycell",
+      "role": "Contract-first replaceable cell architecture (Python/TS/Rust) and POA process plans",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:wellmanifest/polycell.git",
+        "branch": "main",
+        "head_commit": "a50bd58a2656b92ac0e9377700e5f989de7ab47c",
+        "head_date": "2026-11-20T20:36:46+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": null,
+      "contracts": [
+        {
+          "path": "standard/polycell-cell.schema.v1.json",
+          "exists": true,
+          "size_bytes": 2914,
+          "sha256": "b2b199093247de979ce03e842f7514f9817868693e25a2dd7cf8a7e040613200"
+        },
+        {
+          "path": "standard/polycell-plan.schema.v1.json",
+          "exists": true,
+          "size_bytes": 1990,
+          "sha256": "736afbb1c5d19af395915ee36abff009f375907558a26d9b0c98930134c4eba2"
+        },
+        {
+          "path": "standard/polycell-package.schema.v1.json",
+          "exists": true,
+          "size_bytes": 968,
+          "sha256": "19815d9acace27ff2b43f0585ff5f5c64d8da3ef903c0e47f1e254c32cd66c15"
+        },
+        {
+          "path": "standard/conformance.py",
+          "exists": true,
+          "size_bytes": 8326,
+          "sha256": "f1e1cf27a67477e404ff7a4e0615ae7ff05487b42c22710d37c5165846cd2b06"
+        },
+        {
+          "path": "contracts/cells/pricing.quote.cell.yaml",
+          "exists": true,
+          "size_bytes": 1540,
+          "sha256": "1459bca527e1aa9b99c38223bd61e8f43b0f6d66f040c95ef5a8a834ce64e3c2"
+        },
+        {
+          "path": "contracts/processes/checkout.process.yaml",
+          "exists": true,
+          "size_bytes": 1792,
+          "sha256": "dbda85f27c5616fd1937fa451d660eccfbd74da2aee6d46df6dac49e5e280062"
+        }
+      ]
+    },
+    {
+      "id": "wellmanifest-nl-uri-dsl-llm",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/wellmanifest/nl-uri-dsl-llm",
+      "resolved_path": "/home/tom/github/wellmanifest/nl-uri-dsl-llm",
+      "role": "Normative NL -> RFC 3986 Action URI / Resource URN -> LLM GBNF standard",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:wellmanifest/nl-uri-dsl-llm.git",
+        "branch": "main",
+        "head_commit": "29a67748a41bec2ccd600a5c978c7caa5d362450",
+        "head_date": "2026-11-19T03:26:11+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "wellmanifest-nl-uri-dsl-llm",
+        "version": "1.5.0",
+        "license": null,
+        "pyproject_sha256": "bdb6d4d68212c61ab30a9679363e0aa06b2e5ef8bc8c494d6d3a6ed965e7f6ea"
+      },
+      "contracts": [
+        {
+          "path": "schemas/process-uri.schema.json",
+          "exists": true,
+          "size_bytes": 787,
+          "sha256": "a18c2f779dfebc9d993ea0e4f011eed62cc33dc4a7d6aeb8cd27d87928e03835"
+        },
+        {
+          "path": "schemas/mcp-process-gateway.schema.json",
+          "exists": true,
+          "size_bytes": 2525,
+          "sha256": "075f3985fb91825e5d79cf9aa7b78878d4ad2695db8f26dab702fd2601f4779d"
+        },
+        {
+          "path": "schemas/system-one-decision.schema.json",
+          "exists": true,
+          "size_bytes": 6462,
+          "sha256": "db2f3d38d186f97dde3b09bf10a95b5815ba43e6c23adf15291ebae6e719a53a"
+        },
+        {
+          "path": "profiles/semantic-v1.json",
+          "exists": true,
+          "size_bytes": 9344,
+          "sha256": "f5158d6011cbcb20efc50954d6b7e9b0da1ec43ddff6b50a663239f46d4f5770"
+        }
+      ]
+    },
+    {
+      "id": "wellmanifest-nl-dsl-llm",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/wellmanifest/nl-dsl-llm",
+      "resolved_path": "/home/tom/github/wellmanifest/nl-dsl-llm",
+      "role": "Companion NL -> DSL -> LLM standard",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:wellmanifest/nl-dsl-llm.git",
+        "branch": "main",
+        "head_commit": "f4f1e268584c86a044313f5883dfb921a7f5ac38",
+        "head_date": "2026-11-19T00:18:53+01:00",
+        "dirty_count": 0,
+        "clean": true
+      },
+      "package": {
+        "name": "wellmanifest-nl-dsl-llm",
+        "version": "0.1.1",
+        "license": null,
+        "pyproject_sha256": "69236c27aa79e519d30e05bfa528566ea57ff9969b84d7f02b0c21ca3aa39694"
+      },
+      "contracts": [
+        {
+          "path": "README.md",
+          "exists": true,
+          "size_bytes": 1437,
+          "sha256": "52b15c2b499a91eb842c71801bcea64653297728980ea19eb45e6b1f89e42c66"
+        }
+      ]
+    },
+    {
+      "id": "code2schema",
+      "status": "source_verified",
+      "requested_path": "/home/tom/github/autogrammar/code2schema",
+      "resolved_path": "/home/tom/github/autogrammar/code2schema",
+      "role": "Static AST -> CQRS heuristic extractor (as-is hypothesis source)",
+      "git": {
+        "is_git_repo": true,
+        "remote_origin": "git@github.com:autogrammar/code2schema.git",
+        "branch": "ticket/004-add-autoupdate-support",
+        "head_commit": "c4a0f3b8a3f6c419e33d75b4ee149e80cfc78dba",
+        "head_date": "2026-09-19T23:29:10+01:00",
+        "dirty_count": 15,
+        "clean": false
+      },
+      "package": {
+        "name": "code2schema",
+        "version": "0.1.9",
+        "license": "Apache-2.0",
+        "pyproject_sha256": "e5de340685b22c0a92155e65b4b970dc65bd0acbd3388cfc164230326dda3de5"
+      },
+      "contracts": [
+        {
+          "path": "code2schema/__init__.py",
+          "exists": true,
+          "size_bytes": 420,
+          "sha256": "547d244f931ca824826db6319ecd5c9721db3fa7e17180887c2b11564c884d4e"
+        },
+        {
+          "path": "LICENSE",
+          "exists": true,
+          "size_bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "id": "deconnected",
+      "status": "missing_local_checkout",
+      "requested_path": "/home/tom/github/autogrammar/deconnected",
+      "role": "Extraction boundary / dependency graph analyzer (optional external tool)",
+      "contracts": []
+    }
+  ],
+  "cross_checks": {
+    "nl_uri_process_schema_vs_forge_copy": {
+      "upstream_path": "/home/tom/github/wellmanifest/nl-uri-dsl-llm/schemas/process-uri.schema.json",
+      "forge_copy_path": "/home/tom/github/paxlet-com/forge/examples/wellman/standards/nl-uri-dsl-llm/process-uri.schema.json",
+      "upstream_sha256": "a18c2f779dfebc9d993ea0e4f011eed62cc33dc4a7d6aeb8cd27d87928e03835",
+      "forge_copy_sha256": "a18c2f779dfebc9d993ea0e4f011eed62cc33dc4a7d6aeb8cd27d87928e03835",
+      "identical": true
+    }
+  }
+}

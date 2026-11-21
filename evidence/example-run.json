@@ -1,0 +1,30 @@
+[
+  {
+    "profile": "local",
+    "status": "best_in_catalog",
+    "selected": "modular_monolith",
+    "input_sha256": "369b9d52f12f02ad0af214c50c96969fe59497c56cdedf1b7c430f3be3154e89",
+    "candidate_count": 3
+  },
+  {
+    "profile": "worker",
+    "status": "best_in_catalog",
+    "selected": "worker_split",
+    "input_sha256": "753c513d4bd55ec7a5e4fb3d104f3b60f8303264837a3523b5ca205c24174900",
+    "candidate_count": 3
+  },
+  {
+    "profile": "services",
+    "status": "best_in_catalog",
+    "selected": "service_split",
+    "input_sha256": "3c18cd94b5ce64b8283406b088cb3d73f64d32778f19b89eea2d597f2495405f",
+    "candidate_count": 3
+  },
+  {
+    "profile": "infeasible",
+    "status": "no_feasible_catalog_candidate",
+    "selected": null,
+    "input_sha256": "25d0df5b617aa96c8d34797bfd18b8f365e85ae9b1cfb991d2618b2a2a7cf681",
+    "candidate_count": 3
+  }
+]

@@ -1,0 +1,1084 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "ArchPat",
+    "description": "Architecture proposals; execution_ready is always false.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/synthesize": {
+      "post": {
+        "summary": "Plan",
+        "operationId": "plan_v1_synthesize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StorySpec"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SynthesisResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/validate": {
+      "post": {
+        "summary": "Validate",
+        "operationId": "validate_v1_validate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArchitectureGraph"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Validate V1 Validate Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArchitectureGraph": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "archpat.graph/v1",
+            "title": "Schema Version",
+            "default": "archpat.graph/v1"
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+            "title": "Id"
+          },
+          "variant": {
+            "type": "string",
+            "enum": [
+              "modular_monolith",
+              "worker_split",
+              "service_split"
+            ],
+            "title": "Variant"
+          },
+          "story": {
+            "$ref": "#/components/schemas/StorySpec"
+          },
+          "patterns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Patterns"
+          },
+          "nodes": {
+            "items": {
+              "$ref": "#/components/schemas/Node"
+            },
+            "type": "array",
+            "maxItems": 300,
+            "title": "Nodes"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/Edge"
+            },
+            "type": "array",
+            "maxItems": 2500,
+            "title": "Edges"
+          },
+          "provenance": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Provenance"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "variant",
+          "story",
+          "patterns",
+          "nodes",
+          "edges"
+        ],
+        "title": "ArchitectureGraph"
+      },
+      "Candidate": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "graph": {
+            "$ref": "#/components/schemas/ArchitectureGraph"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/Metrics"
+          },
+          "validation": {
+            "$ref": "#/components/schemas/ValidationReport"
+          },
+          "rejection_reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Rejection Reasons"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "score_terms": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Score Terms"
+          },
+          "feasible": {
+            "type": "boolean",
+            "title": "Feasible"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "graph",
+          "metrics",
+          "validation",
+          "rejection_reasons",
+          "score",
+          "score_terms",
+          "feasible"
+        ],
+        "title": "Candidate"
+      },
+      "Constraints": {
+        "properties": {
+          "ram_budget_mb": {
+            "type": "integer",
+            "maximum": 1048576.0,
+            "minimum": 1.0,
+            "title": "Ram Budget Mb",
+            "default": 4096
+          },
+          "reserved_ram_mb": {
+            "type": "integer",
+            "maximum": 1048576.0,
+            "minimum": 0.0,
+            "title": "Reserved Ram Mb",
+            "default": 0
+          },
+          "max_processes": {
+            "type": "integer",
+            "maximum": 1024.0,
+            "minimum": 1.0,
+            "title": "Max Processes",
+            "default": 3
+          },
+          "isolate_projection": {
+            "type": "boolean",
+            "title": "Isolate Projection",
+            "default": false
+          },
+          "independent_command_query_scaling": {
+            "type": "boolean",
+            "title": "Independent Command Query Scaling",
+            "default": false
+          },
+          "offline": {
+            "type": "boolean",
+            "title": "Offline",
+            "default": true
+          },
+          "interfaces": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "rest",
+                "mcp",
+                "shell"
+              ]
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Interfaces"
+          },
+          "artifact_formats": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "json",
+                "protobuf"
+              ]
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Artifact Formats"
+          },
+          "required_patterns": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "cqrs",
+                "event_sourcing",
+                "outbox",
+                "ports_adapters"
+              ]
+            },
+            "type": "array",
+            "title": "Required Patterns"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Constraints"
+      },
+      "Edge": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+            "title": "Id"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "invoke",
+              "command",
+              "query",
+              "event",
+              "read",
+              "write",
+              "return",
+              "depends_on",
+              "temporal",
+              "propose"
+            ],
+            "title": "Kind"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operation Id"
+          },
+          "data_urns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Data Urns"
+          },
+          "effect": {
+            "type": "string",
+            "enum": [
+              "none",
+              "read",
+              "write"
+            ],
+            "title": "Effect",
+            "default": "none"
+          },
+          "interface": {
+            "type": "string",
+            "title": "Interface",
+            "default": "in_process"
+          },
+          "encoding": {
+            "type": "string",
+            "enum": [
+              "json",
+              "protobuf",
+              "object"
+            ],
+            "title": "Encoding",
+            "default": "object"
+          },
+          "delivery": {
+            "type": "string",
+            "enum": [
+              "local",
+              "at_least_once"
+            ],
+            "title": "Delivery",
+            "default": "local"
+          },
+          "idempotent": {
+            "type": "boolean",
+            "title": "Idempotent",
+            "default": true
+          },
+          "transaction_group": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transaction Group"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "source",
+          "target",
+          "kind"
+        ],
+        "title": "Edge"
+      },
+      "Finding": {
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning"
+            ],
+            "title": "Severity"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "subject": {
+            "type": "string",
+            "title": "Subject"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "severity",
+          "code",
+          "subject",
+          "message"
+        ],
+        "title": "Finding"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Metrics": {
+        "properties": {
+          "ram_mb_estimate": {
+            "type": "integer",
+            "title": "Ram Mb Estimate"
+          },
+          "reserved_ram_mb": {
+            "type": "integer",
+            "title": "Reserved Ram Mb"
+          },
+          "total_ram_mb_estimate": {
+            "type": "integer",
+            "title": "Total Ram Mb Estimate"
+          },
+          "process_count": {
+            "type": "integer",
+            "title": "Process Count"
+          },
+          "cross_process_edges": {
+            "type": "integer",
+            "title": "Cross Process Edges"
+          },
+          "change_surface_prior": {
+            "type": "integer",
+            "title": "Change Surface Prior"
+          },
+          "evidence": {
+            "type": "string",
+            "const": "heuristic_unmeasured",
+            "title": "Evidence",
+            "default": "heuristic_unmeasured"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "ram_mb_estimate",
+          "reserved_ram_mb",
+          "total_ram_mb_estimate",
+          "process_count",
+          "cross_process_edges",
+          "change_surface_prior"
+        ],
+        "title": "Metrics"
+      },
+      "Node": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "actor",
+              "adapter",
+              "command_handler",
+              "query_handler",
+              "aggregate",
+              "event_store",
+              "outbox",
+              "relay",
+              "projector",
+              "read_model",
+              "temporal_service"
+            ],
+            "title": "Role"
+          },
+          "capability": {
+            "type": "string",
+            "title": "Capability"
+          },
+          "owner": {
+            "type": "string",
+            "title": "Owner"
+          },
+          "process_group": {
+            "type": "string",
+            "title": "Process Group"
+          },
+          "story_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Story Ids"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Operation Id"
+          },
+          "aggregate_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aggregate Id"
+          },
+          "deployment": {
+            "type": "string",
+            "enum": [
+              "local",
+              "remote",
+              "external"
+            ],
+            "title": "Deployment",
+            "default": "local"
+          },
+          "interface": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "rest",
+                  "mcp",
+                  "shell"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interface"
+          },
+          "service_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Service Url"
+          },
+          "process_uri": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Process Uri"
+          },
+          "binding_status": {
+            "type": "string",
+            "enum": [
+              "unbound",
+              "proposed",
+              "verified"
+            ],
+            "title": "Binding Status",
+            "default": "unbound"
+          },
+          "reuse": {
+            "items": {
+              "$ref": "#/components/schemas/ReuseEvidence"
+            },
+            "type": "array",
+            "title": "Reuse"
+          },
+          "properties": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Properties"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "role",
+          "capability",
+          "owner",
+          "process_group",
+          "story_ids"
+        ],
+        "title": "Node"
+      },
+      "OperationSpec": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "command",
+              "query"
+            ],
+            "title": "Kind"
+          },
+          "capability": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "title": "Capability"
+          },
+          "aggregate": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "title": "Aggregate"
+          },
+          "input_urns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Input Urns"
+          },
+          "output_urns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Output Urns"
+          },
+          "consistency": {
+            "type": "string",
+            "enum": [
+              "eventual",
+              "read_your_writes"
+            ],
+            "title": "Consistency",
+            "default": "eventual"
+          },
+          "temporal": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TemporalRequirement"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "capability",
+          "aggregate"
+        ],
+        "title": "OperationSpec"
+      },
+      "ReuseEvidence": {
+        "properties": {
+          "project": {
+            "type": "string",
+            "title": "Project"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "symbols": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Symbols"
+          },
+          "source_sha256": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Sha256"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "indexed_only",
+              "source_seen",
+              "contract_verified"
+            ],
+            "title": "Status",
+            "default": "indexed_only"
+          },
+          "note": {
+            "type": "string",
+            "title": "Note",
+            "default": "Candidate only; the source API and behavioral contract require verification."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "project",
+          "path"
+        ],
+        "title": "ReuseEvidence"
+      },
+      "StorySpec": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "archpat.story/v1",
+            "title": "Schema Version",
+            "default": "archpat.story/v1"
+          },
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "actor": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Actor"
+          },
+          "goal": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Goal"
+          },
+          "acceptance_criteria": {
+            "items": {
+              "type": "string",
+              "maxLength": 8000,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 100,
+            "minItems": 1,
+            "title": "Acceptance Criteria"
+          },
+          "operations": {
+            "items": {
+              "$ref": "#/components/schemas/OperationSpec"
+            },
+            "type": "array",
+            "maxItems": 50,
+            "minItems": 1,
+            "title": "Operations"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/Constraints"
+          },
+          "weights": {
+            "$ref": "#/components/schemas/Weights"
+          },
+          "assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 100,
+            "title": "Assumptions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "actor",
+          "goal",
+          "acceptance_criteria",
+          "operations"
+        ],
+        "title": "StorySpec"
+      },
+      "SynthesisResult": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "archpat.synthesis/v1",
+            "title": "Schema Version",
+            "default": "archpat.synthesis/v1"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "best_in_catalog",
+              "no_feasible_catalog_candidate"
+            ],
+            "title": "Status"
+          },
+          "selected_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selected Id"
+          },
+          "pareto_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Pareto Ids"
+          },
+          "input_sha256": {
+            "type": "string",
+            "title": "Input Sha256"
+          },
+          "search_scope": {
+            "type": "string",
+            "const": "three_explicit_cqrs_es_templates",
+            "title": "Search Scope",
+            "default": "three_explicit_cqrs_es_templates"
+          },
+          "objective_definition": {
+            "type": "string",
+            "title": "Objective Definition",
+            "default": "weighted_normalized_priors_v1; smaller is better"
+          },
+          "execution_ready": {
+            "type": "boolean",
+            "const": false,
+            "title": "Execution Ready",
+            "default": false
+          },
+          "assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Assumptions"
+          },
+          "candidates": {
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            },
+            "type": "array",
+            "title": "Candidates"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status",
+          "selected_id",
+          "pareto_ids",
+          "input_sha256",
+          "assumptions",
+          "candidates"
+        ],
+        "title": "SynthesisResult"
+      },
+      "TemporalRequirement": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 8000,
+            "minLength": 1,
+            "title": "Text"
+          },
+          "timezone": {
+            "type": "string",
+            "title": "Timezone",
+            "default": "Europe/Warsaw"
+          },
+          "resolution_status": {
+            "type": "string",
+            "const": "unresolved",
+            "title": "Resolution Status",
+            "default": "unresolved"
+          },
+          "owner": {
+            "type": "string",
+            "const": "uritime",
+            "title": "Owner",
+            "default": "uritime"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TemporalRequirement"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "ValidationReport": {
+        "properties": {
+          "findings": {
+            "items": {
+              "$ref": "#/components/schemas/Finding"
+            },
+            "type": "array",
+            "title": "Findings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "ValidationReport"
+      },
+      "Weights": {
+        "properties": {
+          "ram": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Ram",
+            "default": 0.35
+          },
+          "processes": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Processes",
+            "default": 0.25
+          },
+          "coupling": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Coupling",
+            "default": 0.2
+          },
+          "change_surface": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Change Surface",
+            "default": 0.2
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Weights"
+      }
+    }
+  }
+}

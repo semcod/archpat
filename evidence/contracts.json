@@ -1,0 +1,24 @@
+{
+  "schema_compilation": "passed",
+  "profiles": [
+    {
+      "profile": "local",
+      "schema": "passed",
+      "protobuf_roundtrip": "passed",
+      "protobuf_bytes": 37015
+    },
+    {
+      "profile": "worker",
+      "schema": "passed",
+      "protobuf_roundtrip": "passed",
+      "protobuf_bytes": 37024
+    },
+    {
+      "profile": "services",
+      "schema": "passed",
+      "protobuf_roundtrip": "passed",
+      "protobuf_bytes": 37037
+    }
+  ],
+  "contract": "ArchPat IR only; not upstream schema conformance"
+}

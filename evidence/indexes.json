@@ -1,0 +1,42 @@
+[
+  {
+    "project": "uritime",
+    "index_sha256": "4d6e522af2e31bcae152cd8fbd4a03b6b66c3f4c845e559d68f876b8c9599c41",
+    "module_count": 647,
+    "stats": {
+      "reported_file_count": 647,
+      "reported_line_count": 141902,
+      "reported_function_count": 1856,
+      "reported_class_count": 192,
+      "reported_module_count": 647,
+      "reported_mean_cc": 6.8,
+      "reported_critical_count": 252,
+      "reported_cycles": "unknown",
+      "declared_module_count": 647,
+      "parsed_module_count": 647,
+      "parsed_symbol_count": 2048
+    },
+    "evidence": "indexed_only",
+    "api_verified": false
+  },
+  {
+    "project": "forge",
+    "index_sha256": "73b9e08f04a161f8787adcb796dd336e633f20efdafa2c002d88311ffe57290c",
+    "module_count": 574,
+    "stats": {
+      "reported_file_count": 574,
+      "reported_line_count": 88284,
+      "reported_function_count": 525,
+      "reported_class_count": 46,
+      "reported_module_count": 574,
+      "reported_mean_cc": 7.0,
+      "reported_critical_count": 78,
+      "reported_cycles": "unknown",
+      "declared_module_count": 574,
+      "parsed_module_count": 574,
+      "parsed_symbol_count": 571
+    },
+    "evidence": "indexed_only",
+    "api_verified": false
+  }
+]

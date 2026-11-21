@@ -1,0 +1,104 @@
+{
+  "schema": "archpat.vertical-pilot-result/v1",
+  "story_id": "exercise-feedback",
+  "archpat_proposal": {
+    "selected_variant": "modular_monolith",
+    "graph_sha256": "bf531bca2ec7066550b9773bcf2a901453ff43ed69018885106041870e46a91f",
+    "execution_ready": false
+  },
+  "evidence_level": "integration_verified",
+  "all_acceptance_passed": true,
+  "acceptance": {
+    "criterion_1_idempotent_command": true,
+    "criterion_2_readonly_query_zero_mutations": true,
+    "criterion_3_pure_replay_matches_live": true,
+    "criterion_4_pinned_artifact_urn": true,
+    "criterion_5_urt_temporal_resolution": true,
+    "ownership_enforced_uritime_only": true,
+    "forge_fresh_publishable": true,
+    "forge_stale_snapshot_rejected": true,
+    "contract_corpus_all_passed": true
+  },
+  "temporal_resolution": {
+    "status": "resolved",
+    "resolved_urt": "urt:v1:interval:2026-11-21T09:15:00Z/2026-11-21T09:55:00Z",
+    "intent_digest": "sha256:28c78db84f45135a5b4b532f9e6cffb40b49e17b350f41fe5f349727a65f9c71",
+    "eligibility": {
+      "not_before": "2026-11-21T09:15:00Z",
+      "deadline_guarantee": "constraint_checked_by_runtime; not a prediction of completion",
+      "completion_deadline": "2026-11-21T09:55:00Z",
+      "completion_deadline_inclusive": false
+    }
+  },
+  "command_binding": {
+    "operation_id": "request-review",
+    "process_uri": "urn:poa:exercise.review#v1",
+    "plan_id": "urn:uritime:plan:exercise-feedback:ex-001",
+    "proposal_event_urn": "urn:urievents:event:plan.proposed:urn-uritime-plan-exercise-feedback-ex-001:6cb6697554bd6d04",
+    "accepted_event_urn": "urn:urievents:event:plan.accepted:urn-uritime-plan-exercise-feedback-ex-001:445f6e1ef1ed5b27",
+    "accepted_version": 1,
+    "pinned_input_urn": "urn:sha256:5b45f6001c99821d17af92a022d453157174db392164d7033237ffa3970bd8ee",
+    "exported_urt_records": 2
+  },
+  "query_binding": {
+    "operation_id": "get-feedback",
+    "plan_status": "accepted",
+    "plan_version": 1,
+    "events_before_query": 2,
+    "events_after_query": 2,
+    "audit_trail_entries": 2,
+    "replay_matches_live": true
+  },
+  "forge_qualification": {
+    "project_urn": "urn:uuid:66dfbf7c-bf9b-56f0-acfe-fd586c15bff8",
+    "snapshot_id": "b3c2ff10e23cba6976f52280db4dbe8a65e87730cdb59efb4fa4af64787eef88",
+    "changed_paths": [
+      "review.py",
+      "test_review.py"
+    ],
+    "patch_sha256": "9646358ed093a51ef5842e447d6bced4fb3a106f9dcb889bbccc889afdb32d22",
+    "checks_status": "PASS",
+    "result_digest": "e60684a54013c651ab06001736e11fe759cb5d45f3adf7c9fc886409d2f41499",
+    "fresh_publish_precondition": {
+      "schema": "heyasa-forge.project-job-publication/v1",
+      "publishable": true,
+      "reasons": [],
+      "snapshot_id": "b3c2ff10e23cba6976f52280db4dbe8a65e87730cdb59efb4fa4af64787eef88",
+      "current_snapshot_id": "b3c2ff10e23cba6976f52280db4dbe8a65e87730cdb59efb4fa4af64787eef88",
+      "patch_sha256": "9646358ed093a51ef5842e447d6bced4fb3a106f9dcb889bbccc889afdb32d22",
+      "base_source": {
+        "commit": "88b210b10649e62e9deb567f44d3e0b484c4a908",
+        "commit_sha256": "16b470aaed5492da61d6b4d6027013cd68f3dbfff11d7b6f9f70c58ce3fdda6b",
+        "kind": "git-commit",
+        "object_format": "sha1",
+        "tree": "bebdffcf3328c527bde493e4ce849738d8bd3f22",
+        "tree_sha256": "de370d4e23cb53e580b04fd73dfe88864840a12442fe5d33d3fd130f26cae35f"
+      },
+      "authority": "decision_only; the caller applies the patch under its own lease"
+    },
+    "stale_publish_precondition": {
+      "schema": "heyasa-forge.project-job-publication/v1",
+      "publishable": false,
+      "reasons": [
+        "base_snapshot_changed"
+      ],
+      "snapshot_id": "b3c2ff10e23cba6976f52280db4dbe8a65e87730cdb59efb4fa4af64787eef88",
+      "current_snapshot_id": "e2435a62510472302c91010b624b7a9dd810ead4e4f202221b3f650ed169bc4a",
+      "patch_sha256": "9646358ed093a51ef5842e447d6bced4fb3a106f9dcb889bbccc889afdb32d22",
+      "base_source": {
+        "commit": "88b210b10649e62e9deb567f44d3e0b484c4a908",
+        "commit_sha256": "16b470aaed5492da61d6b4d6027013cd68f3dbfff11d7b6f9f70c58ce3fdda6b",
+        "kind": "git-commit",
+        "object_format": "sha1",
+        "tree": "bebdffcf3328c527bde493e4ce849738d8bd3f22",
+        "tree_sha256": "de370d4e23cb53e580b04fd73dfe88864840a12442fe5d33d3fd130f26cae35f"
+      },
+      "authority": "decision_only; the caller applies the patch under its own lease"
+    }
+  },
+  "contract_corpus_summary": {
+    "total": 16,
+    "passed": 16,
+    "all_passed": true
+  }
+}

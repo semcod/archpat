@@ -1,0 +1,56 @@
+syntax = "proto3";
+package archpat.v1;
+import "google/protobuf/struct.proto";
+
+// Proposed ArchPat IR exchange. Not an upstream URT/urievents/domain API.
+// Field numbers are stable in v1; reserve removed numbers and names.
+message ArchitectureProposal {
+  string schema_version = 1;
+  string id = 2;
+  string variant = 3;
+  google.protobuf.Struct story = 4;
+  repeated string patterns = 5;
+  repeated Node nodes = 6;
+  repeated Edge edges = 7;
+  google.protobuf.Struct provenance = 8;
+}
+message ReuseEvidence {
+  string project = 1;
+  string path = 2;
+  repeated string symbols = 3;
+  optional string source_sha256 = 4;
+  string status = 5;
+  string note = 6;
+}
+message Node {
+  string id = 1;
+  string label = 2;
+  string role = 3;
+  string capability = 4;
+  string owner = 5;
+  string process_group = 6;
+  repeated string story_ids = 7;
+  optional string operation_id = 8;
+  optional string aggregate_id = 9;
+  string deployment = 10;
+  optional string interface = 11;
+  optional string service_url = 12;
+  optional string process_uri = 13;
+  string binding_status = 14;
+  repeated ReuseEvidence reuse = 15;
+  google.protobuf.Struct properties = 16;
+}
+message Edge {
+  string id = 1;
+  string source = 2;
+  string target = 3;
+  string kind = 4;
+  optional string operation_id = 5;
+  repeated string data_urns = 6;
+  string effect = 7;
+  string interface = 8;
+  string encoding = 9;
+  string delivery = 10;
+  bool idempotent = 11;
+  optional string transaction_group = 12;
+}

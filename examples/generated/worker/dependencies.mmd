@@ -1,0 +1,23 @@
+flowchart TD
+  n0["Prowadzący i student · actor"]
+  n1["REST · adapter"]
+  n2["MCP · adapter"]
+  n3["SHELL · adapter"]
+  n4["Append-only domain event log · event_store"]
+  n5["Transactional outbox · outbox"]
+  n6["Outbox relay · relay"]
+  n7["Replayable projector · projector"]
+  n8["Query projection + checkpoints · read_model"]
+  n9["exercise · aggregate"]
+  n10["URTime + URT (unbound) · temporal_service"]
+  n11["Zleć ocenę ćwiczenia · command_handler"]
+  n12["Pokaż aktualny wynik i wyjaśnienie · query_handler"]
+  n7 -->|"depends_on"| n4
+  n1 -->|"depends_on"| n11
+  n2 -->|"depends_on"| n11
+  n3 -->|"depends_on"| n11
+  n11 -->|"depends_on"| n9
+  n1 -->|"depends_on"| n12
+  n2 -->|"depends_on"| n12
+  n3 -->|"depends_on"| n12
+  n12 -->|"depends_on"| n8

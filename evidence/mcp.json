@@ -1,0 +1,14 @@
+{
+  "transport": "stdio",
+  "protocol_version": "2025-11-25",
+  "tools": [
+    "architecture_diff",
+    "architecture_impact",
+    "architecture_synthesize",
+    "architecture_validate"
+  ],
+  "initialize": "passed",
+  "synthesize": "passed",
+  "validate": "passed",
+  "upstream_integrations_tested": false
+}

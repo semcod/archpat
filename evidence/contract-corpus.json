@@ -1,0 +1,121 @@
+{
+  "schema": "archpat.contract-corpus/v1",
+  "evidence_level": "contract_verified",
+  "all_passed": true,
+  "total": 16,
+  "passed": 16,
+  "checks": [
+    {
+      "name": "nl_uri_schema_matches_forge_copy",
+      "contract": "wellmanifest/nl-uri-dsl-llm/process-uri.schema.json",
+      "expected": "identical_bytes",
+      "passed": true,
+      "detail": "sha256=a18c2f779dfebc9d"
+    },
+    {
+      "name": "nl_uri_valid_action_uri",
+      "contract": "nl-uri-dsl-llm/process-uri",
+      "expected": "accept",
+      "passed": true,
+      "detail": "proc://heyasa.forge/project/impact/v1"
+    },
+    {
+      "name": "nl_uri_missing_required_uri",
+      "contract": "nl-uri-dsl-llm/process-uri",
+      "expected": "reject",
+      "passed": true,
+      "detail": "'uri' is a required property"
+    },
+    {
+      "name": "urievents_command_valid",
+      "contract": "ur.command-envelope/v1",
+      "expected": "accept",
+      "passed": true,
+      "detail": "urn:poa:exercise.review#v1"
+    },
+    {
+      "name": "urievents_command_unpinned_input",
+      "contract": "ur.command-envelope/v1",
+      "expected": "reject",
+      "passed": true,
+      "detail": "Accepted command input must be content-pinned: urn:uritime:exercise:submission:unpinned"
+    },
+    {
+      "name": "urievents_query_masquerade",
+      "contract": "ur.timeline-query/v1",
+      "expected": "reject",
+      "passed": true,
+      "detail": "TimelineQuery cannot carry command or event message_kind"
+    },
+    {
+      "name": "autodo_parse_poa_uri",
+      "contract": "ur.operation-descriptor/v1",
+      "expected": "accept",
+      "passed": true,
+      "detail": "exercise.review@1"
+    },
+    {
+      "name": "autodo_reject_http_url",
+      "contract": "ur.operation-descriptor/v1",
+      "expected": "reject",
+      "passed": true,
+      "detail": "URL-shaped URI 'https://example.com/exercise/review' cannot be dereferenced or treated as an executable OperationDescriptor"
+    },
+    {
+      "name": "urt_temporal_intent_resolved",
+      "contract": "urt.resolution/v1",
+      "expected": "accept",
+      "passed": true,
+      "detail": "urt:v1:interval:2026-11-21T09:15:00Z/2026-11-21T09:55:00Z"
+    },
+    {
+      "name": "urt_missing_timezone_rejected",
+      "contract": "urt.temporal-intent/v1",
+      "expected": "reject",
+      "passed": true,
+      "detail": "invalid_temporal_intent: invalid_temporal_intent: context.timezone must be explicitly pinned (never inferred from locale)"
+    },
+    {
+      "name": "forge_impact_input_valid",
+      "contract": "urn:uuid:2f65cf6c-f10a-4d82-895b-923779aee001",
+      "expected": "accept",
+      "passed": true,
+      "detail": "urn:uuid:2f65cf6c-f10a-4d82-895b-923779aee001"
+    },
+    {
+      "name": "forge_impact_undeclared_node",
+      "contract": "urn:uuid:2f65cf6c-f10a-4d82-895b-923779aee001",
+      "expected": "reject",
+      "passed": true,
+      "detail": "Graph contains an undeclared node"
+    },
+    {
+      "name": "polycell_pricing_quote_cell",
+      "contract": "wellmanifest.polycell.cell/v1",
+      "expected": "accept",
+      "passed": true,
+      "detail": "urn:wm:cell:shop:pricing.quote:v1"
+    },
+    {
+      "name": "uritime_pilot_backlog_cell",
+      "contract": "wellmanifest.polycell.cell/v1",
+      "expected": "accept",
+      "passed": true,
+      "detail": "urn:wm:cell:autonomy:backlog.reconciliation:v1"
+    },
+    {
+      "name": "polycell_invalid_urn_rejected",
+      "contract": "wellmanifest.polycell.cell/v1",
+      "expected": "reject",
+      "passed": true,
+      "detail": "'https://not-a-cell-urn.example/bad' does not match '^urn:wm:cell:[a-z0-9_-]+:[a-z0-9_.]+:v[0-9]+$'"
+    },
+    {
+      "name": "polycell_backlog_reconciliation_examples",
+      "contract": "urn:wm:cell:autonomy:backlog.reconciliation:v1",
+      "expected": "all_pass",
+      "passed": true,
+      "detail": "14/14 examples passed"
+    }
+  ]
+}

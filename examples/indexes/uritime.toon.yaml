@@ -1,0 +1,2838 @@
+# uritime | 647f 141902L | md:225,yml:4,json:189,yaml:7,toml:7,txt:33,sandbox:1,subllm:1,worker:1,python:157,shell:17,javascript:1 | 2026-11-21
+# producer: code2llm | artifact: map.toon.yaml | schema: 1
+# stats: 1856 func | 192 cls | 647 mod | CC̄=6.8 | critical:252 | cycles:unknown
+# alerts[5]: CC main=106; fan-out main=99; CC AutodoQueries.explain=91; CC map_action_event_to_domain_fact=71; fan-out main=71
+# hotspots[5]: main fan=99; main fan=71; main fan=71; _run_e2e_typed_and_proxy_slice fan=63; _run_sigkill_matrix fan=58
+# evolution: CC̄ 7.2→6.8 (improved -0.4)
+# Keys: M=modules, D=details, i=imports, e=exports, c=classes, f=functions, m=methods
+M[647]:
+  Makefile,42
+  README.md,116
+  THIRD-PARTY-NOTICES.md,35
+  UPGRADE.md,106
+  VALIDATION.md,129
+  autodo/.aider.conf.yml,22
+  autodo/AGENTS.md,341
+  autodo/CHANGELOG.md,24
+  autodo/CLAUDE.md,40
+  autodo/CONTRACTS.md,27
+  autodo/GEMINI.md,40
+  autodo/GITHUB-DELIVERY.md,76
+  autodo/Makefile,75
+  autodo/README.md,277
+  autodo/TODO.md,31
+  autodo/artifacts/README.md,5
+  autodo/autodo-import-manifest.json,348
+  autodo/autodo-import-owner.json,7
+  autodo/compose.yaml,79
+  autodo/compose.gpu.yaml,10
+  autodo/config/subllm.offline.toml,226
+  autodo/config/subllm.requirements.txt,2
+  autodo/deploy/Dockerfile.worker,9
+  autodo/deploy/Dockerfile.subllm,15
+  autodo/deploy/Dockerfile.sandbox,9
+  autodo/deploy/sandbox_runner.py,93
+  autodo/docs/ARCHITECTURE.md,89
+  autodo/docs/CONNECTORS.md,196
+  autodo/docs/ECOSYSTEM.md,96
+  autodo/docs/EVALUATION.md,54
+  autodo/docs/MODELS.md,125
+  autodo/docs/RECOVERY-AND-IDENTITY.md,279
+  autodo/docs/SUBLLM.md,186
+  autodo/evidence/VALIDATION.md,96
+  autodo/evidence/cqrs-003-ownership-qualification.json,146
+  autodo/evidence/cqrs-004-store-extraction-qualification.json,406
+  autodo/evidence/cqrs-005-commands-outbox-qualification.json,125
+  autodo/evidence/cqrs-006-queries-checkpoints-qualification.json,109
+  autodo/evidence/cqrs-009-data-pinning-qualification.json,107
+  autodo/evidence/cqrs-010-operation-descriptor-qualification.json,174
+  autodo/evidence/cqrs-011-service-binding-qualification.json,102
+  autodo/evidence/cqrs-024-029-offline-gpu-subllm-qualification.json,264
+  autodo/evidence/cqrs-026-cli-api-timeline-explain-qualification.json,73
+  autodo/evidence/cqrs-030-migration-rollout-qualification.json,78
+  autodo/evidence/cqrs-032-e2e-conformance-qualification.json,337
+  autodo/evidence/cqrs-033-static-evidence-qualification.json,12382
+  autodo/evidence/demo.json,216
+  autodo/evidence/provenance.json,31
+  autodo/evidence/qualification-0.2.0-live-rtx4060.json,1272
+  autodo/evidence/tests.txt,115
+  autodo/evidence/urt-003-store-identity-qualification.json,106
+  autodo/evidence/validation.json,29
+  autodo/examples/candidate.json,96
+  autodo/examples/connector-operation.json,30
+  autodo/examples/connectors.json,6
+  autodo/examples/cqrs-003-ownership-configs.json,115
+  autodo/examples/cqrs-010-operation-descriptors.json,331
+  autodo/examples/goal.json,72
+  autodo/examples/recurrent-goal.json,18
+  autodo/planning/PLAN-PREAMBLE.md,181
+  autodo/planning/PLANFILE-INTEGRATION.md,179
+  autodo/planning/REPAIR-PLAN.md,3705
+  autodo/planning/audits/HEYASA-AUTODO-AUDIT.md,503
+  autodo/planning/audits/README.md,9
+  autodo/planning/audits/SUBLLM-AUDIT.md,156
+  autodo/planning/audits/autodo-findings.json,1063
+  autodo/planning/audits/github-issue-snapshot.json,3115
+  autodo/planning/audits/heyasa-audit.json,1593
+  autodo/planning/audits/planfile-contract-findings.json,596
+  autodo/planning/audits/planfile-repair-findings.json,1046
+  autodo/planning/audits/subllm-findings.json,798
+  autodo/planning/backlog.json,5334
+  autodo/planning/evidence/VALIDATION-0.1.1.md,65
+  autodo/planning/evidence/access-status.json,15
+  autodo/planning/evidence/additional-reproductions.json,27
+  autodo/planning/evidence/baseline-reproductions.json,65
+  autodo/planning/evidence/demo-0.1.1.json,216
+  autodo/planning/evidence/full-campaign-import.json,700
+  autodo/planning/evidence/github-publication-receipt.json,546
+  autodo/planning/evidence/heyasa-symbol-map-excerpts.txt,533
+  autodo/planning/evidence/importer-verification-agent.json,29
+  autodo/planning/evidence/packaging-checks.json,38
+  autodo/planning/evidence/reproduce_additional.py,58
+  autodo/planning/evidence/reproduce_baseline.py,74
+  autodo/planning/evidence/reproductions.json,65
+  autodo/planning/evidence/source-provenance.json,43
+  autodo/planning/evidence/wheel-build.json,11
+  autodo/planning/github-issues.json,709
+  autodo/planning/import-plan.schema.json,118
+  autodo/planning/issues/AUTO-001.md,81
+  autodo/planning/issues/AUTO-002.md,78
+  autodo/planning/issues/AUTO-003.md,78
+  autodo/planning/issues/AUTO-004.md,79
+  autodo/planning/issues/AUTO-005.md,86
+  autodo/planning/issues/AUTO-006.md,93
+  autodo/planning/issues/AUTO-007.md,88
+  autodo/planning/issues/AUTO-008.md,101
+  autodo/planning/issues/AUTO-009.md,86
+  autodo/planning/issues/AUTO-010.md,101
+  autodo/planning/issues/HEY-001.md,95
+  autodo/planning/issues/HEY-002.md,97
+  autodo/planning/issues/HEY-003.md,97
+  autodo/planning/issues/HEY-004.md,99
+  autodo/planning/issues/HEY-005.md,96
+  autodo/planning/issues/HEY-006.md,107
+  autodo/planning/issues/HEY-007.md,101
+  autodo/planning/issues/HEY-008.md,97
+  autodo/planning/issues/HEY-009.md,103
+  autodo/planning/issues/HEY-010.md,104
+  autodo/planning/issues/LLM-001.md,92
+  autodo/planning/issues/LLM-002.md,93
+  autodo/planning/issues/LLM-003.md,94
+  autodo/planning/issues/LLM-004.md,93
+  autodo/planning/issues/LLM-005.md,91
+  autodo/planning/issues/LLM-006.md,89
+  autodo/planning/issues/LLM-007.md,94
+  autodo/planning/issues/LLM-008.md,93
+  autodo/planning/issues/LLM-009.md,95
+  autodo/planning/issues/LLM-010.md,90
+  autodo/planning/issues/PLAN-001.md,86
+  autodo/planning/issues/PLAN-002.md,87
+  autodo/planning/issues/PLAN-003.md,90
+  autodo/planning/issues/PLAN-004.md,90
+  autodo/planning/issues/PLAN-005.md,92
+  autodo/planning/issues/PLAN-006.md,93
+  autodo/planning/native-delivery-plan.example.json,83
+  autodo/planning/proposals.json,1243
+  autodo/planning/upstream-schemas/LICENSE-PLANFILE.txt,201
+  autodo/planning/upstream-schemas/compiled-work-plan.v1.schema.json,433
+  autodo/planning/upstream-schemas/delivery-plan-state.schema.v1.json,224
+  autodo/planning/upstream-schemas/provenance.json,26
+  autodo/planning/upstream-schemas/ticket-proposal.v1.schema.json,137
+  autodo/planning/upstream-schemas/ticket-status.v1.json,21
+  autodo/planning/upstream-schemas/ticket.v1.schema.json,838
+  autodo/project.sh,38
+  autodo/project/TICKETS.md,32
+  autodo/project/governance-check.sh,21
+  autodo/project/new-ticket.sh,1369
+  autodo/project/readme.sh,141
+  autodo/project/ticket-001/README.md,46
+  autodo/project/ticket-001/intent.json,30
+  autodo/project/ticket-002/README.md,37
+  autodo/project/ticket-002/intent.json,24
+  autodo/project/ticket-003/README.md,37
+  autodo/project/ticket-003/intent.json,83
+  autodo/project/ticket-004/README.md,37
+  autodo/project/ticket-004/intent.json,26
+  autodo/project/ticket-005/README.md,19
+  autodo/project/ticket-005/intent.json,91
+  autodo/project/ticket-006/README.md,24
+  autodo/project/ticket-006/intent.json,91
+  autodo/project/ticket-007/README.md,40
+  autodo/project/ticket-007/intent.json,26
+  autodo/project/ticket-008/README.md,40
+  autodo/project/ticket-008/intent.json,24
+  autodo/project/ticket-009/README.md,34
+  autodo/project/ticket-009/intent.json,121
+  autodo/project/ticket-010/README.md,34
+  autodo/project/ticket-010/intent.json,133
+  autodo/project/ticket-011/README.md,35
+  autodo/project/ticket-011/intent.json,138
+  autodo/project/ticket-012/README.md,26
+  autodo/project/ticket-012/intent.json,136
+  autodo/project/ticket-013/README.md,27
+  autodo/project/ticket-013/intent.json,131
+  autodo/project/ticket-014/README.md,24
+  autodo/project/ticket-014/intent.json,124
+  autodo/project/ticket-015/README.md,25
+  autodo/project/ticket-015/intent.json,134
+  autodo/project/ticket-016/README.md,25
+  autodo/project/ticket-016/intent.json,136
+  autodo/project/ticket-017/README.md,25
+  autodo/project/ticket-017/intent.json,131
+  autodo/project/ticket-018/README.md,25
+  autodo/project/ticket-018/intent.json,129
+  autodo/project/ticket-019/README.md,26
+  autodo/project/ticket-019/intent.json,129
+  autodo/project/ticket-020/README.md,23
+  autodo/project/ticket-020/intent.json,126
+  autodo/project/ticket-021/README.md,23
+  autodo/project/ticket-021/intent.json,82
+  autodo/project/ticket-022/README.md,23
+  autodo/project/ticket-022/intent.json,82
+  autodo/project/ticket-023/README.md,39
+  autodo/project/ticket-023/intent.json,26
+  autodo/pyproject.toml,28
+  autodo/scripts/evaluate_models.py,394
+  autodo/scripts/install-agent-hosts.sh,420
+  autodo/scripts/package.py,17
+  autodo/scripts/prepare_models.py,45
+  autodo/scripts/proxy.py,68
+  autodo/scripts/runtime.sh,862
+  autodo/scripts/verify.py,67
+  autodo/src/autodo/__init__.py,4
+  autodo/src/autodo/__main__.py,3
+  autodo/src/subactor_autonomy/__init__.py,21
+  autodo/src/subactor_autonomy/__main__.py,3
+  autodo/src/subactor_autonomy/api.py,190
+  autodo/src/subactor_autonomy/bridge.py,763
+  autodo/src/subactor_autonomy/cli.py,538
+  autodo/src/subactor_autonomy/commands.py,777
+  autodo/src/subactor_autonomy/config.py,30
+  autodo/src/subactor_autonomy/cqrs_conformance.py,1689
+  autodo/src/subactor_autonomy/data_pinning.py,792
+  autodo/src/subactor_autonomy/demo.py,127
+  autodo/src/subactor_autonomy/engine.py,727
+  autodo/src/subactor_autonomy/evidence_audit.py,548
+  autodo/src/subactor_autonomy/execution.py,564
+  autodo/src/subactor_autonomy/intent_interface.py,684
+  autodo/src/subactor_autonomy/jsonutil.py,68
+  autodo/src/subactor_autonomy/llm.py,447
+  autodo/src/subactor_autonomy/models.py,214
+  autodo/src/subactor_autonomy/offline_gpu_qualification.py,578
+  autodo/src/subactor_autonomy/operation_descriptor.py,533
+  autodo/src/subactor_autonomy/ownership.py,538
+  autodo/src/subactor_autonomy/qualification.py,1087
+  autodo/src/subactor_autonomy/queries.py,1003
+  autodo/src/subactor_autonomy/registry.py,315
+  autodo/src/subactor_autonomy/service_binding.py,488
+  autodo/src/subactor_autonomy/storage/__init__.py,56
+  autodo/src/subactor_autonomy/storage/actions.py,559
+  autodo/src/subactor_autonomy/storage/database.py,308
+  autodo/src/subactor_autonomy/storage/dependencies.py,111
+  autodo/src/subactor_autonomy/storage/events.py,238
+  autodo/src/subactor_autonomy/storage/goals.py,906
+  autodo/src/subactor_autonomy/storage/migrations.py,1076
+  autodo/src/subactor_autonomy/storage/outbox.py,297
+  autodo/src/subactor_autonomy/storage/projections.py,185
+  autodo/src/subactor_autonomy/store.py,672
+  autodo/src/subactor_autonomy/upcasters.py,404
+  autodo/src/subactor_autonomy/urt_records.py,421
+  autodo/src/uritime_autodo.egg-info/SOURCES.txt,74
+  autodo/src/uritime_autodo.egg-info/dependency_links.txt,1
+  autodo/src/uritime_autodo.egg-info/entry_points.txt,3
+  autodo/src/uritime_autodo.egg-info/requires.txt,1
+  autodo/src/uritime_autodo.egg-info/top_level.txt,2
+  autodo/tools/build_repair_plan.py,397
+  autodo/tools/planfile_import.py,513
+  autodo/tools/urt_record_v1/SOURCES.md,6
+  autodo/tools/urt_record_v1/rfc3339_validator.py,48
+  autodo/tools/urt_record_v1/rfc3986_validator.py,106
+  autodo/tools/urt_record_v1/urt-record-data-v1.schema.json,493
+  autodo/tools/urt_record_v1/urt-record-v1.schema.json,73
+  autodo/tools/verify_urt_records.py,94
+  autodo/wellmanifest_governance.py,175
+  autodo/worktree-guard.yaml,65
+  autonom/README.md,230
+  autonom/autonom.example.toml,49
+  autonom/pyproject.toml,30
+  autonom/src/autonom/__init__.py,18
+  autonom/src/autonom/__main__.py,3
+  autonom/src/autonom/agent.py,278
+  autonom/src/autonom/builtins.py,199
+  autonom/src/autonom/cli.py,323
+  autonom/src/autonom/config.py,189
+  autonom/src/autonom/decider.py,213
+  autonom/src/autonom/embeddings.py,102
+  autonom/src/autonom/executor.py,189
+  autonom/src/autonom/journal.py,126
+  autonom/src/autonom/models.py,202
+  autonom/src/autonom/policy.py,112
+  autonom/src/autonom/registry.py,291
+  autonom/src/autonom/sandbox.py,283
+  autonom/src/autonom/scheduler.py,84
+  autonom/src/autonom/store.py,260
+  autonom/src/autonom/subllm_client.py,250
+  autonom/src/autonom/synthesizer.py,224
+  autonom/src/autonom/timeline.py,116
+  autonom/src/oqlos_autonom.egg-info/SOURCES.txt,27
+  autonom/src/oqlos_autonom.egg-info/dependency_links.txt,1
+  autonom/src/oqlos_autonom.egg-info/entry_points.txt,2
+  autonom/src/oqlos_autonom.egg-info/requires.txt,4
+  autonom/src/oqlos_autonom.egg-info/top_level.txt,1
+  evidence/offline-install.json,151
+  evidence/package-checks.json,13
+  evidence/review-findings.json,36
+  evidence/source-provenance.json,103
+  evidence/wheel-build.json,24
+  planning/README.md,88
+  planning/autonomy-pilot/README.md,272
+  planning/autonomy-pilot/cells/python/backlog_reconciliation.py,55
+  planning/autonomy-pilot/compare_retries.py,129
+  planning/autonomy-pilot/contracts/cells/backlog.reconciliation.cell.yaml,81
+  planning/autonomy-pilot/fleet_generation.py,176
+  planning/autonomy-pilot/observation_plan.py,276
+  planning/autonomy-pilot/observation_receipt.py,382
+  planning/autonomy-pilot/read_observation_attempt.py,255
+  planning/autonomy-pilot/replay.py,240
+  planning/autonomy-pilot/result-20261118.json,79
+  planning/autonomy-pilot/result-20261119.json,79
+  planning/autonomy-pilot/run_observation.py,330
+  planning/evidence/import-preview.json,33
+  planning/import-plan.schema.json,118
+  planning/issues/URT-001.md,74
+  planning/issues/URT-002.md,76
+  planning/issues/URT-003.md,77
+  planning/issues/URT-004.md,72
+  planning/issues/URT-005.md,72
+  planning/issues/URT-006.md,74
+  planning/issues/URT-007.md,73
+  planning/issues/URT-008.md,76
+  planning/issues/URT-009.md,74
+  planning/urt-polycell-forge-autonomy.md,707
+  planning/urt-proposals.json,308
+  requirements-analysis.txt,10
+  requirements-offline.txt,10
+  scripts/package_release.py,122
+  scripts/verify_offline_install.py,114
+  uritime-cqrs-es-plan-20261118/BACKLOG.json,2507
+  uritime-cqrs-es-plan-20261118/BACKLOG.md,96
+  uritime-cqrs-es-plan-20261118/MANIFEST.json,303
+  uritime-cqrs-es-plan-20261118/PLAN.md,324
+  uritime-cqrs-es-plan-20261118/PLANFILE-IMPORT.md,65
+  uritime-cqrs-es-plan-20261118/README.md,21
+  uritime-cqrs-es-plan-20261118/SOURCES.md,36
+  uritime-cqrs-es-plan-20261118/docs/INTEGRACJA-AGENTA.md,312
+  uritime-cqrs-es-plan-20261118/docs/STAN-I-MAPA-ZMIAN.md,301
+  uritime-cqrs-es-plan-20261118/docs/URT-JEZYK-CZASU.md,240
+  uritime-cqrs-es-plan-20261118/evidence/VALIDATION.md,11
+  uritime-cqrs-es-plan-20261118/evidence/input-provenance.json,40
+  uritime-cqrs-es-plan-20261118/evidence/module-inventory.json,1246
+  uritime-cqrs-es-plan-20261118/evidence/validation.json,39
+  uritime-cqrs-es-plan-20261118/examples/README.md,30
+  uritime-cqrs-es-plan-20261118/examples/command-envelope.json,68
+  uritime-cqrs-es-plan-20261118/examples/data-registry.json,41
+  uritime-cqrs-es-plan-20261118/examples/data/input-log.txt,4
+  uritime-cqrs-es-plan-20261118/examples/data/output-receipt.json,1
+  uritime-cqrs-es-plan-20261118/examples/fixture-manifest.json,49
+  uritime-cqrs-es-plan-20261118/examples/operation-descriptor.json,44
+  uritime-cqrs-es-plan-20261118/examples/temporal-intent.json,87
+  uritime-cqrs-es-plan-20261118/examples/temporal-monitor.json,36
+  uritime-cqrs-es-plan-20261118/examples/temporal-resolution.json,56
+  uritime-cqrs-es-plan-20261118/examples/timeline-query.json,59
+  uritime-cqrs-es-plan-20261118/examples/unresolved-before.json,12
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-001.md,61
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-002.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-003.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-004.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-005.md,67
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-006.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-007.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-008.md,61
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-009.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-010.md,61
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-011.md,61
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-012.md,66
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-013.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-014.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-015.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-016.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-017.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-018.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-019.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-020.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-021.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-022.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-023.md,65
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-024.md,64
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-025.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-026.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-027.md,65
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-028.md,66
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-029.md,63
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-030.md,66
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-031.md,62
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-032.md,66
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-033.md,60
+  uritime/.aider.conf.yml,22
+  uritime/AGENTS.md,341
+  uritime/CHANGELOG.md,8
+  uritime/CLAUDE.md,40
+  uritime/Dockerfile,24
+  uritime/GEMINI.md,40
+  uritime/README.md,61
+  uritime/TODO.md,3
+  uritime/authority-lifecycle.json,12
+  uritime/docker-compose.yml,22
+  uritime/docs/README.md,14
+  uritime/errors/README.md,4
+  uritime/goal.yaml,526
+  uritime/planning/CQRS-001-BASELINE.md,27
+  uritime/planning/CQRS-027-HEYASA-UPSTREAM.md,36
+  uritime/planning/CQRS-029-SUBLLM-UPSTREAM.md,36
+  uritime/planning/CQRS-032-CAMPAIGN-QUALIFICATION.md,31
+  uritime/planning/CQRS-WAVE2-STATUS.md,13
+  uritime/planning/CQRS-WAVE3-STATUS.md,11
+  uritime/planning/CQRS-WAVE4-STATUS.md,22
+  uritime/planning/README.md,14
+  uritime/planning/cqrs-proposals.json,1103
+  uritime/planning/evidence/cqrs-001-baseline.json,206
+  uritime/planning/evidence/cqrs-032-campaign-qualification.json,147
+  uritime/planning/evidence/full-campaign-import.json,23
+  uritime/planning/evidence/github-publication-receipt.json,441
+  uritime/planning/evidence/import-preview.json,66
+  uritime/planning/evidence/planfile-import-manifest.json,349
+  uritime/planning/import-plan.schema.json,118
+  uritime/poa-process.json,32
+  uritime/project/TICKETS.md,17
+  uritime/project/governance-check.sh,21
+  uritime/project/new-ticket.sh,1369
+  uritime/project/readme.sh,141
+  uritime/project/ticket-001/README.md,38
+  uritime/project/ticket-001/intent.json,237
+  uritime/project/ticket-002/README.md,38
+  uritime/project/ticket-002/intent.json,106
+  uritime/project/ticket-003/README.md,19
+  uritime/project/ticket-003/intent.json,93
+  uritime/project/ticket-004/README.md,19
+  uritime/project/ticket-004/intent.json,104
+  uritime/project/ticket-005/README.md,19
+  uritime/project/ticket-005/intent.json,103
+  uritime/project/ticket-006/README.md,24
+  uritime/project/ticket-006/intent.json,111
+  uritime/project/ticket-007/README.md,29
+  uritime/project/ticket-007/intent.json,130
+  uritime/project/ticket-008/README.md,24
+  uritime/project/ticket-008/intent.json,99
+  uritime/project/ticket-009/README.md,51
+  uritime/project/ticket-009/intent.json,82
+  uritime/pyproject.toml,38
+  uritime/scripts/install-agent-hosts.sh,420
+  uritime/scripts/runtime.sh,862
+  uritime/src/urievents/__init__.py,94
+  uritime/src/urievents/contracts.py,465
+  uritime/src/urievents/data_registry.py,487
+  uritime/src/urievents/export.py,316
+  uritime/src/urievents/importers.py,203
+  uritime/src/urievents/models.py,158
+  uritime/src/urievents/reactions.py,157
+  uritime/src/urievents/schemas/ur-cqrs-v1.schema.json,220
+  uritime/src/urievents/schemas/urt-record-data-v1.schema.json,493
+  uritime/src/urievents/schemas/urt-record-v1.schema.json,73
+  uritime/src/urievents/store.py,604
+  uritime/src/uritime/__init__.py,137
+  uritime/src/uritime/calendar_sync.py,257
+  uritime/src/uritime/chat_scanner.py,274
+  uritime/src/uritime/cli.py,161
+  uritime/src/uritime/cqrs_slice.py,550
+  uritime/src/uritime/daemon.py,812
+  uritime/src/uritime.egg-info/SOURCES.txt,28
+  uritime/src/uritime.egg-info/dependency_links.txt,1
+  uritime/src/uritime.egg-info/entry_points.txt,2
+  uritime/src/uritime.egg-info/requires.txt,1
+  uritime/src/uritime.egg-info/top_level.txt,2
+  uritime/src/uritime/environment_observer.py,276
+  uritime/src/uritime/heyasa_adapter.py,465
+  uritime/src/uritime/intent_service.py,472
+  uritime/src/uritime/materializer_handoff.py,164
+  uritime/src/uritime/models.py,336
+  uritime/src/uritime/plan_commands.py,371
+  uritime/src/uritime/plan_queries.py,263
+  uritime/src/uritime/planfile_sync.py,346
+  uritime/src/uritime/rollout_guard.py,267
+  uritime/src/uritime/scheduler.py,605
+  uritime/src/uritime/slippage.py,224
+  uritime/src/uritime/temporal_interpreter.py,452
+  uritime/src/uritime/temporal_monitor.py,324
+  uritime/src/uritime/temporal_resolver.py,165
+  uritime/src/uritime/temporal_subscriptions.py,321
+  uritime/wellmanifest_governance.py,175
+  uritime/worktree-guard.yaml,65
+  urt-records-proposal-0.1.0/INTEGRATION.md,161
+  urt-records-proposal-0.1.0/README.md,93
+  urt-records-proposal-0.1.0/SOURCES.md,35
+  urt-records-proposal-0.1.0/SPEC.md,251
+  urt-records-proposal-0.1.0/evidence/source-contracts.json,62
+  urt-records-proposal-0.1.0/evidence/validation.json,152
+  urt-records-proposal-0.1.0/examples/01-intent-created.json,50
+  urt-records-proposal-0.1.0/examples/02-execution-started.json,55
+  urt-records-proposal-0.1.0/examples/03-execution-succeeded.json,69
+  urt-records-proposal-0.1.0/examples/04-resource-observed.json,34
+  urt-records-proposal-0.1.0/examples/05-resource-validity.json,35
+  urt-records-proposal-0.1.0/schemas/urt-record-data-v1.schema.json,493
+  urt-records-proposal-0.1.0/schemas/urt-record-v1.schema.json,73
+  urt-records-proposal-0.1.0/scripts/validate_examples.py,224
+  urt/.aider.conf.yml,22
+  urt/AGENTS.md,341
+  urt/CHANGELOG.md,26
+  urt/CLAUDE.md,40
+  urt/GEMINI.md,40
+  urt/Makefile,13
+  urt/README.md,100
+  urt/THIRD-PARTY-NOTICES.md,18
+  urt/TODO.md,18
+  urt/UPGRADE.md,106
+  urt/autodo-import-manifest.json,91
+  urt/autodo-import-owner.json,7
+  urt/docs/AUTODO-INTEGRATION.md,119
+  urt/docs/COMPATIBILITY.md,37
+  urt/docs/MATERIALIZER.md,200
+  urt/docs/ROADMAP.md,42
+  urt/docs/SPEC.md,347
+  urt/docs/STANDARDS.md,105
+  urt/evidence-history/0.1.0/VALIDATION.md,105
+  urt/evidence-history/0.1.0/autodo-core-unchanged.json,72
+  urt/evidence-history/0.1.0/demo-output.json,59
+  urt/evidence-history/0.1.0/offline-command-output.json,34
+  urt/evidence-history/0.1.0/offline-smoke.json,55
+  urt/evidence-history/0.1.0/test-summary.json,22
+  urt/evidence/VALIDATION.md,32
+  urt/evidence/cqrs-019-materializer-handoff-qualification.json,66
+  urt/evidence/release-0.2.0/offline-install.json,151
+  urt/evidence/release-0.2.0/review-findings.json,36
+  urt/evidence/release-0.2.0/source-provenance.json,103
+  urt/evidence/tests.txt,170
+  urt/evidence/urt-001-conformance-v1.json,83
+  urt/evidence/urt-002-materializer-qualification.json,174
+  urt/evidence/urt-004-tzdb-migration-qualification.json,197
+  urt/evidence/urt-005-ics-subset-qualification.json,258
+  urt/evidence/urt-006-recovery-qualification.json,57
+  urt/evidence/urt-007-resolver-signatures-qualification.json,40
+  urt/evidence/urt-008-binding-supersede-qualification.json,44
+  urt/evidence/urt-009-registration-readiness.json,116
+  urt/evidence/validation.json,35
+  urt/examples/goal-template.json,15
+  urt/examples/instant.json,5
+  urt/examples/interval.json,6
+  urt/examples/materialize_autodo.py,62
+  urt/examples/materializer_demo.py,102
+  urt/examples/rate.json,7
+  urt/examples/relative.json,6
+  urt/examples/temporal_demo.py,37
+  urt/examples/warsaw-dst.json,11
+  urt/examples/warsaw-weekdays.json,11
+  urt/planning/ADR-URT-007-integrity-issuer-execution.md,26
+  urt/planning/README.md,88
+  urt/planning/URT-009-URI-SCHEME-EVALUATION-AND-RFC7595-DRAFT.md,49
+  urt/planning/adr/ADR-001-urt-v1-portable-conformance-suite.md,45
+  urt/planning/evidence/github-publication-receipt.json,129
+  urt/planning/evidence/import-preview.json,33
+  urt/planning/import-plan.schema.json,118
+  urt/planning/issues/URT-001.md,74
+  urt/planning/issues/URT-002.md,76
+  urt/planning/issues/URT-003.md,77
+  urt/planning/issues/URT-004.md,72
+  urt/planning/issues/URT-005.md,72
+  urt/planning/issues/URT-006.md,74
+  urt/planning/issues/URT-007.md,73
+  urt/planning/issues/URT-008.md,76
+  urt/planning/issues/URT-009.md,74
+  urt/planning/urt-proposals.json,308
+  urt/project.sh,38
+  urt/project/TICKETS.md,24
+  urt/project/governance-check.sh,21
+  urt/project/new-ticket.sh,1369
+  urt/project/readme.sh,141
+  urt/project/ticket-001/README.md,38
+  urt/project/ticket-001/intent.json,233
+  urt/project/ticket-001/qualification-0.2.0.json,88
+  urt/project/ticket-002/README.md,19
+  urt/project/ticket-002/intent.json,99
+  urt/project/ticket-003/README.md,40
+  urt/project/ticket-003/intent.json,28
+  urt/project/ticket-004/README.md,34
+  urt/project/ticket-004/intent.json,137
+  urt/project/ticket-005/README.md,38
+  urt/project/ticket-005/intent.json,24
+  urt/project/ticket-006/README.md,38
+  urt/project/ticket-006/intent.json,24
+  urt/project/ticket-007/README.md,34
+  urt/project/ticket-007/intent.json,141
+  urt/project/ticket-008/README.md,22
+  urt/project/ticket-008/intent.json,95
+  urt/project/ticket-009/README.md,26
+  urt/project/ticket-009/intent.json,107
+  urt/project/ticket-010/README.md,25
+  urt/project/ticket-010/intent.json,119
+  urt/project/ticket-011/README.md,32
+  urt/project/ticket-011/intent.json,127
+  urt/project/ticket-012/README.md,32
+  urt/project/ticket-012/intent.json,125
+  urt/project/ticket-013/README.md,32
+  urt/project/ticket-013/intent.json,130
+  urt/project/ticket-014/README.md,32
+  urt/project/ticket-014/intent.json,132
+  urt/project/ticket-015/README.md,28
+  urt/project/ticket-015/intent.json,137
+  urt/project/ticket-016/README.md,24
+  urt/project/ticket-016/intent.json,84
+  urt/project/ticket-017/README.md,24
+  urt/project/ticket-017/intent.json,82
+  urt/project/ticket-018/README.md,23
+  urt/project/ticket-018/intent.json,112
+  urt/pyproject.toml,29
+  urt/scripts/install-agent-hosts.sh,420
+  urt/scripts/package.py,53
+  urt/scripts/runtime.sh,862
+  urt/scripts/verify.py,60
+  urt/src/uritime_urt/__init__.py,108
+  urt/src/uritime_urt/__main__.py,3
+  urt/src/uritime_urt/_sqlite.py,33
+  urt/src/uritime_urt/autodo.py,1412
+  urt/src/uritime_urt/canonical.py,62
+  urt/src/uritime_urt/cli.py,791
+  urt/src/uritime_urt/conformance.py,348
+  urt/src/uritime_urt.egg-info/SOURCES.txt,62
+  urt/src/uritime_urt.egg-info/dependency_links.txt,1
+  urt/src/uritime_urt.egg-info/entry_points.txt,2
+  urt/src/uritime_urt.egg-info/requires.txt,2
+  urt/src/uritime_urt.egg-info/top_level.txt,1
+  urt/src/uritime_urt/errors.py,9
+  urt/src/uritime_urt/ics.py,1273
+  urt/src/uritime_urt/intents.py,209
+  urt/src/uritime_urt/links.py,17
+  urt/src/uritime_urt/materializer.py,627
+  urt/src/uritime_urt/materializer_qualification.py,763
+  urt/src/uritime_urt/model.py,99
+  urt/src/uritime_urt/occurrences.py,106
+  urt/src/uritime_urt/plan_handoff.py,537
+  urt/src/uritime_urt/recovery.py,1002
+  urt/src/uritime_urt/recurrence.py,380
+  urt/src/uritime_urt/references.py,61
+  urt/src/uritime_urt/registration.py,282
+  urt/src/uritime_urt/registry.py,144
+  urt/src/uritime_urt/relations.py,22
+  urt/src/uritime_urt/resolution.py,526
+  urt/src/uritime_urt/resolver.py,589
+  urt/src/uritime_urt/schemas/descriptor-v1.schema.json,291
+  urt/src/uritime_urt/schemas/resolution-v1.schema.json,30
+  urt/src/uritime_urt/schemas/temporal-intent-v1.schema.json,65
+  urt/src/uritime_urt/schemas/temporal-monitor-v1.schema.json,54
+  urt/src/uritime_urt/selectors.py,335
+  urt/src/uritime_urt/supersede.py,641
+  urt/src/uritime_urt/timeutil.py,96
+  urt/src/uritime_urt/tzdb_migration.py,1113
+  urt/tools/urt_conformance_runner.mjs,1388
+  urt/wellmanifest_governance.py,175
+  urt/worktree-guard.yaml,65
+  urtlog/README.md,63
+  urtlog/docs/ARCHITECTURE.md,86
+  urtlog/pyproject.toml,26
+  urtlog/src/uritime_urtlog.egg-info/SOURCES.txt,20
+  urtlog/src/uritime_urtlog.egg-info/dependency_links.txt,1
+  urtlog/src/uritime_urtlog.egg-info/entry_points.txt,4
+  urtlog/src/uritime_urtlog.egg-info/requires.txt,3
+  urtlog/src/uritime_urtlog.egg-info/top_level.txt,1
+  urtlog/src/urtlog/__init__.py,75
+  urtlog/src/urtlog/adapters.py,624
+  urtlog/src/urtlog/cli.py,272
+  urtlog/src/urtlog/decision.py,331
+  urtlog/src/urtlog/dsl.py,582
+  urtlog/src/urtlog/executor.py,613
+  urtlog/src/urtlog/registry.py,513
+  urtlog/src/urtlog/sdk.py,406
+  urtlog/src/urtlog/security.py,577
+  urtlog/src/urtlog/server.py,409
+  urtlog/src/urtlog/store.py,819
+D:
+  autodo/src/subactor_autonomy/cli.py:
+    e: _load,build_runtime,parser,main
+    _load(path)
+    build_runtime(state_dir)
+    parser()
+    main(argv)
+  autodo/src/subactor_autonomy/queries.py:
+    e: AutodoQueries,_nonempty_str,_finite_number,_normalize_checkpoint,checkpoints_in_conn,evaluate_freshness_in_conn,projection_replay_scope_in_conn,_validate_timeline_query,_timeline_in_conn
+    AutodoQueries: __init__(1),checkpoints(0),projection_scope(0),get_goal(1),list_goals(0),list_actions(1),list_events(0),recent_activity(1),timeline(1),explain(1),execute(1),domain_events(0)  # Strictly read-only query facade bound to one Store via ?mode...
+    _nonempty_str(value;name)
+    _finite_number(value;name)
+    _normalize_checkpoint(item)
+    checkpoints_in_conn(db;identity)
+    evaluate_freshness_in_conn(db;identity;min_checkpoints)
+    projection_replay_scope_in_conn(db;identity)
+    _validate_timeline_query(query_doc)
+    _timeline_in_conn(db;ident;q)
+  autodo/src/subactor_autonomy/service_binding.py:
+    e: _bounded_token,normalize_service_binding,verify_command_service_against_binding,verify_pinned_binding_compatible,resolve_action_idempotency_key,build_diagnostic_receipt,_action_process_uri,_goal_process_uri,_bounded_optional_str,_to_data_ref,map_action_event_to_domain_fact
+    _bounded_token(value;name)
+    normalize_service_binding(service)
+    verify_command_service_against_binding(command_service;resolved_binding)
+    verify_pinned_binding_compatible(pinned_binding;expected_binding_digest;live_binding)
+    resolve_action_idempotency_key(action_id)
+    build_diagnostic_receipt()
+    _action_process_uri(action)
+    _goal_process_uri(goal)
+    _bounded_optional_str(value;max_len)
+    _to_data_ref(entry)
+    map_action_event_to_domain_fact(event)
+  urt/tools/urt_conformance_runner.mjs:
+    i: node:crypto,node:fs,node:process
+    e: URTError,sha256Hex,floorDivBig,floorDivInt,isLeapYear,daysInMonth,weekdayMon0,daysFromCivil,civilFromDays,parseStrictJson,skipWs,parseString,parseNumber,parseValue,canonicalString,jcsSerialize,<anonymous@352:39>,<anonymous@353:26>,canonicalBytes,digestValue,referenceUri,parsePosixOffset,parsePosixAbbr,parsePosixRuleDate,evalPosixRuleUtc,parsePosixTz,parseTzifBuffer,readHeader,zoneOffsetSeconds,posixOffsetAt,resolveLocal,<anonymous@604:15>,validateCivilCalendar,getZone,<anonymous@627:17>,parseInstantUs,formatInstantUs,parseDurationSec,formatDurationSec,normalizeExdates,<anonymous@740:30>,<anonymous@741:30>,parseRrule,posInt,<anonymous@800:36>,<anonymous@812:37>,<anonymous@814:43>,<anonymous@819:48>,normalizeDescriptor,toUri,parseUri,makeOccurrence,expandDescriptor,<anonymous@1030:51>,takeBudget,<anonymous@1101:48>,<anonymous@1101:69>,<anonymous@1118:22>,<anonymous@1119:28>,<anonymous@1124:16>,<anonymous@1125:22>,<anonymous@1136:51>,containsInstant,deepEqual,<anonymous@1190:84>,<anonymous@1195:47>,loadTzifBundle,runConformance,<anonymous@1330:34>,parseArgs
+    URTError: constructor(-1)
+    sha256Hex()
+    floorDivBig()
+    floorDivInt()
+    isLeapYear()
+    daysInMonth()
+    weekdayMon0()
+    daysFromCivil()
+    civilFromDays()
+    parseStrictJson()
+    skipWs()
+    parseString()
+    parseNumber()
+    parseValue()
+    canonicalString()
+    jcsSerialize()
+    <anonymous@352:39>()
+    <anonymous@353:26>()
+    canonicalBytes()
+    digestValue()
+    referenceUri()
+    parsePosixOffset()
+    parsePosixAbbr()
+    parsePosixRuleDate()
+    evalPosixRuleUtc()
+    parsePosixTz()
+    parseTzifBuffer()
+    readHeader()
+    zoneOffsetSeconds()
+    posixOffsetAt()
+    resolveLocal()
+    <anonymous@604:15>()
+    validateCivilCalendar()
+    getZone()
+    <anonymous@627:17>()
+    parseInstantUs()
+    formatInstantUs()
+    parseDurationSec()
+    formatDurationSec()
+    normalizeExdates()
+    <anonymous@740:30>()
+    <anonymous@741:30>()
+    parseRrule()
+    posInt()
+    <anonymous@800:36>()
+    <anonymous@812:37>()
+    <anonymous@814:43>()
+    <anonymous@819:48>()
+    normalizeDescriptor()
+    toUri()
+    parseUri()
+    makeOccurrence()
+    expandDescriptor()
+    <anonymous@1030:51>()
+    takeBudget()
+    <anonymous@1101:48>()
+    <anonymous@1101:69>()
+    <anonymous@1118:22>()
+    <anonymous@1119:28>()
+    <anonymous@1124:16>()
+    <anonymous@1125:22>()
+    <anonymous@1136:51>()
+    containsInstant()
+    deepEqual()
+    <anonymous@1190:84>()
+    <anonymous@1195:47>()
+    loadTzifBundle()
+    runConformance()
+    <anonymous@1330:34>()
+    parseArgs()
+  urt/src/uritime_urt/intents.py:
+    e: _check_no_code,validate_ast,validate_temporal_intent,intent_digest,validate_temporal_monitor
+    _check_no_code(node)
+    validate_ast(node;depth)
+    validate_temporal_intent(intent)
+    intent_digest(intent)
+    validate_temporal_monitor(monitor)
+  urt/src/uritime_urt/resolution.py:
+    e: _det_resolution_id,selector_anchor_key,_validated_pinned_anchor,_resolve_plan_boundary,_resolve_calendar_window,_resolve_node,validate_temporal_constraint_graph,resolve_temporal_intent,revise_plan_anchor_resolution
+    _det_resolution_id(idigest;resolved_at)
+    selector_anchor_key(node)
+    _validated_pinned_anchor(pinned;selector_key)
+    _resolve_plan_boundary(anchor;accepted_plans)
+    _resolve_calendar_window(node;ref_now;tzid;policy_aliases)
+    _resolve_node(node)
+    validate_temporal_constraint_graph(dependencies)
+    resolve_temporal_intent(intent)
+    revise_plan_anchor_resolution(intent)
+  autodo/src/subactor_autonomy/bridge.py:
+    e: UnknownOutcome,RemoteActionFailed,_NoRedirect,ConnectorExecutor,_unique_object,_nonfinite,_decode,validate_connector_operation,_connector_url,_validate_connectors,connector_binding,_validate_receipt_error_object,_parse_connector_receipt
+    UnknownOutcome(ExecutionError): __init__(1)  # A request may have caused an effect; reconcile it, never bli...
+    RemoteActionFailed(ExecutionError): __init__(1)  # A request was explicitly rejected by the connector before pr...
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    ConnectorExecutor: __init__(2),from_env(1),execute(2),qualify(2),resolve_binding(1),_headers_for_connector(1),_post_and_parse_receipt(0),execute_action(2),execute_action_with_receipt(2),readback_action(2),readback_with_pinned_binding(2)
+    _unique_object(pairs)
+    _nonfinite(_value)
+    _decode(raw)
+    validate_connector_operation(operation)
+    _connector_url(value)
+    _validate_connectors(connectors)
+    connector_binding(connector_id;config)
+    _validate_receipt_error_object(error_obj)
+    _parse_connector_receipt(raw)
+  autodo/src/subactor_autonomy/storage/actions.py:
+    e: pending_accepted_action_in_conn,start_action_in_tx,record_action_accepted_in_tx,record_action_outcome_in_tx,finish_and_transition_in_tx,reconcile_action_in_tx,list_actions_in_conn
+    pending_accepted_action_in_conn(db;goal_id)
+    start_action_in_tx(db;emit_fn;lease;operation;arguments;now)
+    record_action_accepted_in_tx(db;emit_fn;lease;action;now)
+    record_action_outcome_in_tx(db;emit_fn;lease;action;now)
+    finish_and_transition_in_tx(db;emit_fn;lease;action;now)
+    reconcile_action_in_tx(db;emit_fn;action_id;outcome)
+    list_actions_in_conn(db;goal_id)
+  autodo/src/subactor_autonomy/commands.py:
+    e: command_mapping_matrix,_bounded_str,_activate_operation_in_tx,_deactivate_operation_in_tx,_register_connector_in_tx,_validate_ur_command_envelope,_parse_command,_check_expected_version_goal,_execute_in_tx,command_receipt_in_conn,handle_command_in_tx,handle_command
+    command_mapping_matrix()
+    _bounded_str(value;name)
+    _activate_operation_in_tx(db;emit_fn;operation_id;version;now)
+    _deactivate_operation_in_tx(db;emit_fn;operation_id;version;now)
+    _register_connector_in_tx(db;emit_fn;definition;now)
+    _validate_ur_command_envelope(command)
+    _parse_command(command)
+    _check_expected_version_goal(db;goal_id;expected_version)
+    _execute_in_tx(db;emit_fn;parsed;now)
+    command_receipt_in_conn(db;idempotency_key)
+    handle_command_in_tx(db;emit_fn;command)
+    handle_command(store;command)
+  autodo/tools/build_repair_plan.py:
+    e: read,write_json,remap,listify,normalize,bullets,tests_text,evidence_line,body,main
+    read(name)
+    write_json(path;value)
+    remap(value)
+    listify(value)
+    normalize(raw;family)
+    bullets(items;checkbox)
+    tests_text(items)
+    evidence_line(e)
+    body(f)
+    main()
+  urt/src/uritime_urt/autodo.py:
+    e: StoreSink,DeliveryLedger,_error,_bounded_json,_legacy_spec_bytes,_spec_digest,_positive_budget,_condition,_validate_outputs_expected_list,_validate_data_binding_obj,_validate_ownership_obj,_validate_schedule_obj,_validate_plan_handoff,_validate_template,_binding,_anchor_context,normalize_binding,_target_instant,_apply_plan_handoff,plan_goals,_sink_target,_store_identity,preflight_autodo_store
+    StoreSink: __init__(1),target_id(0),legacy_path_target_id(0),_check_identity(0),create_goal(1),get_goal(1)  # Pin a durable Store UUID and generation, not its filesystem ...
+    DeliveryLedger: __init__(1),_inspect(0),_guard(0),_connection(0),_transaction(0),_decode(0),deliveries(1),_validate_snapshot_ids(0),_snapshot_rows(2),delivery_snapshot(1),verified_delivery_snapshot(2),_get(1),_assert_target(2),upgrade_target(1),_stage(5),_ack(2),_control_key(0),_assert_active(2),binding_target(1),binding_control(1),invalidate_binding(1),recover_delivery(1),materialize(2)  # Separate SQLite outbox; immutable inputs, resumable per-goal...
+    _error(code;message)
+    _bounded_json(value)
+    _legacy_spec_bytes(value)
+    _spec_digest(value)
+    _positive_budget(value;name;maximum)
+    _condition(value;depth)
+    _validate_outputs_expected_list(outputs_expected)
+    _validate_data_binding_obj(db_obj)
+    _validate_ownership_obj(own_obj)
+    _validate_schedule_obj(sched_obj)
+    _validate_plan_handoff(ph)
+    _validate_template(template)
+    _binding(binding;document)
+    _anchor_context(document;anchors)
+    normalize_binding(binding;document)
+    _target_instant(value)
+    _apply_plan_handoff(spec;ph;occurrence_id;due)
+    plan_goals(binding;document)
+    _sink_target(sink)
+    _store_identity(value)
+    preflight_autodo_store(path)
+  autodo/scripts/evaluate_models.py:
+    e: Probe,utc_now,strict_object,reject_constant,safe_schema,load_cases,percentile,latency_summary,save_report,summarize,parse_args,main
+    Probe: __init__(2),invoke(2),plan(1),selection_case(4),planner_case(1)
+    utc_now()
+    strict_object(pairs)
+    reject_constant(value)
+    safe_schema(schema;depth)
+    load_cases(path)
+    percentile(values;fraction)
+    latency_summary(values)
+    save_report(path;report)
+    summarize(results;calls)
+    parse_args()
+    main()
+  autodo/tools/planfile_import.py:
+    e: ImportRefusal,digest,_unique_object,read_json,_nonempty,_strings,validate_plan,_absolute_without_symlinks,expected_owner,check_target,diagnose_source,load_sdk,atomic_json,_context,_verify_ticket,materialize,preview,main
+    ImportRefusal(ValueError): __init__(2)
+    digest(value)
+    _unique_object(pairs)
+    read_json(path)
+    _nonempty(value;field)
+    _strings(value;field)
+    validate_plan(plan)
+    _absolute_without_symlinks(path)
+    expected_owner(root;plan)
+    check_target(root;plan)
+    diagnose_source(source)
+    load_sdk(source)
+    atomic_json(path;value)
+    _context(plan;proposal)
+    _verify_ticket(ticket;plan;proposal;dependency_ids)
+    materialize(plan;root;source)
+    preview(plan;root;source)
+    main(argv)
+  planning/autonomy-pilot/run_observation.py:
+    e: utc_now,read_latest_observation,superseding_observation,run_retry,run_trigger_history,run_trigger_plan,main
+    utc_now()
+    read_latest_observation(path)
+    superseding_observation(latest;repository;queue;failed_at;now;expected_generation)
+    run_retry(receipt;state_dir;probe)
+    run_trigger_history(history;state_dir;planfile_url;polycell)
+    run_trigger_plan(plan;state_dir;planfile_url)
+    main()
+  planning/autonomy-pilot/read_observation_attempt.py:
+    e: retry_context,load_attempt,snapshot_request,bind_generation,attempt_request,classification_report,classification_reports,main
+    retry_context(failure;now)
+    load_attempt(context;state_dir;now)
+    snapshot_request(context;snapshot;now;expected_generation)
+    bind_generation(result;binding;expected_generation)
+    attempt_request(failure;state_dir;now;expected_generation)
+    classification_report(request;binding;now;polycell)
+    classification_reports(cases;now;polycell)
+    main()
+  uritime/src/uritime/daemon.py:
+    e: CyclicLaneRunner,UriTimeDaemon,run_cyclic_lanes,_resolve_dockuri_uri_module,_resolve_dockuri_autonomous_registry,uri,uri_jsonl
+    CyclicLaneRunner: __post_init__(0),register_lane(2),start(0),stop(0),tick_once(0),_run_loop(0),status(0)  # Reusable temporal runner managing cyclic background daemon t...
+    UriTimeDaemon: __init__(1),_register_builtin_cron_daemons(1),dispatch_uri_process(2),schedule_once(2),schedule_cyclic(2),register_housekeeping_catalog(1),tick(1),run_loop(0),query_timeline(0)  # Real-Time Operating System (RTOS) Daemon orchestrating URI p...
+    run_cyclic_lanes(lanes)
+    _resolve_dockuri_uri_module()
+    _resolve_dockuri_autonomous_registry()
+    uri(address;payload)
+    uri_jsonl(address;lines)
+  autodo/src/subactor_autonomy/models.py:
+    e: validate,timestamp,goal_from_spec
+    validate(schema;value)
+    timestamp(value;default)
+    goal_from_spec(spec;now)
+  autodo/src/subactor_autonomy/execution.py:
+    e: CandidateError,ExecutionError,Executor,_json_bytes,_check_schema,_validate_value,_pointer_parts,_check_expression,_check_python,_test_cases,validate_candidate,_strict_equal,_number,_text,_evaluate,_bounded_process,_cleanup_container,_parse_result
+    CandidateError(ValueError):  # An operation does not satisfy the bounded, pure candidate co...
+    ExecutionError(RuntimeError):  # An operation could not produce an admissible, verified JSON ...
+    Executor: __init__(2),execute(2),_python(2),qualify(2)
+    _json_bytes(value;error;limit)
+    _check_schema(schema)
+    _validate_value(schema;value;label;error)
+    _pointer_parts(pointer)
+    _check_expression(expression)
+    _check_python(code)
+    _test_cases(tests;operation)
+    validate_candidate(operation)
+    _strict_equal(left;right)
+    _number(value)
+    _text(value)
+    _evaluate(expression;arguments;deadline)
+    _bounded_process(command;timeout_seconds;max_stdout;max_stderr)
+    _cleanup_container(name)
+    _parse_result(raw)
+  autodo/src/subactor_autonomy/storage/migrations.py:
+    e: _store_event,_preflight_sqlite_header,_can_open_read_only,preflight_migration,migrate_v1,advance_generation,snapshot_historical_manifest,verify_post_migration_resolution,migrate_v1_on_copy,_record_map_diffs,compare_shadow_projections,prepare_cutover_baseline,verify_single_writer_invariants,_goal_matches_allowlist,execute_scoped_cutover,dispatch_halt_state_in_conn,is_dispatch_halted_in_conn,_read_action_summary,guard_backup_restore,assess_rollback_safety,execute_safe_rollback,resume_halted_dispatch
+    _store_event(db;event_type;payload;now)
+    _preflight_sqlite_header(resolved_path)
+    _can_open_read_only(resolved_path)
+    preflight_migration(path)
+    migrate_v1(path;backup_path)
+    advance_generation(path)
+    snapshot_historical_manifest(path)
+    verify_post_migration_resolution(store)
+    migrate_v1_on_copy(source_path;copy_path;backup_path)
+    _record_map_diffs(live_items;replayed_items)
+    compare_shadow_projections(store)
+    prepare_cutover_baseline(store)
+    verify_single_writer_invariants(store)
+    _goal_matches_allowlist(goal;allowlist)
+    execute_scoped_cutover(store)
+    dispatch_halt_state_in_conn(db)
+    is_dispatch_halted_in_conn(db)
+    _read_action_summary(db_path)
+    guard_backup_restore(live_path;backup_path)
+    assess_rollback_safety(store)
+    execute_safe_rollback(store)
+    resume_halted_dispatch(store)
+  urt/src/uritime_urt/recurrence.py:
+    e: _Rule,_Prepared,_Budget,_error,_validate_tzid,_zone_data,_validate_tzdb_metadata,_check_tzif_source,load_zone,zone_metadata,_positive,_parse_rule,_resolve_local,_prepare,normalize_schedule,_bucket_start,_seek_bucket,_bucket_dates,_query_instant,expand_schedule
+    _Rule:
+    _Prepared:
+    _Budget: __init__(1),take(0)
+    _error(code;message)
+    _validate_tzid(tzid)
+    _zone_data(tzid)
+    _validate_tzdb_metadata(metadata)
+    _check_tzif_source(tzif_source)
+    load_zone(tzid)
+    zone_metadata(tzid)
+    _positive(value;field;maximum)
+    _parse_rule(text;start)
+    _resolve_local(nominal;zone)
+    _prepare(document)
+    normalize_schedule(document)
+    _bucket_start(start;rule;index)
+    _seek_bucket(start;rule;earliest_ordinal)
+    _bucket_dates(bucket;rule;budget)
+    _query_instant(value;name)
+    expand_schedule(document)
+  urt/src/uritime_urt/tzdb_migration.py:
+    e: _ZoneEntry,TzifSource,_fail,_validate_iana,_validate_sha256,_validate_size_bytes,_verify_tzif_bytes,_check_no_symlink_components,_read_regular_file,_parse_tzif_bundle,_load_tzif_directory,load_tzif_source,build_tzif_v2_bytes,inspect_local_wall_time,_occurrence_id,_delta_seconds,_shifted_cause,_added_cause,_removed_cause,_extract_until,migrate_schedule_descriptor,_positive_int,diff_schedule_tzdb,_us_to_instant,_instant_to_us,_ro_sqlite,_inspect_materializer_ro,_inspect_ledger_ro,_normalize_binding_for_descriptor,_validate_distinct_id,plan_tzdb_cutover
+    _ZoneEntry:
+    TzifSource: __init__(2),iana(0),label(0),tzids(0),has_zone(1),_entry(1),zone_metadata(1),zone_info_bytes(1),zone_bytes(1),load_zone(1)  # Isolated in-memory catalog of explicitly verified local TZif...
+    _fail(code;message)
+    _validate_iana(value)
+    _validate_sha256(value)
+    _validate_size_bytes(value)
+    _verify_tzif_bytes(tzid;raw;expected_sha256;expected_size)
+    _check_no_symlink_components(path)
+    _read_regular_file(path)
+    _parse_tzif_bundle(payload)
+    _load_tzif_directory(directory)
+    load_tzif_source(source)
+    build_tzif_v2_bytes()
+    inspect_local_wall_time(nominal;zone)
+    _occurrence_id(reference;due_iso)
+    _delta_seconds(old_due;new_due)
+    _shifted_cause(old_local;new_local)
+    _added_cause()
+    _removed_cause()
+    _extract_until(rrule)
+    migrate_schedule_descriptor(document)
+    _positive_int(value;name;maximum)
+    diff_schedule_tzdb(document)
+    _us_to_instant(value)
+    _instant_to_us(value)
+    _ro_sqlite(path)
+    _inspect_materializer_ro(path;expected_old_descriptor)
+    _inspect_ledger_ro(path;old_binding;old_descriptor)
+    _normalize_binding_for_descriptor(binding;normalized_doc)
+    _validate_distinct_id(new_id;old_id)
+    plan_tzdb_cutover(document)
+  urtlog/src/urtlog/store.py:
+    e: UrtLogStore,_record_from_json
+    UrtLogStore: __init__(2),close(0),__enter__(0),__exit__(0),append(1),append_many(1),record_audit(1),query_audit(1),query(1),get_record(1),settled_plan_statuses(0),trace_lineage(2),custody_chain(2),logic_tree(1),access_insights(1),plan_dag(1),heyasa_brief(1)  # Append-only JSONL log + disposable SQLite WAL/FTS5 prefix-tr...
+    _record_from_json(raw)
+  autodo/src/subactor_autonomy/intent_interface.py:
+    e: _iso_utc,_parse_reference_ts,_is_quoted,_match_operation,_resolve_resources,_parse_temporal_phrase,_pin_text_input,_find_observed_anchor,preview_text_intent,submit_text_intent
+    _iso_utc(ts)
+    _parse_reference_ts(value)
+    _is_quoted(text;source_kind)
+    _match_operation(text)
+    _resolve_resources()
+    _parse_temporal_phrase(text)
+    _pin_text_input(payload)
+    _find_observed_anchor(db;anchor_event)
+    preview_text_intent(store;registry;request)
+    submit_text_intent(store;registry;request)
+  urtlog/src/urtlog/executor.py:
+    e: UrtExecutor,_derived_event_id
+    UrtExecutor: __init__(3),_emit_log(2),_invoke_capability(8),_materialize_next_occurrence(2),run_due(1)  # Execute due `PLAN` records using the exact same `UrtEventRec...
+    _derived_event_id(prefix;parts)
+  autodo/src/subactor_autonomy/cqrs_conformance.py:
+    e: _ConformanceHttpServer,_DeterministicSelectorPort,_load_urt_record_verifier,_discover_optional_siblings,_git_revision,_archive_operation_def,_run_e2e_typed_and_proxy_slice,_fault_commit_rollback,_fault_dispatch_crash_unverified_url,_fault_ack_crash_idempotent_readback,_fault_owner_generation_handoff,_fault_cancel_before_and_inflight,_fault_stale_observation_and_late_bitemporal,_run_fault_and_guarantee_matrix,_run_deterministic_replay_gate,_seed_legacy_v1_store,_run_contract_conformance_gate,_live_environment_ledger,run_cqrs_conformance_suite
+    _ConformanceHttpServer: __init__(0),close(0)  # Thread-safe loopback HTTP harness for SOA /invoke, /readback...
+    _DeterministicSelectorPort: __init__(1),complete_json(3),select_operation(2)  # Offline model double for qualified selector/planner executio...
+    _load_urt_record_verifier()
+    _discover_optional_siblings(include_sibling_repos)
+    _git_revision()
+    _archive_operation_def(timeout_seconds)
+    _run_e2e_typed_and_proxy_slice(root;server;siblings;verify_urt_fn)
+    _fault_commit_rollback(base)
+    _fault_dispatch_crash_unverified_url(base;server)
+    _fault_ack_crash_idempotent_readback(base;server)
+    _fault_owner_generation_handoff(base)
+    _fault_cancel_before_and_inflight(base;server;siblings)
+    _fault_stale_observation_and_late_bitemporal(base)
+    _run_fault_and_guarantee_matrix(root;server;siblings)
+    _run_deterministic_replay_gate(root;e2e_result;server)
+    _seed_legacy_v1_store(v1_path)
+    _run_contract_conformance_gate(root;e2e_result;siblings)
+    _live_environment_ledger()
+    run_cqrs_conformance_suite()
+  uritime/src/urievents/reactions.py:
+    e: TicketReactionRule,ReactionEngine
+    TicketReactionRule:  # Declarative rule defining how a scheduled ticket reacts to r...
+    ReactionEngine: __init__(1),register_rule(1),on_reaction(1),evaluate_event(2),_collect_downstream(1)  # Evaluates ticket reactions in response to UriEvents and Tri-...
+  urt/src/uritime_urt/ics.py:
+    e: ICSLimits,_resolve_limits,ics_support_matrix,_reject_control_chars,_unfold_ics_lines,_split_unquoted,_parse_content_line,parse_ics,_unescape_ics_text,_escape_ics_text,_parse_ics_datetime_token,_ics_until_to_rfc3339,_translate_ics_rrule,_find_matching_schedule_occurrence,_build_metadata_snapshot,_validate_calendar_header,_extract_vevent_timing,_non_recurring_descriptor,import_ics,_to_ics_utc_compact,_to_ics_local_compact,_fold_ics_line,_validate_ics_uid_or_text,export_ics,evaluate_ics_reference_occurrences,verify_ics_vector_suite
+    ICSLimits: validate(0),as_dict(0)
+    _resolve_limits(limits)
+    ics_support_matrix()
+    _reject_control_chars(text)
+    _unfold_ics_lines(raw;limits)
+    _split_unquoted(text;sep)
+    _parse_content_line(line)
+    parse_ics(raw)
+    _unescape_ics_text(value)
+    _escape_ics_text(value)
+    _parse_ics_datetime_token(token;params)
+    _ics_until_to_rfc3339(raw_until)
+    _translate_ics_rrule(raw_rrule)
+    _find_matching_schedule_occurrence(schedule;target_utc)
+    _build_metadata_snapshot(props)
+    _validate_calendar_header(cal_props)
+    _extract_vevent_timing(vevent)
+    _non_recurring_descriptor(event)
+    import_ics(raw)
+    _to_ics_utc_compact(iso_text)
+    _to_ics_local_compact(local_iso)
+    _fold_ics_line(line;limit)
+    _validate_ics_uid_or_text(value)
+    export_ics(document)
+    evaluate_ics_reference_occurrences(raw_ics)
+    verify_ics_vector_suite(vectors)
+  autodo/src/subactor_autonomy/evidence_audit.py:
+    e: _git_head_sha,_module_name,_scan_files,_collect_imports,_call_target_name,_classify_function,_tarjan_cycles,_match_executed_modules,audit_package_evidence
+    _git_head_sha(root)
+    _module_name(package_dir;file_path)
+    _scan_files(package_dir)
+    _collect_imports(tree;mod_name;known_modules;package_name)
+    _call_target_name(node)
+    _classify_function(fn_node)
+    _tarjan_cycles(graph)
+    _match_executed_modules(package_name;known_modules;executed_test_modules)
+    audit_package_evidence(package_dir)
+  autonom/src/autonom/sandbox.py:
+    e: GuardReport,SandboxResult,Sandbox,guard,_is_literal,_limits,bwrap_available,_interpreter_roots,bwrap_argv
+    GuardReport:
+    SandboxResult:
+    Sandbox: __init__(4),uses_bwrap(0),run(3)
+    guard(code)
+    _is_literal(node)
+    _limits(memory_mb;cpu_s)
+    bwrap_available()
+    _interpreter_roots()
+    bwrap_argv(cwd)
+  uritime/src/uritime/planfile_sync.py:
+    e: PlanfileSynchronizer,export_urt_planfile_metadata
+    PlanfileSynchronizer: __init__(1),load_repository_planfile(1),_parse_directive(3),write_updated_timestamps_to_planfile(1),export_github_issues_payload(2),import_campaign_tickets_idempotent(1)  # Integrates uritime with `.planfile` tickets, timeframe prior...
+    export_urt_planfile_metadata(plan_projection)
+  uritime/src/uritime/rollout_guard.py:
+    e: RolloutCompatibilityError,RolloutMigrationGuard,StaticEvidenceAuditor
+    RolloutCompatibilityError(RuntimeError):  # Raised on unknown SQLite schema/format or competing migratio...
+    RolloutMigrationGuard: preflight_sqlite_store(0),create_imported_state_snapshot(0),compare_shadow_projections(1),verify_single_owner_rollout(1),plan_rollback(-1)  # Read-only SQLite preflight, cutover snapshot creation, singl...
+    StaticEvidenceAuditor: _has_cycle(0),audit_python_sources(1)  # Honest AST evidence analyzer separating symbol presence, run...
+  autodo/src/subactor_autonomy/qualification.py:
+    e: _wait_for_marker,_evaluate_frozen_roles,_seed_v1_database,_run_sigkill_matrix,_latency_stats,_query_gpu_telemetry,_probe_live_docker,_live_planner_cases,_live_selector_cases,_live_generator_case,_probe_live_model,run_qualification_suite,_run_internal_worker,main
+    _wait_for_marker(marker)
+    _evaluate_frozen_roles()
+    _seed_v1_database(path;clock_ts)
+    _run_sigkill_matrix(base_dir)
+    _latency_stats(values_ms)
+    _query_gpu_telemetry()
+    _probe_live_docker(run_live_docker)
+    _live_planner_cases(client)
+    _live_selector_cases(client)
+    _live_generator_case(client)
+    _probe_live_model(run_live_model)
+    run_qualification_suite()
+    _run_internal_worker(scenario;db_path;connector_url;marker)
+    main(argv)
+  autodo/src/subactor_autonomy/storage/goals.py:
+    e: load_goal,check_lease,create_goal_in_tx,list_goals_in_conn,next_wake_time_in_conn,completion_evidence_in_tx,finish_completion_in_tx,retire_started_in_tx,expire_goal_in_tx,expire_due_in_tx,claim_in_tx,update_goal_in_tx,release_goal_in_tx,complete_goal_in_tx,recover_completion_in_tx,control_goal_in_tx,wake_occurrence_in_tx,advance_run_owner_generation_in_tx,note_in_tx,observe_in_tx,record_blocker_in_tx,resolve_blocker_in_tx,active_blockers_in_conn
+    load_goal(db;goal_id)
+    check_lease(goal;lease;now)
+    create_goal_in_tx(db;emit_fn;spec;now)
+    list_goals_in_conn(db;limit)
+    next_wake_time_in_conn(db)
+    completion_evidence_in_tx(db;goal;now)
+    finish_completion_in_tx(db;emit_fn;goal;receipt;now)
+    retire_started_in_tx(db;emit_fn;goal;now)
+    expire_goal_in_tx(db;emit_fn;goal;now)
+    expire_due_in_tx(db;emit_fn;now;limit)
+    claim_in_tx(db;emit_fn;owner;now;lease_seconds)
+    update_goal_in_tx(db;emit_fn;lease;now;event_type)
+    release_goal_in_tx(db;emit_fn;lease;now)
+    complete_goal_in_tx(db;emit_fn;lease;now)
+    recover_completion_in_tx(db;emit_fn;lease;now)
+    control_goal_in_tx(db;emit_fn;goal_id;command;now)
+    wake_occurrence_in_tx(db;emit_fn)
+    advance_run_owner_generation_in_tx(db;emit_fn;run_id)
+    note_in_tx(db;emit_fn;goal_id;event_type;data;now;lease)
+    observe_in_tx(db;emit_fn;goal_id;data;now)
+    record_blocker_in_tx(db;emit_fn;goal_id;blocker_id;reason)
+    resolve_blocker_in_tx(db;emit_fn;goal_id;blocker_id)
+    active_blockers_in_conn(db;goal_id)
+  autodo/src/subactor_autonomy/engine.py:
+    e: ModelPort,Supervisor,_query_tokens,retrieve_catalog
+    ModelPort(Protocol): complete_json(3),select_operation(2)
+    Supervisor: __init__(4),_get_data_registry(0),_record_verified_outputs(4),_block_data_pinning(2),_exclusive(0),_acquire_inference_gate(1),_heartbeat(1),_request_id(2),_complete(4),_context(2),tick(0),_cycle(1),_synthesize(2),_act(3),_failure(2),_reply(0),run(0)
+    _query_tokens(text)
+    retrieve_catalog(query_text;arguments;catalog)
+  autodo/src/subactor_autonomy/storage/outbox.py:
+    e: durable_dispatch_guarantees_matrix,_validate_consumer,enqueue_outbox_in_tx,outbox_checkpoint_in_conn,ack_outbox_in_tx,list_outbox_in_conn,latest_baseline_snapshot_in_conn,assess_log_completeness_in_conn,capture_baseline_snapshot_in_tx
+    durable_dispatch_guarantees_matrix()
+    _validate_consumer(consumer)
+    enqueue_outbox_in_tx(db;emit_fn)
+    outbox_checkpoint_in_conn(db;consumer)
+    ack_outbox_in_tx(db;emit_fn)
+    list_outbox_in_conn(db)
+    latest_baseline_snapshot_in_conn(db)
+    assess_log_completeness_in_conn(db)
+    capture_baseline_snapshot_in_tx(db;emit_fn)
+  urtlog/src/urtlog/security.py:
+    e: AccessDeniedError,AccessContext,AccessAuditEntry,AclRule,SecurityPolicy,UrnVault,_redacted_token,_now_us,compute_ni_sha256
+    AccessDeniedError(PermissionError):  # Raised when a principal lacks clearance to access a URI or d...
+    AccessContext: __post_init__(0),clearance_rank(0),all_memberships(0)  # Authenticated caller identity — never derived from untrusted...
+    AccessAuditEntry: to_dict(0)  # Non-recursive SOA/POA/URN access audit record (records every...
+    AclRule: label(0),matches(1),explicitly_denies(1),permits(1)  # Explicit allow/deny rule matching URI/URN globs or hierarchi...
+    SecurityPolicy: _emit_audit(1),_evaluate(0),can_view_uri(3),can_view_urn(3),audit_operation_access(3),project_record(2)  # Fail-closed authorization & redaction boundary with DENY > A...
+    UrnVault: __init__(2),_meta_path(1),put(2),get(2)  # Content-addressed blob store separating sensitive URN payloa...
+    _redacted_token(prefix;value)
+    _now_us()
+    compute_ni_sha256(payload)
+  uritime/src/uritime/scheduler.py:
+    e: SchedulerCycleError,EternalTimeScheduler
+    SchedulerCycleError(ValueError):  # Raised when a dependency cycle is detected in the ticket gra...
+    EternalTimeScheduler: __init__(1),upsert_ticket(2),schedule_once(2),schedule_cyclic(2),get_due_tickets(1),register_directive(1),topological_order(1),_base_utility(2),_ancestors_of(1),compute_cpm_metrics(3),reorganize_for_timeframe(2),_wsjf_topological_order(1),decompose_ticket(2),compose_tickets(2)  # RTOS Eternal Priority Queue and Mathematical Re-planning Eng...
+  urt/src/uritime_urt/supersede.py:
+    e: BindingSupersedeJournal,_ensure_dt,_sink_identity_str,_check_nonsymlink,preview_binding_supersede,_cancel_on_sink,execute_binding_supersede,plan_supersede_rollback
+    BindingSupersedeJournal: __init__(1),_guard(0),_connection(0),_transaction(0),get_transition(1),get_receipt(1)  # Durable SQLite journal coordinating fenced transitions and i...
+    _ensure_dt(value)
+    _sink_identity_str(sink)
+    _check_nonsymlink(raw)
+    preview_binding_supersede()
+    _cancel_on_sink(sink)
+    execute_binding_supersede()
+    plan_supersede_rollback()
+  autodo/src/subactor_autonomy/llm.py:
+    e: LLMError,_NoRedirect,SubLLMClient,_unique_object,_invalid_constant,estimate_tokens,shared_gpu_lock_path,_json_loads,_encoded,_validator,http_transport
+    LLMError(RuntimeError): __init__(1)  # A bounded failed inference, never an instruction to switch p...
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    SubLLMClient: __init__(1),from_env(0),_request(3),health(0),model_digests(0),model_show(1),budget_for(3),complete_json(3),select_operation(2),_native_selection(2)
+    _unique_object(pairs)
+    _invalid_constant(_value)
+    estimate_tokens(value)
+    shared_gpu_lock_path(base_url)
+    _json_loads(raw)
+    _encoded(value;limit)
+    _validator(schema)
+    http_transport(method;url;payload;headers;timeout)
+  autonom/src/autonom/synthesizer.py:
+    e: SynthesisOutcome,_Reject,Synthesizer
+    SynthesisOutcome:
+    _Reject(Exception): __init__(2)
+    Synthesizer: __init__(7),_messages(3),synthesize(1),_admit(8)
+  planning/autonomy-pilot/observation_plan.py:
+    e: planfile_endpoint,receipt_queue,trigger_reference,receipt_request,failure_from_trigger_execution,retry_proposal,plan_trigger_history,main
+    planfile_endpoint(base_url)
+    receipt_queue(receipt)
+    trigger_reference(document;failed_at)
+    receipt_request(receipt;now)
+    failure_from_trigger_execution(execution;queue;now)
+    retry_proposal(repository;observed_at;now)
+    plan_trigger_history(path;now;polycell)
+    main()
+  urt/src/uritime_urt/materializer.py:
+    e: _LeaseSink,Materializer,_fail,_bounded,_integer,_text,_us,_instant,normalize_config,_target
+    _LeaseSink: __init__(3),target_id(0),create_goal(1),__getattr__(1)  # Check the claim before every external call, never holding a ...
+    Materializer: __init__(2),config(0),_initialize(1),_guard(0),_connection(0),_transaction(0),_job(1),_snapshot(0),_retirement_key(0),_retirement_row(1),retirement(0),retire(0),status(0),_claim(2),_matches(2),_check_lease(2),_complete(3),_failed(3),_verify_result(2),_terminal_snapshot(2),tick(0)  # One immutable materializer configuration and cursor per SQLi...
+    _fail(code;message)
+    _bounded(value)
+    _integer(value;name;minimum;maximum)
+    _text(value;name;maximum)
+    _us(value)
+    _instant(value)
+    normalize_config(value)
+    _target(sink)
+  autodo/src/subactor_autonomy/ownership.py:
+    e: Conflict,StandaloneModeAdapter,IntegratedModeAdapter,AuthoritativeDispatchGate,aggregate_ownership_matrix,_validate_strict_schema,normalize_goal_ownership,validate_runtime_ownership_config,accept_plan_proposal
+    Conflict(RuntimeError):  # Raised when an operation violates state, lease, or ownership...
+    StandaloneModeAdapter: __post_init__(0),runtime_config(0),bind_goal_spec(1)  # Adapter building validated standalone Goal specs owned solel...
+    IntegratedModeAdapter: __post_init__(0),runtime_config(0),bind_goal_spec(1)  # Adapter binding URTime Plan/Schedule ownership to Autodo Goa...
+    AuthoritativeDispatchGate: admit(0)  # In-process guard proving only the single active execution_ow...
+    aggregate_ownership_matrix()
+    _validate_strict_schema(schema;value;label)
+    normalize_goal_ownership(raw_ownership)
+    validate_runtime_ownership_config(config)
+    accept_plan_proposal(proposal)
+  urt/src/uritime_urt/cli.py:
+    e: _json_file,_document,_anchors,_emit,_input,_range,_separate_paths,_store_sink,parser,_materializer_command,_tzdb_schedule_input,_tzdb_command,_ics_command,_recovery_command,_resolver_command,_supersede_command,_registration_command,main
+    _json_file(name)
+    _document(value;registry_path)
+    _anchors(doc;registry_path)
+    _emit(value;output)
+    _input(parser)
+    _range(parser;now)
+    _separate_paths()
+    _store_sink(path)
+    parser()
+    _materializer_command(args)
+    _tzdb_schedule_input(value;registry_path;old_source)
+    _tzdb_command(args)
+    _ics_command(args)
+    _recovery_command(args)
+    _resolver_command(args)
+    _supersede_command(args)
+    _registration_command(args)
+    main(argv)
+  urtlog/src/urtlog/cli.py:
+    e: _ctx_from_args,main,main_mcp,main_rest
+    _ctx_from_args(args)
+    main(argv)
+    main_mcp()
+    main_rest()
+  urtlog/src/urtlog/dsl.py:
+    e: UrtTime,OperationUri,DataRef,Custody,UrtEventRecord,parse_utc_us,format_utc_us,time_prefix_path,_clean_path_segment,res_prefix_path,prefix_upper_bound,parse_duration_seconds,format_duration_seconds,_parse_kv_pairs,_parse_urn_list,parse_dsl_line
+    UrtTime: urt_kind(0),range_start_us(0),range_end_us(0),time_path(0),to_urt_uri(0),to_dsl(0),to_dict(0)  # URT(czas, zakres, odstep): canonical temporal descriptor wit...
+    OperationUri: op_path(0),parse(1)  # URI(proces, akcja, usluga): stable operation address with hi...
+    DataRef: __post_init__(0),res_path(0),to_dict(0)  # URN(dane wejsciowe / wyjsciowe) with content-addressed diges...
+    Custody: to_dict(0)  # SOA/POA/URN chain-of-custody roles: who commissioned, who ex...
+    UrtEventRecord: __post_init__(0),time_path(0),op_path(0),effective_call_path(0),effective_custody(0),to_dsl(0),to_dict(0)  # Canonical 4-tuple temporal event or planned DSL operation wi...
+    parse_utc_us(value)
+    format_utc_us(ts_us)
+    time_prefix_path(ts_us)
+    _clean_path_segment(seg)
+    res_prefix_path(urn)
+    prefix_upper_bound(prefix)
+    parse_duration_seconds(value)
+    format_duration_seconds(seconds)
+    _parse_kv_pairs(body)
+    _parse_urn_list(body)
+    parse_dsl_line(line)
+  uritime/src/uritime/slippage.py:
+    e: SlippageEntry,SlippageAnalyzer
+    SlippageEntry: to_dict(0)  # Detailed slippage diagnostic for a single scheduled ticket...
+    SlippageAnalyzer: __init__(2),analyze(2),_diagnose_root_cause(-1),format_markdown(1)  # Evaluates schedule adherence and diagnoses where and why sli...
+  urtlog/src/urtlog/adapters.py:
+    e: ResolvedCapability,PolyglotUriCatalog,_slug,_ts_to_us,_stable_id,adapt_reflex_analysis,adapt_diagit_findings,adapt_monag_snapshot,adapt_heyasa_urievents_sqlite,adapt_willman_events_sqlite,_normalize_effects,_paxlet_effects_from_permissions
+    ResolvedCapability:  # Unified polyglot URI binding across dockuri, paxlet, taskand...
+    PolyglotUriCatalog: __init__(0),register(1),register_python(2),load_paxlet_registry(1),load_dockuri_registry(1),load_taskand_catalog(1),list_uris(0),resolve(1)  # Resolve `proc://`, `urn:paxlet:...`, `paxlet://`, `taskand:/...
+    _slug(value;fallback)
+    _ts_to_us(value)
+    _stable_id(prefix;payload)
+    adapt_reflex_analysis(analysis)
+    adapt_diagit_findings(report)
+    adapt_monag_snapshot(snapshot)
+    adapt_heyasa_urievents_sqlite(db_path)
+    adapt_willman_events_sqlite(db_path)
+    _normalize_effects(raw)
+    _paxlet_effects_from_permissions(perms)
+  urt/src/uritime_urt/model.py:
+    e: absolute_identifier,_exdates,normalize,make_schedule
+    absolute_identifier(value)
+    _exdates(value)
+    normalize(document)
+    make_schedule(dtstart;tzid;rrule;exdates)
+  urt/src/uritime_urt/selectors.py:
+    e: _require_nonempty_str,validate_event_selector,validate_multi_source_selector,validate_plan_anchor,_event_field,_event_stream,_parse_event_instant,_match_single_source_event,_match_candidates,select_next_event,select_previous_event,select_across_sources
+    _require_nonempty_str(mapping;key;code)
+    validate_event_selector(selector)
+    validate_multi_source_selector(selector)
+    validate_plan_anchor(anchor)
+    _event_field(event;key)
+    _event_stream(event)
+    _parse_event_instant(raw)
+    _match_single_source_event(event)
+    _match_candidates(selector;events)
+    select_next_event(selector;events)
+    select_previous_event(selector;events)
+    select_across_sources(selector;events)
+  autodo/src/subactor_autonomy/urt_records.py:
+    e: _stable_urn,_format_utc,_normalize_jcs,jcs_bytes,jcs_snapshot_ni,_write_blob_atomic,_resource_ref,_attach_action_binding_extensions,map_store_event_to_urt_record,_envelope,export_store_urt_records,build_wellmanifest_log_entry
+    _stable_urn(kind;raw_id)
+    _format_utc(timestamp)
+    _normalize_jcs(value)
+    jcs_bytes(value)
+    jcs_snapshot_ni(value)
+    _write_blob_atomic(blob_dir;sha_hex;raw)
+    _resource_ref(uri;value)
+    _attach_action_binding_extensions(ext;action)
+    map_store_event_to_urt_record(event)
+    _envelope(event_id;source;etype;time_str;subject;data)
+    export_store_urt_records(store;output_path)
+    build_wellmanifest_log_entry(urt_record)
+  autonom/src/autonom/config.py:
+    e: PolicySettings,Thresholds,SandboxSettings,Settings,_tuple,load_settings
+    PolicySettings:
+    Thresholds:
+    SandboxSettings:
+    Settings: profile(0),db_path(0),journal_path(0)
+    _tuple(value;default)
+    load_settings(path;environ)
+  uritime/src/urievents/store.py:
+    e: UriEventStore
+    UriEventStore: __init__(1),_connect(0),_init_db(0),stream_identity(0),checkpoints(0),evaluate_freshness(1),emit_in_tx(4),emit(3),_project_state(2),upsert_task_schedule(5),_row_to_state(0),get_task_state(1),snapshot_tri_sets(1),list_events(0),append_domain_event(3),_monitor_resolved(1),_within_valid_time(3),query_timeline(0),replay_into(1)  # Durable SQLite ledger storing runtime events and projecting ...
+  uritime/src/uritime/cli.py:
+    e: main
+    main(argv)
+  urt/src/uritime_urt/occurrences.py:
+    e: Occurrence,_occurrence,expand,contains
+    Occurrence: as_dict(0)
+    _occurrence(reference;due;end;nominal;ordinal)
+    expand(document)
+    contains(document;at)
+  autodo/src/subactor_autonomy/upcasters.py:
+    e: compatibility_matrix,_normalize_major,check_version_compatibility,_safe_ownership,upcast_goal_record,upcast_action_record,upcast_operation_record,upcast_event_envelope
+    compatibility_matrix()
+    _normalize_major(value;name)
+    check_version_compatibility()
+    _safe_ownership(goal;goal_id;sched)
+    upcast_goal_record(goal)
+    upcast_action_record(action)
+    upcast_operation_record(operation)
+    upcast_event_envelope(event)
+  autonom/src/autonom/subllm_client.py:
+    e: SubLLMError,_NoRedirect,Decision,ChatResult,SubLLMClient,_loopback_base
+    SubLLMError(RuntimeError): __init__(1)
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    Decision: top(1),p_true(1)
+    ChatResult: json(0)
+    SubLLMClient: __init__(3),_request(3),health(0),models(0),loaded_models(0),decide(2),embed(1),chat(1)
+    _loopback_base(url)
+  uritime/src/uritime/temporal_interpreter.py:
+    e: ModelGatewayError,_NoRedirect,SubLLMModelGateway,GatewayTemporalInterpreter,_loopback_base,_expected_decide_labels,_valid_decide_answer
+    ModelGatewayError(RuntimeError): __init__(2)  # Deterministic model gateway error prohibiting silent cloud f...
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    SubLLMModelGateway: __init__(1),_record_trace(0),_send(0),decide(1),interpret(1),generate(1),embed(1)  # Single local-only SubLLM gateway across decision, interpreta...
+    GatewayTemporalInterpreter: __init__(1),interpret(1)  # Adapter connecting `SubLLMModelGateway` directly to `IntentS...
+    _loopback_base(url)
+    _expected_decide_labels(q)
+    _valid_decide_answer(answer;q_type;expected_labels)
+  autodo/src/subactor_autonomy/data_pinning.py:
+    e: DataPinningError,DataRecord,AutodoDataRegistry,_sanitize_urn_segment,_canonical_json_bytes,_atomic_write_bytes,_atomic_write_json,_bounded_str,validate_outputs_expected,validate_data_binding,_resolve_blob_with_errors,_build_pinned_input,resolve_and_pin_inputs,verify_and_materialize_pinned_inputs,build_pure_execution_receipt,persist_action_outputs
+    DataPinningError(ExecutionError): __init__(1)  # Fail-closed WE/WY data version pinning or integrity verifica...
+    DataRecord: to_dict(0),from_dict(1)  # Versioned immutable data record matching urievents.data_regi...
+    AutodoDataRegistry: __init__(1),_load_aliases(0),_save_aliases(1),_load_records(0),_save_records(1),_write_blob(1),put(1),put_json(1),bind_alias(2),describe(1),resolve(1),verify(1),retain(1)  # Content-addressed local DataRegistry with explicit mutable a...
+    _sanitize_urn_segment(raw)
+    _canonical_json_bytes(value)
+    _atomic_write_bytes(target;data)
+    _atomic_write_json(target;value)
+    _bounded_str(value;name)
+    validate_outputs_expected(outputs_expected)
+    validate_data_binding(data_binding)
+    _resolve_blob_with_errors(data_registry;urn)
+    _build_pinned_input()
+    resolve_and_pin_inputs(data_binding)
+    verify_and_materialize_pinned_inputs(pinned_inputs;base_arguments)
+    build_pure_execution_receipt(action;result)
+    persist_action_outputs(action;result)
+  uritime/src/urievents/contracts.py:
+    e: ServiceBinding,ProcessRef,DataRef,StreamCheckpoint,CommandEnvelope,DomainEventEnvelope,_build_registry,validate_cqrs_document,validate_command_envelope,validate_query_envelope,validate_domain_event_envelope,uri_event_to_domain_envelope,domain_envelope_to_uri_event,validate_urt_record,_iso_utc,_as_uri,_event_to_urt_record,export_store_to_urt_records
+    ServiceBinding: to_dict(0)  # URL/SOA target binding separated from immutable operation lo...
+    ProcessRef: __post_init__(0),to_dict(0)  # Versioned URI/POA process identity...
+    DataRef: __post_init__(0),to_dict(0)  # URN reference to content-addressed or registered payload dat...
+    StreamCheckpoint: to_dict(0)  # Per-source stream checkpoint replacing any global monotonic ...
+    CommandEnvelope: to_dict(0)  # Explicit URL + versioned URI + URN + URT command envelope...
+    DomainEventEnvelope: to_dict(0)  # Typed CQRS/ES fact envelope with multi-source stream checkpo...
+    _build_registry()
+    validate_cqrs_document(doc)
+    validate_command_envelope(envelope)
+    validate_query_envelope(query_doc)
+    validate_domain_event_envelope(event_doc)
+    uri_event_to_domain_envelope(event)
+    domain_envelope_to_uri_event(envelope)
+    validate_urt_record(record)
+    _iso_utc(ts)
+    _as_uri(value;prefix)
+    _event_to_urt_record(event)
+    export_store_to_urt_records(store;output_path)
+  urt/src/uritime_urt/resolver.py:
+    e: ContentResolver,_recover_x,_pt_add,_scalar_mult,_encode_point,_decode_point,_point_equal,_decode_hex_bytes,_expand_seed,ed25519_public_from_seed,ed25519_sign,ed25519_verify,_bound_str,validate_trust_policy,_signing_payload_bytes,sign_urt_descriptor,verify_signed_envelope,_normalize_origin
+    ContentResolver: __init__(0),_assert_origin_allowed(1),_load_cache(0),_record_cache(0),resolve(1)  # Explicitly enabled, bounded HTTP/HTTPS resolver separated cl...
+    _recover_x(y;x_bit)
+    _pt_add(p1;p2)
+    _scalar_mult(pt;scalar)
+    _encode_point(pt)
+    _decode_point(raw)
+    _point_equal(p1;p2)
+    _decode_hex_bytes(value)
+    _expand_seed(seed)
+    ed25519_public_from_seed(seed_hex)
+    ed25519_sign(seed_hex;message)
+    ed25519_verify(public_hex;message;signature_hex)
+    _bound_str(value)
+    validate_trust_policy(policy)
+    _signing_payload_bytes()
+    sign_urt_descriptor(document)
+    verify_signed_envelope(envelope)
+    _normalize_origin(raw_url)
+  urtlog/src/urtlog/server.py:
+    e: UrtServiceFacade,UrtMcpServer,_now_us,build_rest_server
+    UrtServiceFacade: __init__(4),registry_search(2),task_plan(2),task_execute(2),task_status(2),decide_d1(2)  # Shared fail-closed operation surface used identically by RES...
+    UrtMcpServer: __init__(2),handle_request(1),serve_stdio(2)  # Zero-dependency JSON-RPC 2.0 MCP server (stdio) implementing...
+    _now_us()
+    build_rest_server(facade)
+  autodo/src/subactor_autonomy/operation_descriptor.py:
+    e: LegacyOperationVersionMap,canonical_operation_uri,parse_operation_uri,strip_schema_prose,_strip_docstring,normalize_python_semantics,infer_role_and_verification,_semantic_implementation,build_operation_descriptor,_extract_autodo_definition,descriptor_from_autodo_record,descriptor_from_autonom_spec,activity_from_autodo_record,activity_from_autonom_spec,registry_mapping_matrix
+    LegacyOperationVersionMap: bind(2),resolve(1),snapshot(0)  # Append-only map resolving legacy IDs/URIs to pinned canonica...
+    canonical_operation_uri(operation_id;version)
+    parse_operation_uri(raw_uri)
+    strip_schema_prose(schema)
+    _strip_docstring(body)
+    normalize_python_semantics(code)
+    infer_role_and_verification(effect;adapter)
+    _semantic_implementation(adapter;implementation;operation_id)
+    build_operation_descriptor()
+    _extract_autodo_definition(record)
+    descriptor_from_autodo_record(record)
+    descriptor_from_autonom_spec(spec)
+    activity_from_autodo_record(record)
+    activity_from_autonom_spec(spec)
+    registry_mapping_matrix()
+  autodo/src/subactor_autonomy/storage/database.py:
+    e: LeaseLost,StoreSchemaError,StoreIdentityChanged,UnitOfWork,_ensure_no_symlinks,_atomic_write_json,_canonical_uuid,_guard,_database,_require_existing_db_file,inspect_identity,initialize_database
+    LeaseLost(Conflict):
+    StoreSchemaError(RuntimeError):  # Unknown or malformed database; no implicit migration is perm...
+    StoreIdentityChanged(Conflict):  # A live handle no longer refers to the identity it originally...
+    UnitOfWork: __init__(2),identity(0),connection(0),transaction(0)  # Identity-checked SQLite read/write Unit of Work bound to a s...
+    _ensure_no_symlinks(path;label)
+    _atomic_write_json(path;value)
+    _canonical_uuid(value)
+    _guard(db)
+    _database(path)
+    _require_existing_db_file(resolved)
+    inspect_identity(path)
+    initialize_database(path)
+  uritime/src/uritime/intent_service.py:
+    e: CatalogPolicyError,IntentCatalog,IntentService,_iso_utc
+    CatalogPolicyError(ValueError):  # Raised when NL interpretation requests an unregistered opera...
+    IntentCatalog: default(0)  # Explicit closed allowlist of operations, resources, timezone...
+    IntentService: __init__(2),_call_subllm(1),_is_quoted(1),_current_interpretations(1),get_interpretation(1),_evaluate_intent(1),interpret_and_record(1),preview(1),submit_proposal(1),explain(1)  # SubLLM-capable NL interpretation, preview, versioned AST per...
+    _iso_utc(ts)
+  uritime/src/uritime/temporal_monitor.py:
+    e: MonitorSpec,DurableTemporalMonitor,_monitor_scope
+    MonitorSpec: __post_init__(0),to_dict(0)  # Closed specification for a bounded `while` or `until` reacti...
+    DurableTemporalMonitor: __init__(1),arm_monitor(1),load_state(1),evaluate_observation(1)  # Evaluates bounded while/until conditions deterministically a...
+    _monitor_scope(monitor_id)
+  autodo/src/subactor_autonomy/offline_gpu_qualification.py:
+    e: _raw_http_post,_probe_ollama_tags,_file_mutex,_run_deterministic_harness,_resolve_subllm_runtime,_managed_local_proxy,_run_cqrs_029_upstream_checks,_run_embedding_case,_run_two_process_gpu_arbitration,run_offline_gpu_and_subllm_qualification
+    _raw_http_post(url;body)
+    _probe_ollama_tags(ollama_url)
+    _file_mutex(lock_path)
+    _run_deterministic_harness()
+    _resolve_subllm_runtime(subllm_src)
+    _managed_local_proxy()
+    _run_cqrs_029_upstream_checks(base_url;client)
+    _run_embedding_case(base_url)
+    _run_two_process_gpu_arbitration(base_url;lock_path)
+    run_offline_gpu_and_subllm_qualification()
+  autodo/src/subactor_autonomy/storage/projections.py:
+    e: _project_payload,rebuild_projections_in_tx,project_from_empty_state
+    _project_payload(db;payload)
+    rebuild_projections_in_tx(db)
+    project_from_empty_state(events)
+  uritime/src/uritime/environment_observer.py:
+    e: CapabilityViolationError,_AdapterRegistration,EnvironmentObserver,ObservationQuery
+    CapabilityViolationError(PermissionError):  # Raised when ObserveEnvironment targets an unregistered capab...
+    _AdapterRegistration:
+    EnvironmentObserver: __init__(2),register_adapter(2),_iter_all_events(1),_find_retry_record(1),observe(1)  # Executes only explicitly registered observation adapters and...
+    ObservationQuery: __init__(2),get_latest(0),build_decision_context(0)  # Strictly read-only query view checking observation provenanc...
+  uritime/src/uritime/plan_queries.py:
+    e: PlanQueries,_project_plan_events,append_correction_event
+    PlanQueries: __init__(1),get_plan(1),rebuild_from_events(1),query_knowledge_at(0),tri_set_with_knowledge_view(0)  # Strictly read-only CQRS queries with stream checkpoint fresh...
+    _project_plan_events(events;plan_id)
+    append_correction_event(store)
+  uritime/src/uritime/temporal_subscriptions.py:
+    e: DurableSubscriptionStore,_canonical_digest
+    DurableSubscriptionStore: __init__(1),_connect(0),_init_db(0),_row_to_dict(0),get(1),subscribe(1),evaluate(2),pinned_anchors_map(2)  # Persists event selector cursors, TTL deadlines, and pinned a...
+    _canonical_digest(value)
+  urt/src/uritime_urt/recovery.py:
+    e: _ensure_nonsymlink,_sha256_file,_sidecars,_atomic_write_bytes,_atomic_copy_file,_atomic_write_json,_ro_connect,_inspect_registry,_inspect_ledger,_inspect_state,_inspect_autodo,preflight_urt_stores,_assert_no_active_lease,_assert_migratable_or_current,backup_urt_stores,_load_and_verify_manifest,_migrate_registry_db,_migrate_ledger_db,_migrate_state_db,migrate_urt_stores,rollback_urt_stores,_rebind_restored_ledger,_rebind_restored_state,restore_urt_stores
+    _ensure_nonsymlink(raw)
+    _sha256_file(path)
+    _sidecars(path)
+    _atomic_write_bytes(dst;data)
+    _atomic_copy_file(src;dst)
+    _atomic_write_json(dst;payload)
+    _ro_connect(path)
+    _inspect_registry(path)
+    _inspect_ledger(path)
+    _inspect_state(path)
+    _inspect_autodo(path)
+    preflight_urt_stores()
+    _assert_no_active_lease(preflight;now)
+    _assert_migratable_or_current(preflight)
+    backup_urt_stores()
+    _load_and_verify_manifest(manifest_path;requested)
+    _migrate_registry_db(path)
+    _migrate_ledger_db(path)
+    _migrate_state_db(path)
+    migrate_urt_stores()
+    rollback_urt_stores()
+    _rebind_restored_ledger(ledger_path)
+    _rebind_restored_state(state_path)
+    restore_urt_stores()
+  urtlog/src/urtlog/decision.py:
+    e: _NoRedirect,UrtDecisionAdvisor,_validate_loopback_origin,_post_loopback_json,_validate_probabilities
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    UrtDecisionAdvisor: __init__(2),build_decision_context(2),decide_next_operation(2)  # Grounded decision advisor combining `UrtLogStore` brief + `U...
+    _validate_loopback_origin(base_url)
+    _post_loopback_json(origin;path;payload;timeout)
+    _validate_probabilities(dist;expected_options)
+  planning/autonomy-pilot/observation_receipt.py:
+    e: SignedReceiptFiles,read_bounded,publish_bytes,sign_receipt,publish_receipt,export_attempt,export_observation,verify_attempt,read_signed_receipt,verify_signed_attempt,verify_signed_batch,verify_observation,load_signed_observation,load_signed_observation_index,classify_bytes,main
+    SignedReceiptFiles:
+    read_bounded(path;size)
+    publish_bytes(path;data)
+    sign_receipt(data;private_key_path)
+    publish_receipt(document;output_dir;signing_key)
+    export_attempt(failure;state_dir;output_dir;now)
+    export_observation(observation;output_dir;now)
+    verify_attempt(failure;path;now)
+    read_signed_receipt(path;signature_path;public_key_path;expected_public_key_digest)
+    verify_signed_attempt(failure;path;now)
+    verify_signed_batch(entries;now;polycell)
+    verify_observation(failure;path;now)
+    load_signed_observation(path;signature_path;public_key_path;expected_public_key_digest;expected_owner_epoch)
+    load_signed_observation_index(path;public_key;key_sha256;owner_epoch)
+    classify_bytes(failure;data;now;owner_epoch;expected_generation)
+    main()
+  uritime/src/uritime/heyasa_adapter.py:
+    e: HeyasaOwnershipFenceError,HeyasaCommandTimelineAdapter,_digest,_extract_occurrence_ids
+    HeyasaOwnershipFenceError(PermissionError):  # Raised when Heyasa attempts local execution after delegation...
+    HeyasaCommandTimelineAdapter: __init__(1),_plan_events(1),_delegation_state(1),_preflight_occurrence_ownership(2),delegate_command(1),assert_local_heyasa_execution_allowed(1),revoke_grant(1),cancel_command(1),authorize_effect_boundary(1),record_llm_reply(1),record_execution_receipt(1),import_external_trigger_or_log(1),build_timeline_view(1)  # Routes Heyasa UI/trigger commands exclusively to PlanLedger ...
+    _digest(obj)
+    _extract_occurrence_ids(occurrences)
+  urtlog/src/urtlog/registry.py:
+    e: RegistryEntry,UnifiedRegistry,url_prefix_path
+    RegistryEntry: path_key(0),to_dict(0)  # Canonical record for a registered URI process, URL service e...
+    UnifiedRegistry: __init__(2),close(0),__enter__(0),__exit__(0),upsert(1),register_url(1),register_urn(1),import_poa_registry(1),import_poa_registry_url(1),import_wellmanifest_mcp_registry(1),import_catalog(1),sync_from_store_and_vault(2),search(1),export_poa_registry(1),export_wellmanifest_mcp_registry(1)  # Fast B-tree indexed catalog of URI processes, URL services, ...
+    url_prefix_path(url)
+  autodo/deploy/sandbox_runner.py:
+    e: OutputBudget,bounded_result,main
+    OutputBudget: __init__(0),write(1),flush(0)
+    bounded_result(value)
+    main()
+  autonom/src/autonom/agent.py:
+    e: AutonomousAgent,_iso
+    AutonomousAgent: __init__(1),add_goal(1),ensure_ticks(0),run(0),handle(1),state_for(1),_schedule_tick(3),tick(1),synthesize_for(3),complete_cycle(1),close(0)
+    _iso(ts)
+  autonom/src/autonom/cli.py:
+    e: _hhmm,render,_agent,cmd_vram,cmd_doctor,cmd_goal,cmd_run,cmd_ops,cmd_synth,cmd_exec,cmd_journal,build_parser,main
+    _hhmm(ts)
+    render(entry)
+    _agent(settings)
+    cmd_vram(args;settings)
+    cmd_doctor(args;settings)
+    cmd_goal(args;settings)
+    cmd_run(args;settings)
+    cmd_ops(args;settings)
+    cmd_synth(args;settings)
+    cmd_exec(args;settings)
+    cmd_journal(args;settings)
+    build_parser()
+    main(argv)
+  autonom/src/autonom/executor.py:
+    e: Runtime,ExecResult,Executor,apply_defaults,validate_args
+    Runtime: remember_result(3),recent_for(1)  # Everything an operation may touch, bundled for handlers...
+    ExecResult: summary(1)
+    Executor: __init__(4),context(1),_shadow(5),execute(2)
+    apply_defaults(schema;args)
+    validate_args(schema;args)
+  planning/autonomy-pilot/cells/python/backlog_reconciliation.py:
+    e: run
+    run(input)
+  urt/src/uritime_urt/registration.py:
+    e: _repo_root,_rel_label,evaluate_uri_scheme_name,verify_dual_implementation_conformance,build_scheme_compatibility_plan,build_rfc7595_registration_draft,render_rfc7595_markdown
+    _repo_root(repo_root)
+    _rel_label(path;root)
+    evaluate_uri_scheme_name()
+    verify_dual_implementation_conformance()
+    build_scheme_compatibility_plan()
+    build_rfc7595_registration_draft()
+    render_rfc7595_markdown(draft)
+  urt/scripts/package.py:
+    e: main
+    main()
+  urt/src/uritime_urt/references.py:
+    e: to_uri,parse_uri
+    to_uri(document)
+    parse_uri(value)
+  urt/src/uritime_urt/relations.py:
+    e: relate
+    relate(left;right)
+  planning/autonomy-pilot/replay.py:
+    e: read_journal,observed_events,historical_attempts,legacy_input,evaluate_with_polycell,observation_replay,main
+    read_journal(path;start;end;quality)
+    observed_events(path;start;end)
+    historical_attempts(path;events;start;end)
+    legacy_input(signal)
+    evaluate_with_polycell(polycell;requests)
+    observation_replay(events;decisions;minutes)
+    main()
+  autodo/src/subactor_autonomy/registry.py:
+    e: Registry
+    Registry: __init__(2),catalog(1),get(2),_last_version(1),admit(2),_parse_ref(2),resolve_for_execution(2),resolve_historical(2),describe(2),descriptors(1),validate_historical_result(2),activate(3),deactivate(3),revoke(3),register_connector(1),seed(0)
+  autonom/src/autonom/registry.py:
+    e: OperationSpec,RegistryError,OperationRegistry,canonical,sha256,fold,tokens
+    OperationSpec: code_digest(0),ref(0),uri(0),menu_text(1),public(0)
+    RegistryError(ValueError):
+    OperationRegistry: __init__(1),_row(0),_validate(1),register(1),set_status(2),record_shadow(2),record_outcome(2),latest_version(1),get_version(2),get(1),list(1),digest(0),rank(2)
+    canonical(obj)
+    sha256(text)
+    fold(text)
+    tokens(text)
+  scripts/package_release.py:
+    e: allowed,sha,manifest,project_files,check_wheels,main
+    allowed(path)
+    sha(path)
+    manifest(root;paths)
+    project_files(name)
+    check_wheels()
+    main()
+  uritime/src/urievents/export.py:
+    e: SecretLeakageError,ResumableUrtExporter,_sanitize_url,_sanitize_value,_infer_message_kind,_extract_service_binding,assert_non_executable_export_line,to_cloudevents_projection,_atomic_write_json,verify_export_completeness,build_wellmanifest_evidence_ref
+    SecretLeakageError(ValueError):  # Raised when an exported record contains an unredacted creden...
+    ResumableUrtExporter: __init__(1),export_range(1)  # Cursor-tracked, non-executable JSONL URT Record v1 exporter ...
+    _sanitize_url(url)
+    _sanitize_value(value)
+    _infer_message_kind(event)
+    _extract_service_binding(payload)
+    assert_non_executable_export_line(record)
+    to_cloudevents_projection(event)
+    _atomic_write_json(path;doc)
+    verify_export_completeness(store;jsonl_path)
+    build_wellmanifest_evidence_ref(jsonl_path)
+  autodo/src/subactor_autonomy/jsonutil.py:
+    e: canonical,digest,strict_equal,pointer,satisfied
+    canonical(value)
+    digest(value)
+    strict_equal(a;b)
+    pointer(document;path)
+    satisfied(condition;evidence)
+  autonom/src/autonom/policy.py:
+    e: PolicyDecision,PolicyGate,_args_digest
+    PolicyDecision: __bool__(0)
+    PolicyGate: __init__(1),_http_rule(1),_llm_rule(1),check(2),note_executed(2),reset_goal(1),check_synthesis(1),note_synthesis(1)
+    _args_digest(args)
+  uritime/src/uritime/calendar_sync.py:
+    e: CalendarSynchronizer,_match_cron_field,cron_matches,next_cron_timestamp,next_run_timestamp,_format_ics_dt,_parse_ics_dt
+    CalendarSynchronizer: __init__(1),export_ics(2),import_ics_busy_blocks(2),import_crontab_lines(2)  # Synchronizes scheduled tickets with RFC 5545 iCalendar (.ics...
+    _match_cron_field(field_expr;value;min_val;max_val)
+    cron_matches(cron_expr;timestamp)
+    next_cron_timestamp(cron_expr;after_timestamp;max_lookahead_minutes)
+    next_run_timestamp(after_timestamp)
+    _format_ics_dt(timestamp)
+    _parse_ics_dt(raw)
+  uritime/src/uritime/chat_scanner.py:
+    e: AgentChatScanner
+    AgentChatScanner: __init__(2),_load_seen(0),_save_seen(0),scan_messages(1),_classify_text(0),discover_default_transcripts(0),scan_jsonl_transcripts(1),scan_monag_sqlite(1)  # Scans agent chat transcripts and monag/session databases to ...
+  urt/src/uritime_urt/timeutil.py:
+    e: parse_instant,ensure_utc,format_instant,parse_local,parse_duration,format_duration
+    parse_instant(text)
+    ensure_utc(value)
+    format_instant(value)
+    parse_local(text)
+    parse_duration(text;allow_negative)
+    format_duration(seconds)
+  autodo/scripts/proxy.py:
+    e: main
+    main()
+  urt/src/uritime_urt/conformance.py:
+    e: _BundleRegistry,_load_tzif_bundle,_scoped_tzif_bundle,_eval_jcs_case,_eval_descriptor_case,_eval_uri_case,_eval_error_case,run_conformance,main
+    _BundleRegistry: __init__(1),get(1)  # In-memory read-only reference map for content-addressed uri ...
+    _load_tzif_bundle(bundle_path)
+    _scoped_tzif_bundle(zones)
+    _eval_jcs_case(case)
+    _eval_descriptor_case(case)
+    _eval_uri_case(case)
+    _eval_error_case(case)
+    run_conformance(manifest_path;tzif_bundle_path)
+    main(argv)
+  urt/src/uritime_urt/materializer_qualification.py:
+    e: _load_autodo_store_cls,_check_existing_sqlite_path,_read_ledger_manifest,_read_autodo_manifest,inspect_three_store_manifest,_rate_schedule,_binding_for,_base_config,_child_env,_run_fault_subprocess,_qualify_boundary,_qualify_fencing_and_unlocked_sink,_qualify_clock_mutations_and_blocking,_percentile,_qualify_batch_benchmark,run_materializer_qualification,_fault_worker_main
+    _load_autodo_store_cls()
+    _check_existing_sqlite_path(raw)
+    _read_ledger_manifest(ledger_path)
+    _read_autodo_manifest(autodo_path)
+    inspect_three_store_manifest(state_path;ledger_path;autodo_db_path)
+    _rate_schedule(start_iso)
+    _binding_for(doc;binding_id)
+    _base_config(config_id;doc;binding;target_id)
+    _child_env(store_cls)
+    _run_fault_subprocess()
+    _qualify_boundary(boundary;root;store_cls)
+    _qualify_fencing_and_unlocked_sink(root;store_cls)
+    _qualify_clock_mutations_and_blocking(root;store_cls)
+    _percentile(values;fraction)
+    _qualify_batch_benchmark(root;store_cls)
+    run_materializer_qualification(work_dir)
+    _fault_worker_main(argv)
+  urtlog/src/urtlog/sdk.py:
+    e: UrtSpan,UrtClient,_now_us
+    UrtSpan: __init__(1),emit_log(2),commit_output(2)  # Active operation execution span keeping a constant operation...
+    UrtClient: __init__(1),from_env(0),close(0),__enter__(0),__exit__(0),span(1),emit_paxlet_receipt(1)  # Zero-dependency SDK entry point for Python projects integrat...
+    _now_us()
+  autodo/src/subactor_autonomy/storage/events.py:
+    e: emit_in_tx,list_events_in_conn,high_water_seq_in_conn,stream_identity_in_conn,iter_events,export_events,recent_events_in_conn
+    emit_in_tx(db;event_type;stream_id;payload;now)
+    list_events_in_conn(db)
+    high_water_seq_in_conn(db;goal_id)
+    stream_identity_in_conn(db;identity)
+    iter_events(uow)
+    export_events(uow;output_path)
+    recent_events_in_conn(db;goal_id;limit)
+  planning/autonomy-pilot/fleet_generation.py:
+    e: FleetGeneration,fleet_generation_from_diagnostic,read_fleet_generation,observe_fleet_generation,retry_with_fleet_generation,retry_from_fleet_result,retry_batch_with_fleet_generation
+    FleetGeneration:
+    fleet_generation_from_diagnostic(diagnostic;planfile_url)
+    read_fleet_generation(path;planfile_url)
+    observe_fleet_generation(planfile_url)
+    retry_with_fleet_generation(failure;state_dir;planfile_url;probe)
+    retry_from_fleet_result(fleet_result;state_dir;planfile_url;retries)
+    retry_batch_with_fleet_generation(generation;state_dir;planfile_url;retries)
+  uritime/src/uritime/cqrs_slice.py:
+    e: DeterministicTemporalInterpreter,SubLLMTemporalInterpreter,SlicePaths,VerticalSliceCoordinator,_iso_utc,_parse_utc
+    DeterministicTemporalInterpreter: interpret(1)  # Builds a closed-AST `urt.temporal-intent/v1` from the canoni...
+    SubLLMTemporalInterpreter: __init__(0),interpret(1)  # Interprets natural language into a gated `urt.temporal-inten...
+    SlicePaths:
+    VerticalSliceCoordinator: __init__(1),_operation_def(0),register_archive_operation(0),_claim_target_goal(2),run_slice(0)  # Coordinates UR* CQRS/ES intent -> resolution -> accepted SOA...
+    _iso_utc(ts)
+    _parse_utc(ts_str)
+  uritime/src/uritime/models.py:
+    e: ExponentialBackoffState,ScheduledTicket,TimeBranch,TimeframeDirective,classify_time_horizon,parse_iso_or_epoch,format_iso_utc,compute_time_bucket,next_interval_timestamp
+    ExponentialBackoffState: is_active(1),remaining_seconds(1),retry_at_iso(0),record_failure(2),record_success(0),to_dict(1),from_dict(1)  # Durable exponential backoff state for cyclic lanes and retri...
+    ScheduledTicket: __post_init__(0),is_cyclic(0),budget_exhausted(0),is_key_executed(1),is_ready_at(2),planned_end_timestamp(0),planned_iso(0),planned_end_iso(0),refresh_horizon(1),to_dict(0)  # A URI-addressed task or Planfile ticket scheduled in time wi...
+    TimeBranch: to_dict(0)  # A timeline fork ('rozwidlenie w czasie') in the Eternal Prio...
+    TimeframeDirective: matches(1),to_dict(0)  # A priority directive defined via a Planfile ticket for a spe...
+    classify_time_horizon(lead_time_seconds;duration_seconds;has_dependencies)
+    parse_iso_or_epoch(value;default)
+    format_iso_utc(timestamp)
+    compute_time_bucket(now;interval_seconds;min_bucket_seconds)
+    next_interval_timestamp(now;interval_seconds)
+  urt/src/uritime_urt/plan_handoff.py:
+    e: PlanHandoffController,_fail,build_plan_handoff_binding,build_plan_materializer_config
+    PlanHandoffController: __init__(1),_guard(0),_connection(0),_transaction(0),get_plan_state(1),register_revision(0),assert_fenced_active(0),fence_check_for(0),tick_plan(0),cancel_plan(0),replace_plan_revision(0),reconcile_in_flight_deliveries(0)  # Persistent coordinator enforcing plan revision, owner_genera...
+    _fail(code;message)
+    build_plan_handoff_binding()
+    build_plan_materializer_config()
+  autodo/src/subactor_autonomy/config.py:
+    e: load_env
+    load_env(path)
+  autodo/wellmanifest_governance.py:
+    e: GovernanceGateError,_git,_activate_managed_hook,_github_event_base,_resolve_base,_changed_paths,pytest_sessionstart
+    GovernanceGateError(RuntimeError):  # Raised when deterministic governance rejects the current che...
+    _git(root)
+    _activate_managed_hook(root)
+    _github_event_base(root)
+    _resolve_base(root)
+    _changed_paths(root;base)
+    pytest_sessionstart(session)
+  uritime/src/urievents/importers.py:
+    e: ImportConflictError,SourceEventImporter,_payload_digest,autodo_event_to_import_item,render_journal
+    ImportConflictError(ValueError):  # Raised when an external source reuses an event identity with...
+    SourceEventImporter: __init__(1),import_batch(1)  # Atomic inbox importer preserving origin identity, deduplicat...
+    _payload_digest(payload)
+    autodo_event_to_import_item(autodo_event;stream_identity)
+    render_journal(store)
+  uritime/wellmanifest_governance.py:
+    e: GovernanceGateError,_git,_activate_managed_hook,_github_event_base,_resolve_base,_changed_paths,pytest_sessionstart
+    GovernanceGateError(RuntimeError):  # Raised when deterministic governance rejects the current che...
+    _git(root)
+    _activate_managed_hook(root)
+    _github_event_base(root)
+    _resolve_base(root)
+    _changed_paths(root;base)
+    pytest_sessionstart(session)
+  urt/wellmanifest_governance.py:
+    e: GovernanceGateError,_git,_activate_managed_hook,_github_event_base,_resolve_base,_changed_paths,pytest_sessionstart
+    GovernanceGateError(RuntimeError):  # Raised when deterministic governance rejects the current che...
+    _git(root)
+    _activate_managed_hook(root)
+    _github_event_base(root)
+    _resolve_base(root)
+    _changed_paths(root;base)
+    pytest_sessionstart(session)
+  autonom/src/autonom/decider.py:
+    e: TickDecision,Decider,BindError,ArgBinder
+    TickDecision: to_log(0)
+    Decider: __init__(2),_ask(3),menu(0),tick(2),choose_values(3),verify(3)
+    BindError(RuntimeError):
+    ArgBinder: _is_choice(0),bind(2),_generate(2)
+  uritime/src/urievents/data_registry.py:
+    e: DataUnavailableError,StoredBlob,DataRecord,DataRegistryPort,LocalDataRegistry,canonical_json_bytes,sha256_urn,ni_sha256_ref,_atomic_write_bytes,_atomic_write_json
+    DataUnavailableError(FileNotFoundError):  # Raised explicitly when no physical blob copy is reachable fo...
+    StoredBlob: to_data_ref(1)  # Verified content-addressed artifact stored in LocalDataRegis...
+    DataRecord: to_dict(0),from_dict(1)  # Immutable versioned data identity record decoupling URN, loc...
+    DataRegistryPort(Protocol): put(1),resolve(1),verify(1),describe(1),retain(1)  # Port interface decoupling URN data persistence from agent/ru...
+    LocalDataRegistry: __init__(1),_load_aliases(0),_save_aliases(1),_load_records(0),_save_records(1),_write_cas_blob(1),put(1),describe(1),_authorize(2),resolve(1),verify(1),retain(1),relocate_blob(2),prune_orphans(1),put_bytes(1),put_json(1),resolve_urn(1),verify_urn(1),get_bytes(1),create_manifest(2),resolve_manifest(1)  # Filesystem-backed atomic CAS store separating binary/JSON pa...
+    canonical_json_bytes(value)
+    sha256_urn(data)
+    ni_sha256_ref(data_or_digest)
+    _atomic_write_bytes(target;data)
+    _atomic_write_json(target;value)
+  urt/src/uritime_urt/registry.py:
+    e: Registry
+    Registry: __init__(1),_inspect(0),_guard(0),_connection(0),put(1),get(1),put_anchor(2),anchor(1),anchors_for(1)
+  autodo/scripts/verify.py:
+    e: main
+    main()
+  autodo/src/subactor_autonomy/storage/dependencies.py:
+    e: _find_cycle,release_goal_state,_quarantine_existing_cycles,wake_dependents_in_tx
+    _find_cycle(graph;start_id)
+    release_goal_state(goal;status;when;reason;updated_at)
+    _quarantine_existing_cycles(db;now)
+    wake_dependents_in_tx(db;emit_fn;parent_id;now)
+  urt/src/uritime_urt/canonical.py:
+    e: canonical_bytes,digest,reference_uri,_unique_object,read_json
+    canonical_bytes(value)
+    digest(value)
+    reference_uri(normalized_document)
+    _unique_object(pairs)
+    read_json(data)
+  autodo/src/subactor_autonomy/store.py:
+    e: Store,migrate_v1,advance_generation
+    Store: __init__(1),path(1),path(1),identity(0),connection(0),transaction(0),_goal(1),_check_lease(2),_project(1),emit(5),_wake_dependents(3),create_goal(2),get_goal(1),goals(1),next_wake_time(0),_completion_evidence(3),_finish_completion(4),_retire_started(3),_expire_goal(3),_expire_due(3),expire_due(1),claim(3),assert_lease(2),renew(3),update(3),_release(4),release(2),complete(2),recover_completion(2),control(3),wake_occurrence(0),advance_run_owner_generation(1),note(5),observe(3),record_blocker(3),resolve_blocker(2),active_blockers(1),pending_accepted_action(1),start_action(4),record_action_accepted(3),_record_action_outcome_in_tx(4),finish_action(3),finish_and_transition(3),reconcile_action(2),actions(1),events(0),high_water_seq(1),stream_identity(0),iter_events(0),export_events(1),recent(2),handle_command(1),command_receipt(1),outbox(0),ack_outbox(3),assess_log_completeness(0),capture_baseline_snapshot(0),rebuild_projections(0),queries(0)
+    migrate_v1(path;backup_path)
+    advance_generation(path)
+  autonom/src/autonom/embeddings.py:
+    e: EmbeddingIndex,_digest,_pack,_unpack,cosine,rrf
+    EmbeddingIndex: __init__(3),vectors(1),order(2)
+    _digest(text)
+    _pack(vector)
+    _unpack(blob)
+    cosine(a;b)
+    rrf()
+  planning/autonomy-pilot/compare_retries.py:
+    e: minute_at,observe,poll,run_pilot,finish,main
+    minute_at(minute)
+    observe(minute;available_from;available_until;has_ticket)
+    poll(interval;available_from;available_until;independent;has_ticket)
+    run_pilot(state;available_from;available_until;independent;has_ticket)
+    finish(reads;closures;outcome;last_minute)
+    main()
+  uritime/src/uritime/plan_commands.py:
+    e: OwnershipViolationError,PlanConflictError,AggregateOwnershipPolicy,PlanLedger,_occurrence_bounds
+    OwnershipViolationError(RuntimeError):  # Raised on competing execution owners, mixed standalone/integ...
+    PlanConflictError(RuntimeError):  # Raised on optimistic-concurrency mismatch or illegal Plan/Sc...
+    AggregateOwnershipPolicy: __init__(1),validate_runtime_binding(-1),current_owner(2),claim_execution_owner(2),release_execution_owner(2),assert_can_commit_effect(2)  # Enforces single authoritative execution_owner + monotonic ow...
+    PlanLedger: __init__(1),_current_state(1),propose_plan(1),accept_plan(1),revise_schedule(1),cancel_plan(1)  # Single-writer versioned Plan/Schedule command handler backed...
+    _occurrence_bounds(occurrences;fallback_ts)
+  urt-records-proposal-0.1.0/scripts/validate_examples.py:
+    e: main
+    main()
+  urt/examples/materializer_demo.py:
+    e: main
+    main(argv)
+  autonom/src/autonom/models.py:
+    e: LocalModel,RoleSpec,Profile,ResidencyPlan,lookup,plan_residency
+    LocalModel: vram_gb(1)
+    RoleSpec:
+    Profile:
+    ResidencyPlan: to_dict(0)
+    lookup(name;overrides)
+    plan_residency(profile;budget_gb;overrides)
+  autodo/src/subactor_autonomy/demo.py:
+    e: FakeClock,ScriptedModel,run_demo
+    FakeClock: __init__(1),__call__(0),advance(1)
+    ScriptedModel: __init__(0),complete_json(3),select_operation(2)  # Known responses test orchestration only. Never installed as ...
+    run_demo(directory)
+  autodo/tools/verify_urt_records.py:
+    e: _unique_object,_reject_constant,verify,main
+    _unique_object(pairs)
+    _reject_constant(value)
+    verify(stream)
+    main(argv)
+  autonom/src/autonom/journal.py:
+    e: Journal,_flock,_digest,_last_line
+    Journal: __init__(1),append(2),entries(0),tail(2),verify(0)  # Safe for several processes (daemon + CLI): appends take an e...
+    _flock(handle;lock)
+    _digest(entry)
+    _last_line(handle)
+  scripts/verify_offline_install.py:
+    e: main
+    main()
+  uritime/src/uritime/materializer_handoff.py:
+    e: PlanMaterializerHandoff,_compile_binding_and_doc
+    PlanMaterializerHandoff: __init__(1),handoff_occurrence(0)  # Hands off accepted plan occurrences idempotently into Autodo...
+    _compile_binding_and_doc()
+  urt/scripts/verify.py:
+    e: main
+    main()
+  autodo/scripts/prepare_models.py:
+    e: main
+    main()
+  uritime/src/uritime/temporal_resolver.py:
+    e: TemporalConstraintResolver
+    TemporalConstraintResolver: __init__(3),validate_and_resolve_plan(2),handle_planned_anchor_shift(1),check_deadline_and_propose_revision(1)  # Coordinates dependency DAG checks, pinned subscriptions, and...
+  autonom/src/autonom/scheduler.py:
+    e: Clock,RealClock,SimClock,parse_duration,delay_for_level
+    Clock(Protocol): now(0),sleep(1)
+    RealClock: now(0),sleep(1)
+    SimClock: __init__(1),now(0),sleep(1),advance(1)
+    parse_duration(text)
+    delay_for_level(level;delays)
+  autonom/src/autonom/timeline.py:
+    e: Timeline,UritimeTimeline,item_uri,_import_uritime,make_timeline
+    Timeline(Protocol): push(2),pop_due(2),next_due(0),pending(2),cancel(2)
+    UritimeTimeline(Schedule): __init__(1),_enqueue(1),_set_status(2),push(2),pop_due(2),cancel(2)  # Durable rows in SQLite; due-ness and ordering from ``uritime...
+    item_uri(item)
+    _import_uritime()
+    make_timeline(db;backend)
+  urt/examples/materialize_autodo.py:
+    e: main
+    main(argv)
+  autodo/src/subactor_autonomy/__init__.py:
+    e: _discover_version
+    _discover_version()
+  autodo/tools/urt_record_v1/rfc3339_validator.py:
+    e: validate_rfc3339
+    validate_rfc3339(date_string)
+  autonom/src/autonom/builtins.py:
+    e: _NoRedirect,_obj,_confined,time_now,memory_note,memory_recall,memory_list,schedule_after,goal_complete,goal_add,notify_log,fs_list,fs_read_text,fs_write_text,http_get,llm_ask,builtin_specs
+    _NoRedirect(HTTPRedirectHandler): redirect_request(0)
+    _obj(props;required)
+    _confined(rt;rel)
+    time_now(args;rt)
+    memory_note(args;rt)
+    memory_recall(args;rt)
+    memory_list(args;rt)
+    schedule_after(args;rt)
+    goal_complete(args;rt)
+    goal_add(args;rt)
+    notify_log(args;rt)
+    fs_list(args;rt)
+    fs_read_text(args;rt)
+    fs_write_text(args;rt)
+    http_get(args;rt)
+    llm_ask(args;rt)
+    builtin_specs(settings)
+  autonom/src/autonom/store.py:
+    e: Database,Memory,Goal,Goals,ScheduledItem,Schedule
+    Database: __init__(1),transaction(0),query(2),execute(2),close(0)
+    Memory: __init__(1),set(3),get(2),delete(1),keys(1),snapshot(2)  # Agent key-value memory (JSON values). Generated operations s...
+    Goal: to_dict(0)
+    Goals: __init__(1),_row(0),add(1),get(1),list(1),set_status(2),complete_cycle(2)
+    ScheduledItem:
+    Schedule: __init__(1),push(2),pop_due(2),next_due(0),pending(2),cancel(2)  # Persistent timeline: survives restarts, so 'do X in 6 hours'...
+  uritime/src/urievents/models.py:
+    e: UriEvent,TaskRuntimeState,TriSetSnapshot,classify_tri_set,canonical_json,generate_event_urn
+    UriEvent: __post_init__(0),iso_timestamp(0),to_dict(0)  # Immutable runtime event emitted during URI process lifecycle...
+    TaskRuntimeState: __post_init__(0),to_dict(0)  # Observed runtime state of a scheduled ticket / URI process t...
+    TriSetSnapshot: total_count(0),completion_ratio(0),to_dict(0)  # Exact mathematical partition of all tracked tasks at instant...
+    classify_tri_set(status)
+    canonical_json(value)
+    generate_event_urn(kind;ticket_id;timestamp;payload)
+  urt/examples/temporal_demo.py:
+    e: main
+    main()
+  urt/src/uritime_urt/_sqlite.py:
+    e: sqlite_connection
+    sqlite_connection(path)
+  urt/src/uritime_urt/links.py:
+    e: bind_resource
+    bind_resource(resource;document)
+  autodo/tools/urt_record_v1/rfc3986_validator.py:
+    e: validate_rfc3986
+    validate_rfc3986(url;rule)
+  autodo/planning/evidence/reproduce_additional.py:
+    e: state
+    state(path)
+  autodo/src/subactor_autonomy/api.py:
+    e: create_server
+    create_server(store;registry;host;port)
+  uritime/src/uritime/__init__.py:
+    e: __getattr__,__dir__
+    __getattr__(name)
+    __dir__()
+  autodo/planning/evidence/reproduce_baseline.py:
+    e: Planner,CountingExecutor,spec
+    Planner: complete_json(3),select_operation(2)
+    CountingExecutor: __init__(0),qualify(0),execute_action(2)
+    spec(name)
+  urt/src/uritime_urt/errors.py:
+    e: URTError
+    URTError(ValueError): __init__(2)
+  Makefile:
+  README.md:
+  THIRD-PARTY-NOTICES.md:
+  UPGRADE.md:
+  VALIDATION.md:
+  autodo/.aider.conf.yml:
+  autodo/AGENTS.md:
+  autodo/CHANGELOG.md:
+  autodo/CLAUDE.md:
+  autodo/CONTRACTS.md:
+  autodo/GEMINI.md:
+  autodo/GITHUB-DELIVERY.md:
+  autodo/Makefile:
+  autodo/README.md:
+  autodo/TODO.md:
+  autodo/artifacts/README.md:
+  autodo/autodo-import-manifest.json:
+  autodo/autodo-import-owner.json:
+  autodo/compose.gpu.yaml:
+  autodo/compose.yaml:
+  autodo/config/subllm.offline.toml:
+  autodo/config/subllm.requirements.txt:
+  autodo/deploy/Dockerfile.sandbox:
+  autodo/deploy/Dockerfile.subllm:
+  autodo/deploy/Dockerfile.worker:
+  autodo/docs/ARCHITECTURE.md:
+  autodo/docs/CONNECTORS.md:
+  autodo/docs/ECOSYSTEM.md:
+  autodo/docs/EVALUATION.md:
+  autodo/docs/MODELS.md:
+  autodo/docs/RECOVERY-AND-IDENTITY.md:
+  autodo/docs/SUBLLM.md:
+  autodo/evidence/VALIDATION.md:
+  autodo/evidence/cqrs-003-ownership-qualification.json:
+  autodo/evidence/cqrs-004-store-extraction-qualification.json:
+  autodo/evidence/cqrs-005-commands-outbox-qualification.json:
+  autodo/evidence/cqrs-006-queries-checkpoints-qualification.json:
+  autodo/evidence/cqrs-009-data-pinning-qualification.json:
+  autodo/evidence/cqrs-010-operation-descriptor-qualification.json:
+  autodo/evidence/cqrs-011-service-binding-qualification.json:
+  autodo/evidence/cqrs-024-029-offline-gpu-subllm-qualification.json:
+  autodo/evidence/cqrs-026-cli-api-timeline-explain-qualification.json:
+  autodo/evidence/cqrs-030-migration-rollout-qualification.json:
+  autodo/evidence/cqrs-032-e2e-conformance-qualification.json:
+  autodo/evidence/cqrs-033-static-evidence-qualification.json:
+  autodo/evidence/demo.json:
+  autodo/evidence/provenance.json:
+  autodo/evidence/qualification-0.2.0-live-rtx4060.json:
+  autodo/evidence/tests.txt:
+  autodo/evidence/urt-003-store-identity-qualification.json:
+  autodo/evidence/validation.json:
+  autodo/examples/candidate.json:
+  autodo/examples/connector-operation.json:
+  autodo/examples/connectors.json:
+  autodo/examples/cqrs-003-ownership-configs.json:
+  autodo/examples/cqrs-010-operation-descriptors.json:
+  autodo/examples/goal.json:
+  autodo/examples/recurrent-goal.json:
+  autodo/planning/PLAN-PREAMBLE.md:
+  autodo/planning/PLANFILE-INTEGRATION.md:
+  autodo/planning/REPAIR-PLAN.md:
+  autodo/planning/audits/HEYASA-AUTODO-AUDIT.md:
+  autodo/planning/audits/README.md:
+  autodo/planning/audits/SUBLLM-AUDIT.md:
+  autodo/planning/audits/autodo-findings.json:
+  autodo/planning/audits/github-issue-snapshot.json:
+  autodo/planning/audits/heyasa-audit.json:
+  autodo/planning/audits/planfile-contract-findings.json:
+  autodo/planning/audits/planfile-repair-findings.json:
+  autodo/planning/audits/subllm-findings.json:
+  autodo/planning/backlog.json:
+  autodo/planning/evidence/VALIDATION-0.1.1.md:
+  autodo/planning/evidence/access-status.json:
+  autodo/planning/evidence/additional-reproductions.json:
+  autodo/planning/evidence/baseline-reproductions.json:
+  autodo/planning/evidence/demo-0.1.1.json:
+  autodo/planning/evidence/full-campaign-import.json:
+  autodo/planning/evidence/github-publication-receipt.json:
+  autodo/planning/evidence/heyasa-symbol-map-excerpts.txt:
+  autodo/planning/evidence/importer-verification-agent.json:
+  autodo/planning/evidence/packaging-checks.json:
+  autodo/planning/evidence/reproductions.json:
+  autodo/planning/evidence/source-provenance.json:
+  autodo/planning/evidence/wheel-build.json:
+  autodo/planning/github-issues.json:
+  autodo/planning/import-plan.schema.json:
+  autodo/planning/issues/AUTO-001.md:
+  autodo/planning/issues/AUTO-002.md:
+  autodo/planning/issues/AUTO-003.md:
+  autodo/planning/issues/AUTO-004.md:
+  autodo/planning/issues/AUTO-005.md:
+  autodo/planning/issues/AUTO-006.md:
+  autodo/planning/issues/AUTO-007.md:
+  autodo/planning/issues/AUTO-008.md:
+  autodo/planning/issues/AUTO-009.md:
+  autodo/planning/issues/AUTO-010.md:
+  autodo/planning/issues/HEY-001.md:
+  autodo/planning/issues/HEY-002.md:
+  autodo/planning/issues/HEY-003.md:
+  autodo/planning/issues/HEY-004.md:
+  autodo/planning/issues/HEY-005.md:
+  autodo/planning/issues/HEY-006.md:
+  autodo/planning/issues/HEY-007.md:
+  autodo/planning/issues/HEY-008.md:
+  autodo/planning/issues/HEY-009.md:
+  autodo/planning/issues/HEY-010.md:
+  autodo/planning/issues/LLM-001.md:
+  autodo/planning/issues/LLM-002.md:
+  autodo/planning/issues/LLM-003.md:
+  autodo/planning/issues/LLM-004.md:
+  autodo/planning/issues/LLM-005.md:
+  autodo/planning/issues/LLM-006.md:
+  autodo/planning/issues/LLM-007.md:
+  autodo/planning/issues/LLM-008.md:
+  autodo/planning/issues/LLM-009.md:
+  autodo/planning/issues/LLM-010.md:
+  autodo/planning/issues/PLAN-001.md:
+  autodo/planning/issues/PLAN-002.md:
+  autodo/planning/issues/PLAN-003.md:
+  autodo/planning/issues/PLAN-004.md:
+  autodo/planning/issues/PLAN-005.md:
+  autodo/planning/issues/PLAN-006.md:
+  autodo/planning/native-delivery-plan.example.json:
+  autodo/planning/proposals.json:
+  autodo/planning/upstream-schemas/LICENSE-PLANFILE.txt:
+  autodo/planning/upstream-schemas/compiled-work-plan.v1.schema.json:
+  autodo/planning/upstream-schemas/delivery-plan-state.schema.v1.json:
+  autodo/planning/upstream-schemas/provenance.json:
+  autodo/planning/upstream-schemas/ticket-proposal.v1.schema.json:
+  autodo/planning/upstream-schemas/ticket-status.v1.json:
+  autodo/planning/upstream-schemas/ticket.v1.schema.json:
+  autodo/project.sh:
+  autodo/project/TICKETS.md:
+  autodo/project/governance-check.sh:
+  autodo/project/new-ticket.sh:
+    e: usage,require_value,governance_manifest,print,print,print,is_active_ticket,classification_dsl,require_classification_value,verify_standard_adoption,allocation_config,allocation_runtime,release_allocation_lock,refs_highest,reserve_ticket_number,observe_primary_base,escape_sed,render_template,json_escape,render_json_template
+    usage()
+    require_value()
+    governance_manifest()
+    print()
+    print()
+    print()
+    is_active_ticket()
+    classification_dsl()
+    require_classification_value()
+    verify_standard_adoption()
+    allocation_config()
+    allocation_runtime()
+    release_allocation_lock()
+    refs_highest()
+    reserve_ticket_number()
+    observe_primary_base()
+    escape_sed()
+    render_template()
+    json_escape()
+    render_json_template()
+  autodo/project/readme.sh:
+    e: cleanup,close
+    cleanup()
+    close()
+  autodo/project/ticket-001/README.md:
+  autodo/project/ticket-001/intent.json:
+  autodo/project/ticket-002/README.md:
+  autodo/project/ticket-002/intent.json:
+  autodo/project/ticket-003/README.md:
+  autodo/project/ticket-003/intent.json:
+  autodo/project/ticket-004/README.md:
+  autodo/project/ticket-004/intent.json:
+  autodo/project/ticket-005/README.md:
+  autodo/project/ticket-005/intent.json:
+  autodo/project/ticket-006/README.md:
+  autodo/project/ticket-006/intent.json:
+  autodo/project/ticket-007/README.md:
+  autodo/project/ticket-007/intent.json:
+  autodo/project/ticket-008/README.md:
+  autodo/project/ticket-008/intent.json:
+  autodo/project/ticket-009/README.md:
+  autodo/project/ticket-009/intent.json:
+  autodo/project/ticket-010/README.md:
+  autodo/project/ticket-010/intent.json:
+  autodo/project/ticket-011/README.md:
+  autodo/project/ticket-011/intent.json:
+  autodo/project/ticket-012/README.md:
+  autodo/project/ticket-012/intent.json:
+  autodo/project/ticket-013/README.md:
+  autodo/project/ticket-013/intent.json:
+  autodo/project/ticket-014/README.md:
+  autodo/project/ticket-014/intent.json:
+  autodo/project/ticket-015/README.md:
+  autodo/project/ticket-015/intent.json:
+  autodo/project/ticket-016/README.md:
+  autodo/project/ticket-016/intent.json:
+  autodo/project/ticket-017/README.md:
+  autodo/project/ticket-017/intent.json:
+  autodo/project/ticket-018/README.md:
+  autodo/project/ticket-018/intent.json:
+  autodo/project/ticket-019/README.md:
+  autodo/project/ticket-019/intent.json:
+  autodo/project/ticket-020/README.md:
+  autodo/project/ticket-020/intent.json:
+  autodo/project/ticket-021/README.md:
+  autodo/project/ticket-021/intent.json:
+  autodo/project/ticket-022/README.md:
+  autodo/project/ticket-022/intent.json:
+  autodo/project/ticket-023/README.md:
+  autodo/project/ticket-023/intent.json:
+  autodo/pyproject.toml:
+  autodo/scripts/install-agent-hosts.sh:
+    e: usage,bootstrap_host_files,fail,alias,relative,fail,fail,directory_root,fail,checked,fail,fail,fail,identity,source_bytes,fail,fail,unique_object,fail,document,fail,fail,fail,fail,fail,relative,relative,fail,fail,relative,relative,checked,checked,print,fail,fail,relative,relative,fail,checked,fail,fail,checked,checked,fail,activate_in_place,bootstrap_into,install_user_files
+    usage()
+    bootstrap_host_files()
+    fail()
+    alias()
+    relative()
+    fail()
+    fail()
+    directory_root()
+    fail()
+    checked()
+    fail()
+    fail()
+    fail()
+    identity()
+    source_bytes()
+    fail()
+    fail()
+    unique_object()
+    fail()
+    document()
+    fail()
+    fail()
+    fail()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    fail()
+    relative()
+    relative()
+    checked()
+    checked()
+    print()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    checked()
+    fail()
+    fail()
+    checked()
+    checked()
+    fail()
+    activate_in_place()
+    bootstrap_into()
+    install_user_files()
+  autodo/scripts/package.py:
+  autodo/scripts/runtime.sh:
+    e: usage,parseOptions,sortDeep,canonical,sha256Bytes,sha256File,readText,readJson,diagnostic,validatePolicyText,isObject,isSha,isDigest,validateMinimumShape,findNumericScore,globToRegExp,pathAllowed,git,exactStringSet,approvalScopeDigest,expectedVerdict,validateEvaluation,markdownReport,writeResult
+    usage()
+    parseOptions()
+    sortDeep()
+    canonical()
+    sha256Bytes()
+    sha256File()
+    readText()
+    readJson()
+    diagnostic()
+    validatePolicyText()
+    isObject()
+    isSha()
+    isDigest()
+    validateMinimumShape()
+    findNumericScore()
+    globToRegExp()
+    pathAllowed()
+    git()
+    exactStringSet()
+    approvalScopeDigest()
+    expectedVerdict()
+    validateEvaluation()
+    markdownReport()
+    writeResult()
+  autodo/src/autodo/__init__.py:
+  autodo/src/autodo/__main__.py:
+  autodo/src/subactor_autonomy/__main__.py:
+  autodo/src/subactor_autonomy/storage/__init__.py:
+  autodo/src/uritime_autodo.egg-info/SOURCES.txt:
+  autodo/src/uritime_autodo.egg-info/dependency_links.txt:
+  autodo/src/uritime_autodo.egg-info/entry_points.txt:
+  autodo/src/uritime_autodo.egg-info/requires.txt:
+  autodo/src/uritime_autodo.egg-info/top_level.txt:
+  autodo/tools/urt_record_v1/SOURCES.md:
+  autodo/tools/urt_record_v1/urt-record-data-v1.schema.json:
+  autodo/tools/urt_record_v1/urt-record-v1.schema.json:
+  autodo/worktree-guard.yaml:
+  autonom/README.md:
+  autonom/autonom.example.toml:
+  autonom/pyproject.toml:
+  autonom/src/autonom/__init__.py:
+  autonom/src/autonom/__main__.py:
+  autonom/src/oqlos_autonom.egg-info/SOURCES.txt:
+  autonom/src/oqlos_autonom.egg-info/dependency_links.txt:
+  autonom/src/oqlos_autonom.egg-info/entry_points.txt:
+  autonom/src/oqlos_autonom.egg-info/requires.txt:
+  autonom/src/oqlos_autonom.egg-info/top_level.txt:
+  evidence/offline-install.json:
+  evidence/package-checks.json:
+  evidence/review-findings.json:
+  evidence/source-provenance.json:
+  evidence/wheel-build.json:
+  planning/README.md:
+  planning/autonomy-pilot/README.md:
+  planning/autonomy-pilot/contracts/cells/backlog.reconciliation.cell.yaml:
+  planning/autonomy-pilot/result-20261118.json:
+  planning/autonomy-pilot/result-20261119.json:
+  planning/evidence/import-preview.json:
+  planning/import-plan.schema.json:
+  planning/issues/URT-001.md:
+  planning/issues/URT-002.md:
+  planning/issues/URT-003.md:
+  planning/issues/URT-004.md:
+  planning/issues/URT-005.md:
+  planning/issues/URT-006.md:
+  planning/issues/URT-007.md:
+  planning/issues/URT-008.md:
+  planning/issues/URT-009.md:
+  planning/urt-polycell-forge-autonomy.md:
+  planning/urt-proposals.json:
+  requirements-analysis.txt:
+  requirements-offline.txt:
+  uritime-cqrs-es-plan-20261118/BACKLOG.json:
+  uritime-cqrs-es-plan-20261118/BACKLOG.md:
+  uritime-cqrs-es-plan-20261118/MANIFEST.json:
+  uritime-cqrs-es-plan-20261118/PLAN.md:
+  uritime-cqrs-es-plan-20261118/PLANFILE-IMPORT.md:
+  uritime-cqrs-es-plan-20261118/README.md:
+  uritime-cqrs-es-plan-20261118/SOURCES.md:
+  uritime-cqrs-es-plan-20261118/docs/INTEGRACJA-AGENTA.md:
+  uritime-cqrs-es-plan-20261118/docs/STAN-I-MAPA-ZMIAN.md:
+  uritime-cqrs-es-plan-20261118/docs/URT-JEZYK-CZASU.md:
+  uritime-cqrs-es-plan-20261118/evidence/VALIDATION.md:
+  uritime-cqrs-es-plan-20261118/evidence/input-provenance.json:
+  uritime-cqrs-es-plan-20261118/evidence/module-inventory.json:
+  uritime-cqrs-es-plan-20261118/evidence/validation.json:
+  uritime-cqrs-es-plan-20261118/examples/README.md:
+  uritime-cqrs-es-plan-20261118/examples/command-envelope.json:
+  uritime-cqrs-es-plan-20261118/examples/data-registry.json:
+  uritime-cqrs-es-plan-20261118/examples/data/input-log.txt:
+  uritime-cqrs-es-plan-20261118/examples/data/output-receipt.json:
+  uritime-cqrs-es-plan-20261118/examples/fixture-manifest.json:
+  uritime-cqrs-es-plan-20261118/examples/operation-descriptor.json:
+  uritime-cqrs-es-plan-20261118/examples/temporal-intent.json:
+  uritime-cqrs-es-plan-20261118/examples/temporal-monitor.json:
+  uritime-cqrs-es-plan-20261118/examples/temporal-resolution.json:
+  uritime-cqrs-es-plan-20261118/examples/timeline-query.json:
+  uritime-cqrs-es-plan-20261118/examples/unresolved-before.json:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-001.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-002.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-003.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-004.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-005.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-006.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-007.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-008.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-009.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-010.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-011.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-012.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-013.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-014.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-015.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-016.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-017.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-018.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-019.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-020.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-021.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-022.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-023.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-024.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-025.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-026.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-027.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-028.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-029.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-030.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-031.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-032.md:
+  uritime-cqrs-es-plan-20261118/tickets/CQRS-033.md:
+  uritime/.aider.conf.yml:
+  uritime/AGENTS.md:
+  uritime/CHANGELOG.md:
+  uritime/CLAUDE.md:
+  uritime/Dockerfile:
+  uritime/GEMINI.md:
+  uritime/README.md:
+  uritime/TODO.md:
+  uritime/authority-lifecycle.json:
+  uritime/docker-compose.yml:
+  uritime/docs/README.md:
+  uritime/errors/README.md:
+  uritime/goal.yaml:
+  uritime/planning/CQRS-001-BASELINE.md:
+  uritime/planning/CQRS-027-HEYASA-UPSTREAM.md:
+  uritime/planning/CQRS-029-SUBLLM-UPSTREAM.md:
+  uritime/planning/CQRS-032-CAMPAIGN-QUALIFICATION.md:
+  uritime/planning/CQRS-WAVE2-STATUS.md:
+  uritime/planning/CQRS-WAVE3-STATUS.md:
+  uritime/planning/CQRS-WAVE4-STATUS.md:
+  uritime/planning/README.md:
+  uritime/planning/cqrs-proposals.json:
+  uritime/planning/evidence/cqrs-001-baseline.json:
+  uritime/planning/evidence/cqrs-032-campaign-qualification.json:
+  uritime/planning/evidence/full-campaign-import.json:
+  uritime/planning/evidence/github-publication-receipt.json:
+  uritime/planning/evidence/import-preview.json:
+  uritime/planning/evidence/planfile-import-manifest.json:
+  uritime/planning/import-plan.schema.json:
+  uritime/poa-process.json:
+  uritime/project/TICKETS.md:
+  uritime/project/governance-check.sh:
+  uritime/project/new-ticket.sh:
+    e: usage,require_value,governance_manifest,print,print,print,is_active_ticket,classification_dsl,require_classification_value,verify_standard_adoption,allocation_config,allocation_runtime,release_allocation_lock,refs_highest,reserve_ticket_number,observe_primary_base,escape_sed,render_template,json_escape,render_json_template
+    usage()
+    require_value()
+    governance_manifest()
+    print()
+    print()
+    print()
+    is_active_ticket()
+    classification_dsl()
+    require_classification_value()
+    verify_standard_adoption()
+    allocation_config()
+    allocation_runtime()
+    release_allocation_lock()
+    refs_highest()
+    reserve_ticket_number()
+    observe_primary_base()
+    escape_sed()
+    render_template()
+    json_escape()
+    render_json_template()
+  uritime/project/readme.sh:
+    e: cleanup,close
+    cleanup()
+    close()
+  uritime/project/ticket-001/README.md:
+  uritime/project/ticket-001/intent.json:
+  uritime/project/ticket-002/README.md:
+  uritime/project/ticket-002/intent.json:
+  uritime/project/ticket-003/README.md:
+  uritime/project/ticket-003/intent.json:
+  uritime/project/ticket-004/README.md:
+  uritime/project/ticket-004/intent.json:
+  uritime/project/ticket-005/README.md:
+  uritime/project/ticket-005/intent.json:
+  uritime/project/ticket-006/README.md:
+  uritime/project/ticket-006/intent.json:
+  uritime/project/ticket-007/README.md:
+  uritime/project/ticket-007/intent.json:
+  uritime/project/ticket-008/README.md:
+  uritime/project/ticket-008/intent.json:
+  uritime/project/ticket-009/README.md:
+  uritime/project/ticket-009/intent.json:
+  uritime/pyproject.toml:
+  uritime/scripts/install-agent-hosts.sh:
+    e: usage,bootstrap_host_files,fail,alias,relative,fail,fail,directory_root,fail,checked,fail,fail,fail,identity,source_bytes,fail,fail,unique_object,fail,document,fail,fail,fail,fail,fail,relative,relative,fail,fail,relative,relative,checked,checked,print,fail,fail,relative,relative,fail,checked,fail,fail,checked,checked,fail,activate_in_place,bootstrap_into,install_user_files
+    usage()
+    bootstrap_host_files()
+    fail()
+    alias()
+    relative()
+    fail()
+    fail()
+    directory_root()
+    fail()
+    checked()
+    fail()
+    fail()
+    fail()
+    identity()
+    source_bytes()
+    fail()
+    fail()
+    unique_object()
+    fail()
+    document()
+    fail()
+    fail()
+    fail()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    fail()
+    relative()
+    relative()
+    checked()
+    checked()
+    print()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    checked()
+    fail()
+    fail()
+    checked()
+    checked()
+    fail()
+    activate_in_place()
+    bootstrap_into()
+    install_user_files()
+  uritime/scripts/runtime.sh:
+    e: usage,parseOptions,sortDeep,canonical,sha256Bytes,sha256File,readText,readJson,diagnostic,validatePolicyText,isObject,isSha,isDigest,validateMinimumShape,findNumericScore,globToRegExp,pathAllowed,git,exactStringSet,approvalScopeDigest,expectedVerdict,validateEvaluation,markdownReport,writeResult
+    usage()
+    parseOptions()
+    sortDeep()
+    canonical()
+    sha256Bytes()
+    sha256File()
+    readText()
+    readJson()
+    diagnostic()
+    validatePolicyText()
+    isObject()
+    isSha()
+    isDigest()
+    validateMinimumShape()
+    findNumericScore()
+    globToRegExp()
+    pathAllowed()
+    git()
+    exactStringSet()
+    approvalScopeDigest()
+    expectedVerdict()
+    validateEvaluation()
+    markdownReport()
+    writeResult()
+  uritime/src/urievents/__init__.py:
+  uritime/src/urievents/schemas/ur-cqrs-v1.schema.json:
+  uritime/src/urievents/schemas/urt-record-data-v1.schema.json:
+  uritime/src/urievents/schemas/urt-record-v1.schema.json:
+  uritime/src/uritime.egg-info/SOURCES.txt:
+  uritime/src/uritime.egg-info/dependency_links.txt:
+  uritime/src/uritime.egg-info/entry_points.txt:
+  uritime/src/uritime.egg-info/requires.txt:
+  uritime/src/uritime.egg-info/top_level.txt:
+  uritime/worktree-guard.yaml:
+  urt-records-proposal-0.1.0/INTEGRATION.md:
+  urt-records-proposal-0.1.0/README.md:
+  urt-records-proposal-0.1.0/SOURCES.md:
+  urt-records-proposal-0.1.0/SPEC.md:
+  urt-records-proposal-0.1.0/evidence/source-contracts.json:
+  urt-records-proposal-0.1.0/evidence/validation.json:
+  urt-records-proposal-0.1.0/examples/01-intent-created.json:
+  urt-records-proposal-0.1.0/examples/02-execution-started.json:
+  urt-records-proposal-0.1.0/examples/03-execution-succeeded.json:
+  urt-records-proposal-0.1.0/examples/04-resource-observed.json:
+  urt-records-proposal-0.1.0/examples/05-resource-validity.json:
+  urt-records-proposal-0.1.0/schemas/urt-record-data-v1.schema.json:
+  urt-records-proposal-0.1.0/schemas/urt-record-v1.schema.json:
+  urt/.aider.conf.yml:
+  urt/AGENTS.md:
+  urt/CHANGELOG.md:
+  urt/CLAUDE.md:
+  urt/GEMINI.md:
+  urt/Makefile:
+  urt/README.md:
+  urt/THIRD-PARTY-NOTICES.md:
+  urt/TODO.md:
+  urt/UPGRADE.md:
+  urt/autodo-import-manifest.json:
+  urt/autodo-import-owner.json:
+  urt/docs/AUTODO-INTEGRATION.md:
+  urt/docs/COMPATIBILITY.md:
+  urt/docs/MATERIALIZER.md:
+  urt/docs/ROADMAP.md:
+  urt/docs/SPEC.md:
+  urt/docs/STANDARDS.md:
+  urt/evidence-history/0.1.0/VALIDATION.md:
+  urt/evidence-history/0.1.0/autodo-core-unchanged.json:
+  urt/evidence-history/0.1.0/demo-output.json:
+  urt/evidence-history/0.1.0/offline-command-output.json:
+  urt/evidence-history/0.1.0/offline-smoke.json:
+  urt/evidence-history/0.1.0/test-summary.json:
+  urt/evidence/VALIDATION.md:
+  urt/evidence/cqrs-019-materializer-handoff-qualification.json:
+  urt/evidence/release-0.2.0/offline-install.json:
+  urt/evidence/release-0.2.0/review-findings.json:
+  urt/evidence/release-0.2.0/source-provenance.json:
+  urt/evidence/tests.txt:
+  urt/evidence/urt-001-conformance-v1.json:
+  urt/evidence/urt-002-materializer-qualification.json:
+  urt/evidence/urt-004-tzdb-migration-qualification.json:
+  urt/evidence/urt-005-ics-subset-qualification.json:
+  urt/evidence/urt-006-recovery-qualification.json:
+  urt/evidence/urt-007-resolver-signatures-qualification.json:
+  urt/evidence/urt-008-binding-supersede-qualification.json:
+  urt/evidence/urt-009-registration-readiness.json:
+  urt/evidence/validation.json:
+  urt/examples/goal-template.json:
+  urt/examples/instant.json:
+  urt/examples/interval.json:
+  urt/examples/rate.json:
+  urt/examples/relative.json:
+  urt/examples/warsaw-dst.json:
+  urt/examples/warsaw-weekdays.json:
+  urt/planning/ADR-URT-007-integrity-issuer-execution.md:
+  urt/planning/README.md:
+  urt/planning/URT-009-URI-SCHEME-EVALUATION-AND-RFC7595-DRAFT.md:
+  urt/planning/adr/ADR-001-urt-v1-portable-conformance-suite.md:
+  urt/planning/evidence/github-publication-receipt.json:
+  urt/planning/evidence/import-preview.json:
+  urt/planning/import-plan.schema.json:
+  urt/planning/issues/URT-001.md:
+  urt/planning/issues/URT-002.md:
+  urt/planning/issues/URT-003.md:
+  urt/planning/issues/URT-004.md:
+  urt/planning/issues/URT-005.md:
+  urt/planning/issues/URT-006.md:
+  urt/planning/issues/URT-007.md:
+  urt/planning/issues/URT-008.md:
+  urt/planning/issues/URT-009.md:
+  urt/planning/urt-proposals.json:
+  urt/project.sh:
+  urt/project/TICKETS.md:
+  urt/project/governance-check.sh:
+  urt/project/new-ticket.sh:
+    e: usage,require_value,governance_manifest,print,print,print,is_active_ticket,classification_dsl,require_classification_value,verify_standard_adoption,allocation_config,allocation_runtime,release_allocation_lock,refs_highest,reserve_ticket_number,observe_primary_base,escape_sed,render_template,json_escape,render_json_template
+    usage()
+    require_value()
+    governance_manifest()
+    print()
+    print()
+    print()
+    is_active_ticket()
+    classification_dsl()
+    require_classification_value()
+    verify_standard_adoption()
+    allocation_config()
+    allocation_runtime()
+    release_allocation_lock()
+    refs_highest()
+    reserve_ticket_number()
+    observe_primary_base()
+    escape_sed()
+    render_template()
+    json_escape()
+    render_json_template()
+  urt/project/readme.sh:
+    e: cleanup,close
+    cleanup()
+    close()
+  urt/project/ticket-001/README.md:
+  urt/project/ticket-001/intent.json:
+  urt/project/ticket-001/qualification-0.2.0.json:
+  urt/project/ticket-002/README.md:
+  urt/project/ticket-002/intent.json:
+  urt/project/ticket-003/README.md:
+  urt/project/ticket-003/intent.json:
+  urt/project/ticket-004/README.md:
+  urt/project/ticket-004/intent.json:
+  urt/project/ticket-005/README.md:
+  urt/project/ticket-005/intent.json:
+  urt/project/ticket-006/README.md:
+  urt/project/ticket-006/intent.json:
+  urt/project/ticket-007/README.md:
+  urt/project/ticket-007/intent.json:
+  urt/project/ticket-008/README.md:
+  urt/project/ticket-008/intent.json:
+  urt/project/ticket-009/README.md:
+  urt/project/ticket-009/intent.json:
+  urt/project/ticket-010/README.md:
+  urt/project/ticket-010/intent.json:
+  urt/project/ticket-011/README.md:
+  urt/project/ticket-011/intent.json:
+  urt/project/ticket-012/README.md:
+  urt/project/ticket-012/intent.json:
+  urt/project/ticket-013/README.md:
+  urt/project/ticket-013/intent.json:
+  urt/project/ticket-014/README.md:
+  urt/project/ticket-014/intent.json:
+  urt/project/ticket-015/README.md:
+  urt/project/ticket-015/intent.json:
+  urt/project/ticket-016/README.md:
+  urt/project/ticket-016/intent.json:
+  urt/project/ticket-017/README.md:
+  urt/project/ticket-017/intent.json:
+  urt/project/ticket-018/README.md:
+  urt/project/ticket-018/intent.json:
+  urt/pyproject.toml:
+  urt/scripts/install-agent-hosts.sh:
+    e: usage,bootstrap_host_files,fail,alias,relative,fail,fail,directory_root,fail,checked,fail,fail,fail,identity,source_bytes,fail,fail,unique_object,fail,document,fail,fail,fail,fail,fail,relative,relative,fail,fail,relative,relative,checked,checked,print,fail,fail,relative,relative,fail,checked,fail,fail,checked,checked,fail,activate_in_place,bootstrap_into,install_user_files
+    usage()
+    bootstrap_host_files()
+    fail()
+    alias()
+    relative()
+    fail()
+    fail()
+    directory_root()
+    fail()
+    checked()
+    fail()
+    fail()
+    fail()
+    identity()
+    source_bytes()
+    fail()
+    fail()
+    unique_object()
+    fail()
+    document()
+    fail()
+    fail()
+    fail()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    fail()
+    relative()
+    relative()
+    checked()
+    checked()
+    print()
+    fail()
+    fail()
+    relative()
+    relative()
+    fail()
+    checked()
+    fail()
+    fail()
+    checked()
+    checked()
+    fail()
+    activate_in_place()
+    bootstrap_into()
+    install_user_files()
+  urt/scripts/runtime.sh:
+    e: usage,parseOptions,sortDeep,canonical,sha256Bytes,sha256File,readText,readJson,diagnostic,validatePolicyText,isObject,isSha,isDigest,validateMinimumShape,findNumericScore,globToRegExp,pathAllowed,git,exactStringSet,approvalScopeDigest,expectedVerdict,validateEvaluation,markdownReport,writeResult
+    usage()
+    parseOptions()
+    sortDeep()
+    canonical()
+    sha256Bytes()
+    sha256File()
+    readText()
+    readJson()
+    diagnostic()
+    validatePolicyText()
+    isObject()
+    isSha()
+    isDigest()
+    validateMinimumShape()
+    findNumericScore()
+    globToRegExp()
+    pathAllowed()
+    git()
+    exactStringSet()
+    approvalScopeDigest()
+    expectedVerdict()
+    validateEvaluation()
+    markdownReport()
+    writeResult()
+  urt/src/uritime_urt.egg-info/SOURCES.txt:
+  urt/src/uritime_urt.egg-info/dependency_links.txt:
+  urt/src/uritime_urt.egg-info/entry_points.txt:
+  urt/src/uritime_urt.egg-info/requires.txt:
+  urt/src/uritime_urt.egg-info/top_level.txt:
+  urt/src/uritime_urt/__init__.py:
+  urt/src/uritime_urt/__main__.py:
+  urt/src/uritime_urt/schemas/descriptor-v1.schema.json:
+  urt/src/uritime_urt/schemas/resolution-v1.schema.json:
+  urt/src/uritime_urt/schemas/temporal-intent-v1.schema.json:
+  urt/src/uritime_urt/schemas/temporal-monitor-v1.schema.json:
+  urt/worktree-guard.yaml:
+  urtlog/README.md:
+  urtlog/docs/ARCHITECTURE.md:
+  urtlog/pyproject.toml:
+  urtlog/src/uritime_urtlog.egg-info/SOURCES.txt:
+  urtlog/src/uritime_urtlog.egg-info/dependency_links.txt:
+  urtlog/src/uritime_urtlog.egg-info/entry_points.txt:
+  urtlog/src/uritime_urtlog.egg-info/requires.txt:
+  urtlog/src/uritime_urtlog.egg-info/top_level.txt:
+  urtlog/src/urtlog/__init__.py:

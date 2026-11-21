@@ -1,0 +1,8 @@
+Jako prowadzący chcę, aby po dostarczeniu zrzutu ekranu ćwiczenia, a przed
+rozpoczęciem następnego ćwiczenia, system zlecił ocenę przypiętej wersji artefaktu.
+Historia ma pozwalać odtworzyć wynik bez ponownego wywołania modelu.
+Student ma odczytywać aktualny wynik i wyjaśnienie przez REST, MCP lub shell.
+Powtórzenie komendy nie może powtórzyć skutku. System działa lokalnie i offline,
+z budżetem 4096 MiB, z czego 2048 MiB rezerwuję na istniejące procesy.
+Maksymalnie 3 nowe procesy. Zastosuj CQRS + Event Sourcing i transactional outbox.
+

@@ -1,0 +1,1158 @@
+{
+  "$defs": {
+    "Constraints": {
+      "additionalProperties": false,
+      "properties": {
+        "ram_budget_mb": {
+          "default": 4096,
+          "maximum": 1048576,
+          "minimum": 1,
+          "title": "Ram Budget Mb",
+          "type": "integer"
+        },
+        "reserved_ram_mb": {
+          "default": 0,
+          "maximum": 1048576,
+          "minimum": 0,
+          "title": "Reserved Ram Mb",
+          "type": "integer"
+        },
+        "max_processes": {
+          "default": 3,
+          "maximum": 1024,
+          "minimum": 1,
+          "title": "Max Processes",
+          "type": "integer"
+        },
+        "isolate_projection": {
+          "default": false,
+          "title": "Isolate Projection",
+          "type": "boolean"
+        },
+        "independent_command_query_scaling": {
+          "default": false,
+          "title": "Independent Command Query Scaling",
+          "type": "boolean"
+        },
+        "offline": {
+          "default": true,
+          "title": "Offline",
+          "type": "boolean"
+        },
+        "interfaces": {
+          "items": {
+            "enum": [
+              "rest",
+              "mcp",
+              "shell"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Interfaces",
+          "type": "array"
+        },
+        "artifact_formats": {
+          "items": {
+            "enum": [
+              "json",
+              "protobuf"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Artifact Formats",
+          "type": "array"
+        },
+        "required_patterns": {
+          "items": {
+            "enum": [
+              "cqrs",
+              "event_sourcing",
+              "outbox",
+              "ports_adapters"
+            ],
+            "type": "string"
+          },
+          "title": "Required Patterns",
+          "type": "array"
+        }
+      },
+      "title": "Constraints",
+      "type": "object"
+    },
+    "CriterionLink": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion_index": {
+          "minimum": 0,
+          "title": "Criterion Index",
+          "type": "integer"
+        },
+        "criterion_text": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Criterion Text",
+          "type": "string"
+        },
+        "operation_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Operation Ids",
+          "type": "array"
+        },
+        "node_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Node Ids",
+          "type": "array"
+        },
+        "evidence_level": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "indexed_only",
+            "source_verified",
+            "contract_verified",
+            "integration_verified"
+          ],
+          "title": "Evidence Level",
+          "type": "string"
+        }
+      },
+      "required": [
+        "criterion_index",
+        "criterion_text"
+      ],
+      "title": "CriterionLink",
+      "type": "object"
+    },
+    "Edge": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "invoke",
+            "command",
+            "query",
+            "event",
+            "read",
+            "write",
+            "return",
+            "depends_on",
+            "temporal",
+            "propose"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "data_urns": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Data Urns",
+          "type": "array"
+        },
+        "effect": {
+          "default": "none",
+          "enum": [
+            "none",
+            "read",
+            "write"
+          ],
+          "title": "Effect",
+          "type": "string"
+        },
+        "interface": {
+          "default": "in_process",
+          "title": "Interface",
+          "type": "string"
+        },
+        "encoding": {
+          "default": "object",
+          "enum": [
+            "json",
+            "protobuf",
+            "object"
+          ],
+          "title": "Encoding",
+          "type": "string"
+        },
+        "delivery": {
+          "default": "local",
+          "enum": [
+            "local",
+            "at_least_once"
+          ],
+          "title": "Delivery",
+          "type": "string"
+        },
+        "idempotent": {
+          "default": true,
+          "title": "Idempotent",
+          "type": "boolean"
+        },
+        "transaction_group": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Transaction Group"
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "target",
+        "kind"
+      ],
+      "title": "Edge",
+      "type": "object"
+    },
+    "EdgeV2": {
+      "additionalProperties": false,
+      "properties": {
+        "edge": {
+          "$ref": "#/$defs/Edge"
+        },
+        "evidence_level": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "indexed_only",
+            "source_verified",
+            "contract_verified",
+            "integration_verified"
+          ],
+          "title": "Evidence Level",
+          "type": "string"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/ProvenanceRecord"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "extensions": {
+          "additionalProperties": true,
+          "title": "Extensions",
+          "type": "object"
+        }
+      },
+      "required": [
+        "edge"
+      ],
+      "title": "EdgeV2",
+      "type": "object"
+    },
+    "ForgeBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "process_uri": {
+          "title": "Process Uri",
+          "type": "string"
+        },
+        "project_urn": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Project Urn"
+        },
+        "snapshot_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Snapshot Id"
+        },
+        "qualification_authority": {
+          "const": "decision_only",
+          "default": "decision_only",
+          "title": "Qualification Authority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "process_uri"
+      ],
+      "title": "ForgeBinding",
+      "type": "object"
+    },
+    "NlUriBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "action_uri": {
+          "title": "Action Uri",
+          "type": "string"
+        },
+        "provenance_source": {
+          "default": "direct_dsl",
+          "enum": [
+            "nl_deterministic",
+            "llm_gbnf",
+            "direct_dsl"
+          ],
+          "title": "Provenance Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "action_uri"
+      ],
+      "title": "NlUriBinding",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "actor",
+            "adapter",
+            "command_handler",
+            "query_handler",
+            "aggregate",
+            "event_store",
+            "outbox",
+            "relay",
+            "projector",
+            "read_model",
+            "temporal_service"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "capability": {
+          "title": "Capability",
+          "type": "string"
+        },
+        "owner": {
+          "title": "Owner",
+          "type": "string"
+        },
+        "process_group": {
+          "title": "Process Group",
+          "type": "string"
+        },
+        "story_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Story Ids",
+          "type": "array"
+        },
+        "operation_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Operation Id"
+        },
+        "aggregate_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aggregate Id"
+        },
+        "deployment": {
+          "default": "local",
+          "enum": [
+            "local",
+            "remote",
+            "external"
+          ],
+          "title": "Deployment",
+          "type": "string"
+        },
+        "interface": {
+          "anyOf": [
+            {
+              "enum": [
+                "rest",
+                "mcp",
+                "shell"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Interface"
+        },
+        "service_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Url"
+        },
+        "process_uri": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Process Uri"
+        },
+        "binding_status": {
+          "default": "unbound",
+          "enum": [
+            "unbound",
+            "proposed",
+            "verified"
+          ],
+          "title": "Binding Status",
+          "type": "string"
+        },
+        "reuse": {
+          "items": {
+            "$ref": "#/$defs/ReuseEvidence"
+          },
+          "title": "Reuse",
+          "type": "array"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": true,
+          "title": "Properties"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "role",
+        "capability",
+        "owner",
+        "process_group",
+        "story_ids"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "NodeV2": {
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "$ref": "#/$defs/Node"
+        },
+        "evidence_level": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "indexed_only",
+            "source_verified",
+            "contract_verified",
+            "integration_verified"
+          ],
+          "title": "Evidence Level",
+          "type": "string"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/ProvenanceRecord"
+          },
+          "title": "Provenance",
+          "type": "array"
+        },
+        "profiles": {
+          "$ref": "#/$defs/ProfileBindings"
+        }
+      },
+      "required": [
+        "node"
+      ],
+      "title": "NodeV2",
+      "type": "object"
+    },
+    "OperationSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "command",
+            "query"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "capability": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Capability",
+          "type": "string"
+        },
+        "aggregate": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Aggregate",
+          "type": "string"
+        },
+        "input_urns": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Input Urns",
+          "type": "array"
+        },
+        "output_urns": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Output Urns",
+          "type": "array"
+        },
+        "consistency": {
+          "default": "eventual",
+          "enum": [
+            "eventual",
+            "read_your_writes"
+          ],
+          "title": "Consistency",
+          "type": "string"
+        },
+        "temporal": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TemporalRequirement"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "capability",
+        "aggregate"
+      ],
+      "title": "OperationSpec",
+      "type": "object"
+    },
+    "PolycellBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_urn": {
+          "title": "Cell Urn",
+          "type": "string"
+        },
+        "process_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Process Ref"
+        },
+        "cell_schema": {
+          "const": "wellmanifest.polycell.cell/v1",
+          "default": "wellmanifest.polycell.cell/v1",
+          "title": "Cell Schema",
+          "type": "string"
+        },
+        "owner_lang": {
+          "default": "python",
+          "enum": [
+            "python",
+            "ts",
+            "rust"
+          ],
+          "title": "Owner Lang",
+          "type": "string"
+        },
+        "effects": {
+          "items": {
+            "enum": [
+              "pure",
+              "read_data",
+              "write_data",
+              "local_write",
+              "external",
+              "credential_use"
+            ],
+            "type": "string"
+          },
+          "title": "Effects",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cell_urn"
+      ],
+      "title": "PolycellBinding",
+      "type": "object"
+    },
+    "ProfileBindings": {
+      "additionalProperties": false,
+      "properties": {
+        "uritime": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/UritimeBinding"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "polycell": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PolycellBinding"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "forge": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ForgeBinding"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "nl_uri": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NlUriBinding"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "extensions": {
+          "additionalProperties": true,
+          "title": "Extensions",
+          "type": "object"
+        }
+      },
+      "title": "ProfileBindings",
+      "type": "object"
+    },
+    "ProvenanceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "source_kind": {
+          "enum": [
+            "user_input",
+            "llm_inference",
+            "deterministic_rule",
+            "source_index",
+            "runtime_observation"
+          ],
+          "title": "Source Kind",
+          "type": "string"
+        },
+        "producer": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Producer",
+          "type": "string"
+        },
+        "evidence_level": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "indexed_only",
+            "source_verified",
+            "contract_verified",
+            "integration_verified"
+          ],
+          "title": "Evidence Level",
+          "type": "string"
+        },
+        "revision": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Revision"
+        },
+        "content_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Sha256"
+        },
+        "note": {
+          "default": "",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_kind",
+        "producer"
+      ],
+      "title": "ProvenanceRecord",
+      "type": "object"
+    },
+    "ReuseEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "project": {
+          "title": "Project",
+          "type": "string"
+        },
+        "path": {
+          "title": "Path",
+          "type": "string"
+        },
+        "symbols": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Symbols",
+          "type": "array"
+        },
+        "source_sha256": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Sha256"
+        },
+        "status": {
+          "default": "indexed_only",
+          "enum": [
+            "indexed_only",
+            "source_seen",
+            "contract_verified"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "note": {
+          "default": "Candidate only; the source API and behavioral contract require verification.",
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "path"
+      ],
+      "title": "ReuseEvidence",
+      "type": "object"
+    },
+    "StorySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "archpat.story/v1",
+          "default": "archpat.story/v1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^[a-z][a-z0-9_.-]{0,79}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "actor": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "goal": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Goal",
+          "type": "string"
+        },
+        "acceptance_criteria": {
+          "items": {
+            "maxLength": 8000,
+            "minLength": 1,
+            "type": "string"
+          },
+          "maxItems": 100,
+          "minItems": 1,
+          "title": "Acceptance Criteria",
+          "type": "array"
+        },
+        "operations": {
+          "items": {
+            "$ref": "#/$defs/OperationSpec"
+          },
+          "maxItems": 50,
+          "minItems": 1,
+          "title": "Operations",
+          "type": "array"
+        },
+        "constraints": {
+          "$ref": "#/$defs/Constraints"
+        },
+        "weights": {
+          "$ref": "#/$defs/Weights"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 100,
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "actor",
+        "goal",
+        "acceptance_criteria",
+        "operations"
+      ],
+      "title": "StorySpec",
+      "type": "object"
+    },
+    "TemporalRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 8000,
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "timezone": {
+          "default": "Europe/Warsaw",
+          "title": "Timezone",
+          "type": "string"
+        },
+        "resolution_status": {
+          "const": "unresolved",
+          "default": "unresolved",
+          "title": "Resolution Status",
+          "type": "string"
+        },
+        "owner": {
+          "const": "uritime",
+          "default": "uritime",
+          "title": "Owner",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "TemporalRequirement",
+      "type": "object"
+    },
+    "UritimeBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "poa_uri": {
+          "title": "Poa Uri",
+          "type": "string"
+        },
+        "service_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Service Url"
+        },
+        "temporal_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Temporal Ref"
+        },
+        "owner": {
+          "default": "uritime",
+          "enum": [
+            "uritime",
+            "autodo"
+          ],
+          "title": "Owner",
+          "type": "string"
+        },
+        "contract_schema": {
+          "default": "ur.command-envelope/v1",
+          "enum": [
+            "ur.command-envelope/v1",
+            "ur.timeline-query/v1",
+            "ur.operation-descriptor/v1"
+          ],
+          "title": "Contract Schema",
+          "type": "string"
+        }
+      },
+      "required": [
+        "poa_uri"
+      ],
+      "title": "UritimeBinding",
+      "type": "object"
+    },
+    "Weights": {
+      "additionalProperties": false,
+      "properties": {
+        "ram": {
+          "default": 0.35,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Ram",
+          "type": "number"
+        },
+        "processes": {
+          "default": 0.25,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Processes",
+          "type": "number"
+        },
+        "coupling": {
+          "default": 0.2,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Coupling",
+          "type": "number"
+        },
+        "change_surface": {
+          "default": 0.2,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Change Surface",
+          "type": "number"
+        }
+      },
+      "title": "Weights",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "archpat.ir/v2",
+      "default": "archpat.ir/v2",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "migrated_from": {
+      "default": "archpat.graph/v1",
+      "enum": [
+        "archpat.graph/v1",
+        "native_v2"
+      ],
+      "title": "Migrated From",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_.-]{0,127}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "variant": {
+      "enum": [
+        "modular_monolith",
+        "worker_split",
+        "service_split"
+      ],
+      "title": "Variant",
+      "type": "string"
+    },
+    "story": {
+      "$ref": "#/$defs/StorySpec"
+    },
+    "patterns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Patterns",
+      "type": "array"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/NodeV2"
+      },
+      "maxItems": 300,
+      "title": "Nodes",
+      "type": "array"
+    },
+    "edges": {
+      "items": {
+        "$ref": "#/$defs/EdgeV2"
+      },
+      "maxItems": 2500,
+      "title": "Edges",
+      "type": "array"
+    },
+    "criteria_links": {
+      "items": {
+        "$ref": "#/$defs/CriterionLink"
+      },
+      "title": "Criteria Links",
+      "type": "array"
+    },
+    "provenance": {
+      "items": {
+        "$ref": "#/$defs/ProvenanceRecord"
+      },
+      "title": "Provenance",
+      "type": "array"
+    },
+    "legacy_provenance": {
+      "additionalProperties": true,
+      "title": "Legacy Provenance",
+      "type": "object"
+    },
+    "extensions": {
+      "additionalProperties": true,
+      "title": "Extensions",
+      "type": "object"
+    },
+    "execution_ready": {
+      "const": false,
+      "default": false,
+      "title": "Execution Ready",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "variant",
+    "story",
+    "patterns",
+    "nodes",
+    "edges"
+  ],
+  "title": "ArchitectureIRv2",
+  "type": "object"
+}

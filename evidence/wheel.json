@@ -1,0 +1,7 @@
+{
+  "wheel": "archpat-0.1.0-py3-none-any.whl",
+  "installed_import": "build/wheel-smoke/archpat/__init__.py",
+  "version": "0.1.0",
+  "selected": "modular_monolith",
+  "passed": true
+}

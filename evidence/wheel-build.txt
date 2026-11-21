@@ -1,0 +1,12 @@
+Processing /workspace/scratch/0c8f700f0bb5/archpat
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: archpat
+  Building wheel for archpat (pyproject.toml): started
+  Building wheel for archpat (pyproject.toml): finished with status 'done'
+  Created wheel for archpat: filename=archpat-0.1.0-py3-none-any.whl size=34588 sha256=6cb5f2ead4a54e150e55a345dc385195c4e7b3459a9ad3be1705d002944fa555
+  Stored in directory: /tmp/pip-ephem-wheel-cache-c7civfd3/wheels/d4/3d/a7/299ef33261133de351bda4edb31c538e37e9827b8cbeb9fd05
+Successfully built archpat
+
+[notice] A new release of pip is available: 25.0.1 -> 26.3
+[notice] To update, run: python -m pip install --upgrade pip

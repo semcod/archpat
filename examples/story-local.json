@@ -1,0 +1,53 @@
+{
+  "schema_version": "archpat.story/v1",
+  "id": "exercise-feedback",
+  "title": "Ocena ćwiczenia po dostarczeniu artefaktu",
+  "actor": "Prowadzący i student",
+  "goal": "Zlecić ocenę wersjonowanego artefaktu, zapisać historię i odczytać aktualny wynik.",
+  "acceptance_criteria": [
+    "Ponowienie tej samej komendy nie tworzy drugiego wyniku.",
+    "Zapytanie o wynik nie uruchamia ponownie oceny ani innych skutków.",
+    "Historia pozwala odbudować projekcję bez ponownego wywołania modelu.",
+    "Ocena korzysta z przypiętej wersji artefaktu, a wynik wskazuje jej URN.",
+    "Warunek czasu zostaje rozstrzygnięty przez istniejące uritime/URT."
+  ],
+  "operations": [
+    {
+      "id": "request-review",
+      "name": "Zleć ocenę ćwiczenia",
+      "kind": "command",
+      "capability": "exercise.review",
+      "aggregate": "exercise",
+      "input_urns": ["urn:example:exercise:submission"],
+      "output_urns": ["urn:example:review:receipt"],
+      "temporal": {
+        "text": "po dostarczeniu zrzutu ekranu, przed rozpoczęciem następnego ćwiczenia",
+        "timezone": "Europe/Warsaw"
+      }
+    },
+    {
+      "id": "get-feedback",
+      "name": "Pokaż aktualny wynik i wyjaśnienie",
+      "kind": "query",
+      "capability": "exercise.feedback",
+      "aggregate": "exercise",
+      "input_urns": ["urn:example:exercise:identity"],
+      "output_urns": ["urn:example:exercise:feedback"],
+      "consistency": "read_your_writes"
+    }
+  ],
+  "constraints": {
+    "ram_budget_mb": 4096,
+    "reserved_ram_mb": 2048,
+    "max_processes": 3,
+    "offline": true,
+    "interfaces": ["rest", "mcp", "shell"],
+    "artifact_formats": ["json", "protobuf"]
+  },
+  "assumptions": [
+    "URN-y example są ilustracyjne; pinning wersji i digestu wykonuje istniejący rejestr danych.",
+    "Rezerwa 2048 MiB jest przykładowym parametrem, nie pomiarem uritime ani modelu LLM.",
+    "Lokalny LLM i usługi ekosystemu są konfigurowane oddzielnie i nie są pobierane przez ArchPat."
+  ]
+}
+

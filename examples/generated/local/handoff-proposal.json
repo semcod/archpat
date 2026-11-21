@@ -1,0 +1,30 @@
+{
+  "schema_version": "archpat.handoff-proposal/v1",
+  "status": "unbound_proposal",
+  "graph_sha256": "4f76007aa5514f6b780f18f69bcab4e7f0d8af667a780a3f742443c86020bf6f",
+  "story_id": "exercise-feedback",
+  "target_owners": {
+    "time_semantics": "uritime_urt",
+    "plan_and_schedule": "uritime",
+    "goal_action_effects": "autodo",
+    "implementation_qualification": "forge"
+  },
+  "runtime_process_uri": null,
+  "canonical_urt_descriptor": null,
+  "upstream_schema_verified": false,
+  "submitted": false,
+  "temporal_requirements": [
+    {
+      "text": "po dostarczeniu zrzutu ekranu, przed rozpoczęciem następnego ćwiczenia",
+      "timezone": "Europe/Warsaw",
+      "resolution_status": "unresolved",
+      "owner": "uritime"
+    }
+  ],
+  "required_local_read": [
+    "planning/urt-polycell-forge-autonomy.md",
+    "uritime/src/urievents/contracts.py",
+    "packages/forge_base/forge_base/contracts.py"
+  ],
+  "note": "ArchPat proposal format, not a claimed upstream command envelope."
+}

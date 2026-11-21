@@ -1,0 +1,14 @@
+services:
+  demo:
+    build: .
+    user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+    network_mode: none
+    command: ["synthesize", "examples/story-local.json", "--index", "examples/indexes/uritime.toon.yaml", "--index", "examples/indexes/forge.toon.yaml", "--out", "/out/demo", "--overwrite"]
+    volumes:
+      - ./build/docker:/out
+  tests:
+    build: .
+    network_mode: none
+    entrypoint: ["python"]
+    command: ["-m", "unittest", "discover", "-s", "tests", "-v"]
+
