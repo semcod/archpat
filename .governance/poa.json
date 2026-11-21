@@ -1,0 +1,25 @@
+{
+  "schema": "wellmanifest.poa/v1",
+  "process_id": "archpat-synthesis-and-qualification",
+  "steps": [
+    {
+      "id": "synthesize",
+      "action": "archpat.synthesize",
+      "depends_on": []
+    },
+    {
+      "id": "validate_ir",
+      "action": "archpat.validate",
+      "depends_on": [
+        "synthesize"
+      ]
+    },
+    {
+      "id": "verify_contracts",
+      "action": "archpat.pilot.verify",
+      "depends_on": [
+        "validate_ir"
+      ]
+    }
+  ]
+}
