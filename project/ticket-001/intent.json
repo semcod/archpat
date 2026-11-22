@@ -1,0 +1,151 @@
+{
+  "schema": "new-project.intent/v3",
+  "ticket": "ticket-001",
+  "summary": "Adopt wellmanifest new-project governance",
+  "workstream": "governance",
+  "classification": {
+    "kind": "SERVICE",
+    "priority": "P2",
+    "origin": "health"
+  },
+  "allowedPaths": [
+    "project/ticket-001/**",
+    "TODO.md",
+    "project/TICKETS.md",
+    ".aider.conf.yml",
+    ".cursor/rules/**",
+    ".gitattributes",
+    ".githooks/**",
+    ".github/copilot-instructions.md",
+    ".github/workflows/new-project-governance.yml",
+    ".github/workflows/new-project-branch-hygiene.yml",
+    ".gitignore",
+    ".governance/**",
+    ".subactor/**",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "README.md",
+    "project.sh",
+    "project.bat",
+    "project/**",
+    "scripts/install-agent-hosts.sh",
+    "scripts/runtime.sh",
+    "wellmanifest_governance.py",
+    "worktree-guard.yaml"
+  ],
+  "forbiddenPaths": [
+    "project/ticket-*/user-*.md"
+  ],
+  "stacks": [],
+  "dependsOn": [],
+  "conflictsWith": [],
+  "integrationTicket": null,
+  "placement": {
+    "home": "semcod",
+    "shape": "runtime_service",
+    "adopt": [
+      "wellmanifest/authority-lifecycle",
+      "wellmanifest/docs",
+      "wellmanifest/logs",
+      "wellmanifest/new-project",
+      "wellmanifest/poa"
+    ]
+  },
+  "delivery": {
+    "acceptedBaseSha": "67d7169b7df8fba044025e5f2b412b2cc5f6ed49",
+    "targetBranch": "main",
+    "outcome": "Adopt wellmanifest/new-project 0.20.166 governance pack, Git hooks, and Wellman baseline/deployment standards for semcod/archpat.",
+    "nonGoals": [
+      "Do not create a GitHub remote repository or push to origin without explicit owner approval.",
+      "Do not modify archpat runtime synthesis or pilot behavior."
+    ],
+    "complexity": "L",
+    "estimatedMinutes": 30,
+    "standardAdoption": {
+      "sourceRepository": "wellmanifest/new-project",
+      "fromRevision": null,
+      "toRevision": "c9bb73ce5ce861e78c26619e36e5b016fda56e2d"
+    },
+    "budgets": {
+      "maxImplementationFiles": 15,
+      "maxAffectedComponents": 2,
+      "maxPublicInterfaceChanges": 0,
+      "maxRuntimeDependencies": 0
+    },
+    "architecture": {
+      "status": "accepted",
+      "decision": "Install immutable wellmanifest/new-project managed governance files, hooks, and Wellman standard profiles on ticket-001.",
+      "components": [
+        {
+          "name": "governance-pack",
+          "paths": [
+            ".governance/**",
+            ".githooks/**",
+            ".github/**",
+            ".subactor/**",
+            "project/**",
+            "scripts/install-agent-hosts.sh",
+            "scripts/runtime.sh"
+          ]
+        },
+        {
+          "name": "agent-host-files",
+          "paths": [
+            "AGENTS.md",
+            "CLAUDE.md",
+            "GEMINI.md",
+            ".aider.conf.yml",
+            ".cursor/rules/**",
+            ".gitattributes",
+            ".gitignore",
+            "project.sh",
+            "project.bat",
+            "wellmanifest_governance.py",
+            "worktree-guard.yaml"
+          ]
+        }
+      ],
+      "responsibilityChanges": false,
+      "interfaceChanges": [],
+      "dataChanges": [],
+      "ui": {
+        "impact": "none",
+        "states": [],
+        "evidence": []
+      },
+      "rollback": "Revert ticket-001 branch before merge; main stays untouched at acceptedBaseSha."
+    },
+    "runtimeDependencies": [],
+    "validation": [
+      {
+        "criterion": "AC-01",
+        "commands": [
+          "./scripts/install-agent-hosts.sh"
+        ],
+        "evidence": "core.hooksPath=.githooks active and pre-commit/commit-msg pass"
+      },
+      {
+        "criterion": "AC-02",
+        "commands": [
+          "./project/governance-check.sh --base main"
+        ],
+        "evidence": "GOV-PASS (0 errors, 0 warnings)"
+      },
+      {
+        "criterion": "AC-03",
+        "commands": [
+          "wellman check"
+        ],
+        "evidence": "All selected Wellman conformance checks pass (0 errors)"
+      },
+      {
+        "criterion": "AC-04",
+        "commands": [
+          ".venv/bin/python -m unittest discover -s tests -q"
+        ],
+        "evidence": "87/87 tests pass"
+      }
+    ]
+  }
+}

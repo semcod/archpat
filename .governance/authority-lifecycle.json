@@ -1,0 +1,8 @@
+{
+  "schema": "wellmanifest.authority-lifecycle/profile/v1",
+  "principal": {
+    "uri": "authority://principal/repository-controller",
+    "kind": "service"
+  },
+  "fencingToken": 1
+}
